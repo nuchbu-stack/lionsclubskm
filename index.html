@@ -1,190 +1,197 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>เพื่อนใจวัยเก๋า - Lions Club Samutsongkhram</title>
-
-  <!-- เชื่อมกับไฟล์ CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เพื่อนใจวัยเก๋า</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- ================= NAVBAR =================
-       โลโก้ + ชื่อสโมสร (คงสไตล์ที่คุณต้องการไว้)
-       เมนูนำทางไปยัง section ต่าง ๆ -->
-  <nav class="navbar" id="navbar">
+  <!-- ===========================
+       NAVBAR
+  ============================ -->
+  <nav class="navbar">
     <div class="nav-inner">
       <div class="brand">
         <img src="lions_logo.svg" alt="Lions Club Logo" class="logo">
-        <div class="club-text">
+        <div>
           <div class="club-title">Lions Club of Samutsongkhram</div>
           <div class="club-sub">สโมสรไลออนส์สมุทรสงคราม</div>
         </div>
       </div>
       <ul class="nav-links">
+        <li><a href="#hero">หน้าแรก</a></li>
         <li><a href="#about">เกี่ยวกับโครงการ</a></li>
         <li><a href="#story">เรื่องราว</a></li>
         <li><a href="#actions">สิ่งที่ทำ</a></li>
+        <li><a href="#gallery">กิจกรรม</a></li>
         <li><a href="#goals">เป้าหมาย</a></li>
-        <li><a href="#gallery">ภาพกิจกรรม</a></li>
+        <li><a href="#voices">เสียงจากใจ</a></li>
         <li><a href="#schedule">กำหนดการ</a></li>
-        <li><a href="#contact">ติดต่อ</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ================= HERO (full-bleed slider) =================
-       - สไลด์เต็มจอ (100vh)
-       - overlay เล็กน้อยเพื่อให้ตัวอักษรเด่น
-       - ปุ่ม prev/next แบบ minimal และ dot indicators
-       - ใช้ 3 ภาพโทนอุ่นจาก Unsplash (ตามที่ตกลง)
-  -->
-  <section id="hero" class="hero">
+  <!-- ===========================
+       HERO (SLIDER)
+  ============================ -->
+  <header class="hero" id="hero">
     <div class="slides">
-      <!-- slide backgrounds (full-bleed) -->
-      <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1581578731548-4254a3a2de71?auto=format&fit=crop&w=1600&q=80');"></div>
-      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1605460375648-278bcbd579a6?auto=format&fit=crop&w=1600&q=80');"></div>
-      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1592656092201-981965a7f810?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1601758123927-19671c6f95ae?auto=format&fit=crop&w=1400&q=80');"></div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1599140780379-60c855a2517a?auto=format&fit=crop&w=1400&q=80');"></div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1606788075761-41c82e6465db?auto=format&fit=crop&w=1400&q=80');"></div>
     </div>
-
-    <!-- overlay + content (centered) -->
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>เพื่อนใจวัยเก๋า</h1>
       <p class="hero-sub">ใจดี กายดี ชีวิตก็มีสุข</p>
       <div class="hero-ctas">
-        <a href="#about" class="btn btn-yellow">เกี่ยวกับโครงการ</a>
-        <a href="#join" class="btn btn-outline">สมัครเป็นอาสาสมัคร</a>
-        <a href="#contact" class="btn btn-white">ติดต่อเรา</a>
+        <a href="#about" class="btn">เกี่ยวกับโครงการ</a>
+        <a href="#actions" class="btn">สมัครเป็นอาสาสมัคร</a>
+        <a href="#contact" class="btn">ติดต่อเรา</a>
       </div>
     </div>
+    <button class="control prev">❮</button>
+    <button class="control next">❯</button>
+    <div class="indicators">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
 
-    <!-- controls -->
-    <button class="control prev" aria-label="Previous slide">❮</button>
-    <button class="control next" aria-label="Next slide">❯</button>
-
-    <!-- indicators (dots) -->
-    <div class="indicators" aria-hidden="false"></div>
-  </section>
-
-  <!-- ================= ABOUT (boxed content) =================
-       - อยู่ใน .section-box เพื่อไม่ให้เต็มจอ
-       - มีสถิติ (stat-number) ที่จะนับขึ้นเมื่อเลื่อนมาถึง
-  -->
+  <!-- ===========================
+       ABOUT
+  ============================ -->
   <section id="about" class="section-box" data-anim="fade">
     <h2>ทำไม “เพื่อนใจวัยเก๋า” จึงสำคัญ?</h2>
     <p>
-      จังหวัดสมุทรสงคราม มีผู้สูงอายุกว่า <span class="highlight">28%</span> ของประชากรทั้งหมด
-      และมากกว่า <span class="highlight">12%</span> มีภาวะซึมเศร้าและความจำเสื่อม
+      จังหวัดสมุทรสงคราม มีผู้สูงอายุกว่า <span class="highlight">28%</span> ของประชากรทั้งหมด  
+      และมากกว่า <span class="highlight">12%</span> มีภาวะซึมเศร้าและความจำเสื่อม  
       โครงการนี้เกิดขึ้นเพื่อสร้าง “เพื่อนใจ” ในทุกชุมชน ที่คอยสังเกต รับฟัง และส่งต่อเข้าสู่การดูแลอย่างถูกต้อง
     </p>
-
-    <!-- Stats cards -->
     <div class="stats">
-      <div class="stat-card" data-anim="fade">
-        <div class="stat-number" data-count="28">0%</div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="28">0%</span>
         <p>ของประชากรเป็นผู้สูงอายุ</p>
       </div>
-      <div class="stat-card" data-anim="fade">
-        <div class="stat-number" data-count="12">0%</div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="12">0%</span>
         <p>มีภาวะซึมเศร้า หรือความจำเสื่อม</p>
       </div>
     </div>
   </section>
 
-  <!-- ================= INSPIRATION STORY ================= -->
-  <section id="story" class="section-box alt" data-anim="left">
+  <!-- ===========================
+       STORY
+  ============================ -->
+  <section id="story" class="section-box" data-anim="left">
     <h2>เพื่อนที่ใส่ใจ…สามารถเปลี่ยนชีวิตได้</h2>
-    <div class="story-grid">
-      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80" alt="เรื่องราวแรงบันดาลใจ">
-      <div class="story-text">
-        <p>
-          วันหนึ่ง คุณป้าศรีนิตย์ เห็นเพื่อนมีอาการผิดปกติ จึงโทรหาลูกและรีบพาไปพบแพทย์
-          เรื่องเล็ก ๆ นี้ช่วยให้ผู้เข้าร่วมได้รับการรักษาทันท่วงที และกลับมามีรอยยิ้มอีกครั้ง
-        </p>
-        <a href="#" class="btn btn-outline">▶️ ดูวิดีโอเรื่องจริง</a>
+    <img src="https://images.unsplash.com/photo-1622031372496-7a2a7a4c46f1?auto=format&fit=crop&w=1200&q=80" alt="แรงบันดาลใจ">
+    <p>
+      วันหนึ่ง คุณป้าศรีนิตย์ จิตอนงค์ เห็นเพื่อนผู้สูงอายุมีอาการผิดปกติ  
+      จึงโทรหาลูกสาวให้รีบพาไปพบแพทย์ เรื่องเล็ก ๆ นี้…  
+      ทำให้คุณแม่ของคุณชโลทัยได้รับการรักษาทันท่วงที และกลับมามีรอยยิ้มอีกครั้ง
+    </p>
+    <a href="#" class="btn">▶️ ดูวิดีโอเรื่องจริง</a>
+  </section>
+
+  <!-- ===========================
+       ACTIONS
+  ============================ -->
+  <section id="actions" class="section-box" data-anim="right">
+    <h2>เราทำอะไรบ้าง?</h2>
+    <div class="cards">
+      <div class="action-card">
+        <img src="https://placehold.co/200x200" alt="สังเกต">
+        <h3>สังเกต</h3>
+        <p>เฝ้าระวังสัญญาณซึมเศร้าและอัลไซเมอร์</p>
+      </div>
+      <div class="action-card">
+        <img src="https://placehold.co/200x200" alt="ฟังใจ">
+        <h3>ฟังใจ</h3>
+        <p>รับฟังด้วยความเข้าใจ</p>
+      </div>
+      <div class="action-card">
+        <img src="https://placehold.co/200x200" alt="ส่งต่อ">
+        <h3>ส่งต่อ</h3>
+        <p>เชื่อมสู่การคัดกรองและบริการสุขภาพ</p>
       </div>
     </div>
   </section>
 
-  <!-- ================= OUR ACTIONS ================= -->
-  <section id="actions" class="section-box" data-anim="right">
-    <h2>เราทำอะไรบ้าง?</h2>
-    <div class="grid-3">
-      <div class="card" data-anim="fade"><h3>สังเกต</h3><p>เฝ้าระวังสัญญาณซึมเศร้าและอัลไซเมอร์</p></div>
-      <div class="card" data-anim="fade"><h3>ฟังใจ</h3><p>รับฟังด้วยความเข้าใจ</p></div>
-      <div class="card" data-anim="fade"><h3>ส่งต่อ</h3><p>เชื่อมสู่การคัดกรองและบริการสุขภาพ</p></div>
+  <!-- ===========================
+       GALLERY
+  ============================ -->
+  <section id="gallery" class="section-box" data-anim="fade">
+    <h2>บรรยากาศกิจกรรม</h2>
+    <div class="grid">
+      <img src="https://placehold.co/400x300" alt="กิจกรรม 1">
+      <img src="https://placehold.co/400x300" alt="กิจกรรม 2">
+      <img src="https://placehold.co/400x300" alt="กิจกรรม 3">
+      <img src="https://placehold.co/400x300" alt="กิจกรรม 4">
+      <img src="https://placehold.co/400x300" alt="กิจกรรม 5">
+      <img src="https://placehold.co/400x300" alt="กิจกรรม 6">
     </div>
   </section>
 
-  <!-- ================= GOALS & IMPACT ================= -->
+  <!-- ===========================
+       GOALS
+  ============================ -->
   <section id="goals" class="section-box" data-anim="fade">
     <h2>เป้าหมายของเรา</h2>
-    <div class="grid-4">
-      <div class="card"><div class="stat-number" data-count="70">0%</div><p>คัดกรองสุขภาพจิต</p></div>
-      <div class="card"><div class="stat-number" data-count="60">0%</div><p>เข้าสู่ระบบรักษา</p></div>
-      <div class="card"><div class="stat-number" data-count="80">0%</div><p>ชมรมสุขใจ 15 นาที</p></div>
-      <div class="card"><div class="stat-number" data-count="20">0%</div><p>เพิ่มคะแนนสุข</p></div>
+    <div class="grid">
+      <div class="goal-card">
+        <span class="stat-number" data-count="70">0%</span>
+        <p>คัดกรองสุขภาพจิต</p>
+      </div>
+      <div class="goal-card">
+        <span class="stat-number" data-count="60">0%</span>
+        <p>เข้าสู่ระบบรักษา</p>
+      </div>
+      <div class="goal-card">
+        <span class="stat-number" data-count="80">0%</span>
+        <p>ชมรมสุขใจ 15 นาที</p>
+      </div>
+      <div class="goal-card">
+        <span class="stat-number" data-count="20">0%</span>
+        <p>เพิ่มคะแนนสุข</p>
+      </div>
     </div>
   </section>
 
-  <!-- ================= GALLERY / MEDIA ================= -->
-  <section id="gallery" class="section-box alt" data-anim="left">
-    <h2>บรรยากาศกิจกรรม</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" alt="กิจกรรม1">
-      <img src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?auto=format&fit=crop&w=800&q=80" alt="กิจกรรม2">
-      <img src="https://images.unsplash.com/photo-1509228627152-986b017f0a7b?auto=format&fit=crop&w=800&q=80" alt="กิจกรรม3">
+  <!-- ===========================
+       VOICES
+  ============================ -->
+  <section id="voices" class="section-box" data-anim="left">
+    <h2>เสียงจากใจ</h2>
+    <div class="grid">
+      <div class="voice-card">
+        <p>“ได้เพื่อนใจวัยเก๋า ทำให้แม่ฉันสดใสขึ้นมาก ไม่เหงาเหมือนเมื่อก่อน”</p>
+        <div class="author">— ลูกสาวผู้เข้าร่วม</div>
+      </div>
+      <div class="voice-card">
+        <p>“มีกิจกรรมให้ทำ ได้เพื่อนใหม่ รู้สึกเหมือนได้กลับไปเป็นหนุ่มสาวอีกครั้ง”</p>
+        <div class="author">— ผู้สูงอายุในโครงการ</div>
+      </div>
     </div>
   </section>
 
-  <!-- ================= VOICES / TESTIMONIALS ================= -->
-  <section id="voices" class="section-box" data-anim="right">
-    <h2>เสียงจากชุมชน</h2>
-    <div class="grid-2">
-      <div class="card"><p>“การมีเพื่อนคอยรับฟัง ทำให้ไม่รู้สึกโดดเดี่ยว” — ผู้สูงอายุ</p></div>
-      <div class="card"><p>“ฉันอยากเป็นเพื่อนที่เข้าใจเพื่อน ๆ ของฉัน” — อาสาสมัคร</p></div>
-    </div>
+  <!-- ===========================
+       SCHEDULE (ยังไม่แก้)
+  ============================ -->
+  <section id="schedule" class="section-box" data-anim="fade">
+    <h2>กำหนดการอบรม</h2>
+    <p>รายละเอียดกำหนดการจะแสดงที่นี่</p>
   </section>
 
-  <!-- ================= SCHEDULE (เก็บต้นแบบไว้ตามคำขอ) ================= -->
-  <section id="schedule" class="section-box alt" data-anim="left">
-    <h2>กำหนดการงานแถลงข่าว</h2>
-    <p>วันที่ 16 กันยายน 2568 เวลา 16:00 – 18:00 น. ณ เรือนปณาลี อ.บางคนที จ.สมุทรสงคราม</p>
-    <div class="agenda">
-      <div class="agenda-item"><div class="time">16.00 – 16.15</div><div class="detail">ลงทะเบียน</div></div>
-      <div class="agenda-item"><div class="time">16.15 – 16.30</div><div class="detail">การแสดงเปิด โดยสภาวัฒนธรรมตำบลบางกุ้ง</div></div>
-      <div class="agenda-item"><div class="time">16.30 – 16.50</div><div class="detail">พิธีเปิดงาน & แถลงข่าว (ผู้กล่าว)</div></div>
-      <div class="agenda-item"><div class="time">16.50 – 17.30</div><div class="detail">เสวนา “เพื่อนช่วยเพื่อน”</div></div>
-      <div class="agenda-item"><div class="time">17.30 – 17.45</div><div class="detail">Q&A</div></div>
-      <div class="agenda-item"><div class="time">17.45 – 18.00</div><div class="detail">พิธีปิด & ถ่ายภาพร่วมกัน</div></div>
-    </div>
-  </section>
-
-  <!-- ================= JOIN / CTA ================= -->
-  <section id="join" class="section-box" data-anim="fade">
-    <h2>ร่วมเป็นส่วนหนึ่ง</h2>
-    <p>สมัครเป็นอาสาสมัครผ่านแบบฟอร์มหรือสแกน QR Code</p>
-    <div class="join-ctas">
-      <a href="#form" class="btn btn-yellow">สมัครเป็นอาสาสมัคร</a>
-      <a href="#contact" class="btn btn-white">ติดต่อความร่วมมือ</a>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT / FOOTER ================= -->
-  <section id="contact" class="section-box alt" data-anim="left">
-    <h2>ติดต่อเรา</h2>
-    <p>สโมสรไลออนส์สมุทรสงคราม<br>โทร: 0xx-xxx-xxxx • Line: @LionsSKM • Facebook: Lions Samutsongkhram</p>
-  </section>
-
-  <footer class="footer">
-    <div class="section-box">
-      <p>เพื่อนใจวัยเก๋า – พลังของเพื่อน พลังของไลออนส์ © 2025</p>
-    </div>
+  <!-- ===========================
+       FOOTER
+  ============================ -->
+  <footer>
+    <p>“เพื่อนใจวัยเก๋า – พลังของเพื่อน พลังของไลออนส์”</p>
   </footer>
 
-  <!-- เชื่อมกับไฟล์ JS -->
   <script src="script.js"></script>
 </body>
 </html>
