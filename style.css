@@ -1,241 +1,340 @@
-/* ===========================
-   style.css (Merged / Cleaned / Commented)
-   - รวม style เดิม + hero slider + navbar blur + on-scroll animation
-   - ใช้ตัวแปรสีด้านล่างเพื่อแก้ธีมง่าย
-   =========================== */
-
-/* ---------------------------
-   CSS Variables / Theme
-   --------------------------- */
-:root{
-  --primary: #273a80;   /* navy */
-  --accent:  #fecf09;   /* yellow-gold */
-  --bg:      #fffdf8;   /* warm background */
-  --muted:   #f8f6f2;   /* section alternate bg */
-  --text:    #333333;
-  --card-shadow: rgba(0,0,0,0.06);
+/* =============================
+   1. Reset & Base
+   ============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ===========================
-   1) RESET & BASE
-   - single reset, base typography & spacing
-   =========================== */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  font-family: "Noto Sans Thai", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  padding-top:72px; /* prevent fixed navbar overlapping */
-  font-size:18px;   /* readable for older users (≈18pt) */
+body {
+  font-family: "Noto Sans Thai", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #faf8f5;
 }
 
-/* Utility */
-.container{max-width:1200px;margin:0 auto;padding:0 20px}
-.text-center{text-align:center}
-.hidden{display:none}
-
-/* ===========================
-   2) NAVBAR
-   - fixed top, translucent with blur, .scrolled to toggle denser bg
-   =========================== */
-.navbar{
-  position:fixed;top:0;left:0;right:0;
-  background: rgba(39,58,128,0.86); /* translucent */
-  color:#fff;
-  z-index:1300;
-  backdrop-filter: blur(8px);
-  transition: background .25s ease, box-shadow .25s ease;
-  border-bottom: 1px solid rgba(255,255,255,0.03);
-}
-.navbar.scrolled{ background: rgba(39,58,128,0.98); box-shadow:0 6px 20px rgba(0,0,0,0.08) }
-
-.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:10px 20px}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{height:44px;display:block}
-.club-title{color:var(--accent);font-weight:700;font-size:1rem}
-.club-sub{color:#fff;font-size:.85rem;opacity:.95}
-
-.nav-links{list-style:none;display:flex;gap:16px;align-items:center}
-.nav-links a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
-.nav-links a:hover{background:rgba(255,255,255,0.06)}
-
-/* mobile nav placeholder (hide on small) */
-@media (max-width:900px){ .nav-links{display:none} }
-
-/* ===========================
-   3) HERO SLIDER (full-bleed)
-   - slides .slide (background-image), overlay, centered content
-   - controls: .control.prev/.next and .indicators (dots)
-   =========================== */
-.hero{
-  position:relative;width:100%;height:100vh;overflow:hidden;
-  display:block;
-}
-.slides{position:absolute;inset:0}
-.slide{
-  position:absolute;top:0;left:0;width:100%;height:100%;
-  background-size:cover;background-position:center;
-  opacity:0;transition:opacity .9s ease, transform .9s ease;
-  will-change:opacity,transform;
-}
-.slide.active{opacity:1;transform:translateZ(0)}
-
-.hero-overlay{
-  position:absolute;inset:0;background:linear-gradient(rgba(8,10,24,0.28), rgba(8,10,24,0.28));
-  z-index:1;pointer-events:none;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-/* centered hero content */
-.hero-content{
-  position:relative;z-index:2;max-width:1100px;margin:0 auto;height:100%;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;
-}
-.hero-content h1{font-size:3rem;color:var(--accent);line-height:1.02;margin-bottom:8px;text-shadow:0 6px 18px rgba(0,0,0,0.45)}
-.hero-sub{color:#fff;font-size:1.15rem;margin-bottom:18px;text-shadow:0 4px 12px rgba(0,0,0,0.35)}
-
-/* CTA buttons in hero (keep minimal) */
-.hero-ctas{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.btn{display:inline-block;padding:10px 18px;border-radius:30px;text-decoration:none;font-weight:700;cursor:pointer}
-.btn-yellow{background:var(--accent);color:var(--primary)}
-.btn-outline{background:transparent;color:var(--accent);border:2px solid rgba(254,207,9,0.95)}
-.btn-white{background:#fff;color:var(--primary)}
-
-/* controls (minimal round icons) */
-.control{
-  position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;
-  border:none;background:rgba(0,0,0,0.36);color:#fff;font-size:1.25rem;z-index:3;cursor:pointer;display:flex;align-items:center;justify-content:center;
-}
-.control.prev{left:14px}.control.next{right:14px}
-
-/* dot indicators */
-.indicators{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
-.indicators span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.5);cursor:pointer;display:inline-block}
-.indicators span.active{background:var(--accent)}
-
-/* small-screen hero sizing */
-@media (max-width:900px){
-  .hero-content h1{font-size:2.2rem}
-  .hero-sub{font-size:1rem}
-  .control{width:40px;height:40px}
-}
-@media (max-width:480px){
-  .hero-content h1{font-size:1.6rem}
-  .hero-sub{font-size:.95rem}
+/* =============================
+   2. Navbar
+   ============================= */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(39, 58, 128, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: background 0.3s ease;
 }
 
-/* ===========================
-   4) SECTION: generic boxed layout
-   - .section-box used across About/Story/Actions/... to keep consistent spacing
-   =========================== */
-.section-box{max-width:1100px;margin:0 auto;padding:64px 20px}
-.section-box.alt{background:var(--muted);border-radius:12px}
-.section-box h2{color:var(--primary);margin-bottom:14px;font-size:1.6rem}
-.section-box p{margin-bottom:12px;font-size:1.05rem}
-
-/* ===========================
-   5) ABOUT + STATS
-   - .stats & .stat-card/.stat-number for counter styling
-   =========================== */
-#about .stats{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:18px}
-.stat-card{flex:1 1 220px;background:#fff;border-radius:10px;padding:22px;text-align:center;border:1px solid rgba(39,58,128,0.06);box-shadow:0 8px 20px var(--card-shadow)}
-.stat-number{font-size:2.4rem;color:var(--accent);font-weight:800}
-
-/* ===========================
-   6) STORY
-   - layout image + text
-   =========================== */
-#story{background:#fff;border-radius:12px;padding:36px 20px}
-.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
-.story-grid img{width:100%;border-radius:10px}
-.story-text p{font-size:1.03rem;margin-bottom:14px}
-
-/* ===========================
-   7) ACTIONS (3 columns on desktop)
-   =========================== */
-#actions .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;align-items:start}
-.action-card{background:#fff;border-radius:12px;padding:18px;text-align:center;border:2px solid rgba(39,58,128,0.06);box-shadow:0 6px 16px var(--card-shadow)}
-.action-card img{width:110px;height:110px;border-radius:50%;object-fit:cover;margin-bottom:12px}
-.action-card h3{color:var(--primary);margin-bottom:8px}
-
-/* ===========================
-   8) GALLERY
-   =========================== */
-#gallery .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-#gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px}
-
-/* ===========================
-   9) GOALS
-   =========================== */
-#goals .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px}
-.goal-card{background:#fff;border-radius:10px;padding:18px;text-align:center;border:2px solid rgba(39,58,128,0.06);box-shadow:0 6px 16px var(--card-shadow)}
-.goal-card .stat-number{font-size:2rem;color:var(--accent);font-weight:800}
-
-/* ===========================
-   10) VOICES / TESTIMONIALS
-   =========================== */
-#voices .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
-.voice-card{background:#fff;border-radius:10px;padding:16px;border:2px solid rgba(254,207,9,0.12);box-shadow:0 6px 16px var(--card-shadow)}
-.voice-card .author{margin-top:10px;font-weight:700;color:var(--primary)}
-
-/* ===========================
-   11) SCHEDULE (agenda kept)
-   - .agenda .agenda-item (list-card style) — we keep this as requested
-   =========================== */
-.agenda{margin-top:18px;display:flex;flex-direction:column;gap:12px}
-.agenda-item{display:flex;gap:12px;background:#fff;padding:12px;border-radius:10px;border-left:4px solid rgba(39,58,128,0.06);align-items:flex-start}
-.agenda-item .time{width:140px;color:#8b5e3c;font-weight:700}
-.agenda-item .detail{flex:1;color:#3b2c20;font-size:1rem}
-
-/* ===========================
-   12) JOIN / CTA block
-   =========================== */
-.join-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:12px}
-
-/* ===========================
-   13) FOOTER
-   =========================== */
-footer{background:var(--primary);color:#fff;padding:22px 12px;text-align:center;margin-top:30px}
-footer p{margin:0;font-weight:600}
-
-/* ===========================
-   14) BUTTON styles (re-usable)
-   =========================== */
-button, .btn{font-family:inherit;border:0;outline:0}
-.btn{display:inline-block;padding:10px 18px;border-radius:30px;text-decoration:none;font-weight:700}
-.btn-small{padding:8px 12px;border-radius:8px}
-
-/* ===========================
-   15) ON-SCROLL ANIMATIONS
-   - use data-anim="fade" / "left" / "right"
-   - IntersectionObserver adds .visible to trigger
-   =========================== */
-[data-anim="fade"]{opacity:0;transform:translateY(16px);transition:all .6s ease}
-[data-anim="left"]{opacity:0;transform:translateX(-36px);transition:all .6s ease}
-[data-anim="right"]{opacity:0;transform:translateX(36px);transition:all .6s ease}
-[data-anim].visible{opacity:1;transform:translate(0,0)}
-
-/* ===========================
-   16) RESPONSIVE adjustments
-   =========================== */
-@media (max-width: 1024px){
-  .section-box{padding:48px 18px}
-  .hero-content h1{font-size:2.6rem}
+nav.scrolled {
+  background: rgba(39, 58, 128, 0.8);
 }
-@media (max-width: 900px){
-  .nav-inner{flex-direction:column;align-items:flex-start}
-  .nav-links{display:none} /* mobile menu can be added later */
-  .story-grid{grid-template-columns:1fr}
-  .slides .slide{background-attachment:scroll} /* smoother on mobile */
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fecf09;
+  font-weight: bold;
 }
-@media (max-width: 480px){
-  body{font-size:17px}
-  .hero-content h1{font-size:1.6rem}
-  .hero-sub{font-size:.95rem}
-  .stat-number{font-size:1.6rem}
-  .agenda-item{flex-direction:column}
-  .agenda-item .time{width:100%}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #fecf09;
+}
+
+/* =============================
+   3. Hero Section (Full-screen Slider)
+   ============================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #fecf09;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-buttons a {
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.hero-buttons .primary {
+  background: #fecf09;
+  color: #273a80;
+}
+
+.hero-buttons .primary:hover {
+  background: #e6bb08;
+}
+
+.hero-buttons .secondary {
+  background: #fff;
+  color: #273a80;
+}
+
+.hero-buttons .secondary:hover {
+  background: #eee;
+}
+
+/* Slider controls */
+.hero-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.hero-dots span {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  opacity: 0.6;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.hero-dots span.active {
+  opacity: 1;
+  background: #fecf09;
+}
+
+/* =============================
+   4. Sections (General Box)
+   ============================= */
+.section-box {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.section-box h2 {
+  font-size: 2rem;
+  color: #273a80;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section-box p {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* =============================
+   5. Stats
+   ============================= */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.stat-card {
+  flex: 1 1 200px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fecf09;
+}
+
+/* =============================
+   6. Gallery & Cards
+   ============================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* =============================
+   7. Schedule (Agenda List)
+   ============================= */
+.schedule {
+  background: #f5f0e8;
+  padding: 60px 20px;
+  border-radius: 12px;
+}
+
+.schedule h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #273a80;
+}
+
+.agenda-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.agenda-time {
+  font-weight: bold;
+  color: #273a80;
+  min-width: 80px;
+}
+
+.agenda-details {
+  flex: 1;
+}
+
+.agenda-details h4 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.agenda-details ul {
+  margin-left: 20px;
+  list-style: disc;
+  color: #555;
+}
+
+/* =============================
+   8. Footer
+   ============================= */
+footer {
+  background: #273a80;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer .partners img {
+  height: 40px;
+  margin: 10px;
+}
+
+/* =============================
+   9. Animations
+   ============================= */
+[data-anim="left"] {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
+[data-anim="right"] {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
+}
+[data-anim].visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =============================
+   10. Responsive
+   ============================= */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .agenda-item {
+    flex-direction: column;
+  }
+
+  .agenda-time {
+    min-width: auto;
+  }
 }
