@@ -563,3 +563,47 @@ section h2 {
     font-size: 1.8rem; /* เล็กลงบนมือถือ */
   }
 }
+
+/* Container ของการ์ด */
+.stats {
+  display: flex;
+  flex-wrap: wrap;        /* ให้เรียงลงมาในมือถือ */
+  gap: 20px;              /* ระยะห่างการ์ด */
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* ตัวการ์ด */
+.stat-card {
+  background: #ffffff;               /* พื้นหลังขาว */
+  border-radius: 12px;               /* มุมโค้ง */
+  padding: 20px 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* เงาอ่อน */
+  text-align: center;
+  flex: 1 1 200px;                    /* ยืดหยุ่น */
+  max-width: 250px;
+}
+
+/* ตัวเลขใหญ่ */
+.stat-card .stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fecf09;                     /* เหลืองทอง */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* คำอธิบายใต้ตัวเลข */
+.stat-card p {
+  font-size: 1rem;
+  color: #273a80;                     /* น้ำเงินเข้ม */
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stat-card .stat-number {
+    font-size: 2.2rem;
+  }
+}
