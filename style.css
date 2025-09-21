@@ -541,3 +541,25 @@ section h2 {
   will-change: contents;
   display: inline-block;
 }
+
+/* ==== Count-up Number Styling ==== */
+.stat-number {
+  font-size: 3rem;            /* ใหญ่ */
+  font-weight: 800;           /* หนัก ชัด */
+  color: #fecf09;             /* เหลืองทอง */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.25); /* ให้เด่นขึ้น */
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .stat-number {
+    font-size: 2.2rem; /* เล็กลงบน tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-number {
+    font-size: 1.8rem; /* เล็กลงบนมือถือ */
+  }
+}
