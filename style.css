@@ -36,9 +36,28 @@ h1, h2, h3 {
 
 
 .hero {
-  background: linear-gradient(to right, #fecdd3, #fed7aa, #fef08a);
-  padding: 5rem 2rem;
-  text-align: center;
+  position: relative;
+  width: 100vw;    /* เต็มจอแนวนอน */
+  height: 100vh;   /* เต็มจอแนวตั้ง */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #fff;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slider .slide.active {
+  opacity: 1;
 }
 
 .hero h1 {
