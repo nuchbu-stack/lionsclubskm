@@ -770,8 +770,9 @@ section h2 {
   font-size: 1rem;
   color: #5a4633;
   margin: 0 auto 2rem;
-  max-width: 700px;
+  max-width: 900px;
   line-height: 1.6;
+  text-align: left; /* ชิดซ้าย */
 }
 
 /* Agenda Layout */
@@ -779,6 +780,8 @@ section h2 {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .agenda-item {
@@ -788,10 +791,11 @@ section h2 {
   background: #fffdf9;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left; /* ชิดซ้าย */
 }
 
 .agenda-item .time {
-  min-width: 110px;
+  min-width: 120px;
   font-weight: 700;
   color: #8b5e3c; /* น้ำตาลเข้ม */
 }
@@ -808,6 +812,7 @@ section h2 {
   color: #4a3b2a;
   font-size: 0.95rem;
   line-height: 1.5;
+  list-style-type: disc;
 }
 
 /* Responsive */
@@ -821,4 +826,3 @@ section h2 {
     margin-bottom: 5px;
   }
 }
-
