@@ -1,0 +1,55 @@
+/* พื้นหลังแบบ gradient อบอุ่น */
+body {
+  margin: 0;
+  font-family: "Noto Sans Thai", sans-serif;
+  background: linear-gradient(180deg, #fef6e4, #fde2e4);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(90deg, #ffcc70, #ff7eb3);
+  color: white;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* Section */
+section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+section h2 {
+  color: #6a0572;
+  margin-bottom: 1rem;
+}
+
+/* Gallery */
+.gallery .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #6a0572;
+  color: white;
+}
