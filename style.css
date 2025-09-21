@@ -153,7 +153,7 @@ h1, h2, h3 {
 }
 
 .navbar.scrolled {
-  background: rgba(39, 58, 128, 0.5); /* โปร่งลง */
+  background: rgba(39, 58, 128, 0.4); /* โปร่งลง */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
