@@ -178,6 +178,7 @@ statElements.forEach(el => {
 // Hero Slider
 let slides = document.querySelectorAll('.hero-slider .slide');
 let currentSlide = 0;
+let slideInterval = setInterval(nextSlide, 5000);
 
 function showSlide(index) {
   slides.forEach((slide, i) => {
@@ -191,4 +192,24 @@ function nextSlide() {
   showSlide(currentSlide);
 }
 
-setInterval(nextSlide, 5000); // เปลี่ยนทุก 5 วิ
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+// ปุ่มกด
+document.querySelector('.next').addEventListener('click', () => {
+  nextSlide();
+  resetInterval();
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  prevSlide();
+  resetInterval();
+});
+
+// รีเซ็ตเวลา autoplay
+function resetInterval() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, 5000);
+}
