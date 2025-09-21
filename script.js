@@ -65,3 +65,5 @@ statElements.forEach(el => {
   const target = +el.getAttribute("data-count");
   countUp(el, target);
 });
+
+

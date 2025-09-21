@@ -487,3 +487,36 @@ section h2 {
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
+
+/* ===========================
+   Animations
+   =========================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left,
+.slide-in-right {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.slide-in-left {
+  transform: translateX(-50px);
+}
+
+.slide-in-right {
+  transform: translateX(50px);
+}
+
+.slide-in-left.show,
+.slide-in-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
