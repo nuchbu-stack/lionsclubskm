@@ -608,42 +608,38 @@ section h2 {
   }
 }
 
-/* ===== Schedule Table (โทนน้ำตาลอบอุ่น) ===== */
-.schedule-table {
+/* ===== Schedule Section ===== */
+.schedule {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
   margin-top: 2rem;
-  overflow-x: auto; /* กันล้นบนมือถือ */
 }
 
-.schedule-table table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fffdf9; /* ครีมอ่อน */
+.schedule-card {
+  background: #ffffff;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.schedule-table th,
-.schedule-table td {
-  padding: 15px;
-  text-align: left;
-  border-bottom: 1px solid #eee;
+.schedule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-.schedule-table th {
-  background: #d9c4a1;  /* น้ำตาลอ่อน */
-  color: #5a4633;       /* น้ำตาลเข้ม */
+.schedule-card h3 {
+  font-size: 1.2rem;
   font-weight: 700;
-  font-size: 1.1rem;
+  color: #273a80; /* น้ำเงินเข้ม */
+  margin-bottom: 10px;
 }
 
-.schedule-table td {
+.schedule-card p {
   font-size: 1rem;
-  color: #3b2c20;       /* น้ำตาลเข้ม */
-}
-
-.schedule-table tr:hover {
-  background: #f6f1e7;  /* ไฮไลท์อ่อนๆ เวลา hover */
+  color: #333;
 }
 
 /* Responsive */
@@ -659,28 +655,37 @@ section h2 {
   }
 
   .schedule-table thead {
-    display: none; /* ซ่อนหัวตารางในมือถือ */
+    display: none; /* ซ่อนหัวตาราง */
   }
 
   .schedule-table tr {
     margin-bottom: 15px;
     border-bottom: 2px solid #e8d9c3;
-    padding: 10px;
+    padding: 12px;
     background: #fffdf9;
+    border-radius: 8px;
   }
 
-  .schedule-table td {
-    border: none;
-    padding: 8px 10px;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .schedule-table td::before {
-    content: attr(data-label);
+  /* เวลา (คอลัมน์แรก) */
+  .schedule-table td:first-child {
     font-weight: 700;
     color: #5a4633; /* น้ำตาลเข้ม */
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  /* รายละเอียดกิจกรรม (คอลัมน์สอง) */
+  .schedule-table td:last-child {
+    font-size: 0.95rem;
+    color: #3b2c20;
+  }
+
+  /* เอา flex ออก → ให้เป็น block แทน */
+  .schedule-table td {
+    display: block;
+    padding: 6px 0;
+    border: none;
+    text-align: left;
   }
 }
 
