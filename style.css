@@ -69,9 +69,34 @@ h1, h2 {
 }
 .yellow-border { border-color: #ffeb3b; }
 
+
+/* Schedule */
+.schedule-table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+.schedule-table th {
+  background: #4b0082;
+  color: #fff;
+}
+.schedule-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+
+
 /* Footer */
 footer {
   background: #4b0082;
   color: white;
   padding: 20px;
 }
+
