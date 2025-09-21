@@ -20,22 +20,6 @@ h1, h2, h3 {
   color: #7c2d12; /* น้ำตาลอบอุ่น */
 }
 
-.section {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.section.alt {
-  background: #fffaf0;
-}
-
-/* Container สำหรับ section อื่น */
-.section-box {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
-
 
 
 .cards {
@@ -252,10 +236,22 @@ h1, h2, h3 {
 /* ===========================
    Section Base
    =========================== */
+
 section {
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: auto;
+}
+
+.section.alt {
+  background: #fffaf0;
+}
+
+/* Container สำหรับ section อื่น */
+.section-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
 }
 
 section h2 {
