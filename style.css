@@ -763,3 +763,62 @@ section h2 {
     margin-bottom: 3px;
   }
 }
+
+/* schedule agenda */
+/* Event Title */
+.event-title {
+  font-size: 1rem;
+  color: #5a4633;
+  margin: 0 auto 2rem;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+/* Agenda Layout */
+.agenda {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.agenda-item {
+  display: flex;
+  gap: 20px;
+  padding: 15px 20px;
+  background: #fffdf9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.agenda-item .time {
+  min-width: 110px;
+  font-weight: 700;
+  color: #8b5e3c; /* น้ำตาลเข้ม */
+}
+
+.agenda-item .content h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #3b2c20;
+}
+
+.agenda-item .content ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4a3b2a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .agenda-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .agenda-item .time {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+}
+
