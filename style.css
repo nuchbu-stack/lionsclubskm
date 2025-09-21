@@ -1,880 +1,163 @@
-/* Reset */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  font-family: 'Noto Sans Thai', sans-serif;
-  margin: 0;
-  background: linear-gradient(to bottom, #ffe4e6, #ffedd5, #fef9c3);
-  color: #444;
-  line-height: 1.6;
-}
-
-h1, h2, h3 {
-  color: #7c2d12; /* น้ำตาลอบอุ่น */
-}
-
-.section {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.section.alt {
-  background: #fffaf0;
-}
-
-/* Container สำหรับ section อื่น */
-.section-box {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
-
-
-.hero {
-  position: relative;
-  width: 100vw;    /* เต็มจอแนวนอน */
-  height: 100vh;   /* เต็มจอแนวตั้ง */
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  color: #fff;
-}
-
-.hero-slider .slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.hero-slider .slide.active {
-  opacity: 1;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.hero-buttons .btn {
-  margin: 0.5rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: transform 0.2s;
-}
-
-.btn.primary {
-  background: #7e22ce;
-  color: #facc15;
-}
-
-.btn.secondary {
-  background: #facc15;
-  color: #7e22ce;
-}
-
-.btn.outline {
-  border: 2px solid #7c2d12;
-  color: #7c2d12;
-  background: #fff;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-
-.cards {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
-
-.card {
-  background: #fff;
-  border: 2px solid #fcd34d;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.percent {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #7e22ce;
-}
-
-.highlight {
-  color: #7e22ce;
-  font-weight: bold;
-}
-
-.story-img {
-  border-radius: 1rem;
-  margin: 1rem 0;
-  max-width: 100%;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 1rem;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.schedule {
-  width: 80%;
-  margin: 2rem auto;
-  border-collapse: collapse;
-}
-
-.schedule th, .schedule td {
-  border: 1px solid #fcd34d;
-  padding: 0.75rem;
-}
-
-.schedule th {
-  background: #facc15;
-  color: #7c2d12;
-}
-
-.footer {
-  text-align: center;
-  padding: 2rem;
-  background: #7c2d12;
-  color: #fff;
-}
-
-
-/* nav */
-.navbar {
-  background: rgba(39, 58, 128, 0.95); /* เริ่มทึบ */
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border-bottom: 3px solid #facc15;
-  padding: 0.75rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
-}
-
-.navbar.scrolled {
-  background: rgba(39, 58, 128, 0.4); /* โปร่งลง */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.navbar .container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logo {
-  height: 55px;
-  width: auto;
-}
-
-.club-name h1 {
-  font-size: 1.25rem;
-  margin: 0;
-  color: #fecf09; /* ทอง */
-  font-weight: 600;
-}
-
-.club-name p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #FFFFFF; /* ขาว */
-}
-
-/* ===========================
-   Reset & Base
-   =========================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* -------------------------
+   Basic reset + base fonts
+   ------------------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { width: 100%; height: 100%; }
 body {
   font-family: "Noto Sans Thai", sans-serif;
-  background-color: #fffaf6; /* พื้นหลังโทนอบอุ่น */
+  background: #fdfbf7;
   color: #333;
   line-height: 1.6;
 }
 
-/* ===========================
-   Navbar
-   =========================== */
-.navbar {
-  background: rgba(39, 58, 128, 0.95); /* เริ่มทึบ */
-  border-bottom: 3px solid #fecf09; /* เส้นทอง */
-  padding: 0.75rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease;
-}
-
-.navbar.scrolled {
-  background: rgba(39, 58, 128, 0.5); /* โปร่งลงเมื่อเลื่อน */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.logo {
-  height: 55px;
-  width: auto;
-}
-
-.club-name h1 {
-  font-size: 1.25rem;
-  color: #fecf09;
-  font-weight: 600;
-}
-
-.club-name p {
-  font-size: 0.9rem;
-  color: #ffffff;
-}
-
-/* ===========================
-   Hero Section
-   =========================== */
-/* Hero Section */
-
-
-.hero-slider .slide.active {
-  opacity: 1;
-}
-
-.hero-content {
+/* -------------------------
+   HERO (full bleed)
+   ------------------------- */
+.hero {
   position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: rgba(39, 58, 128, 0.4); /* overlay โปร่ง */
-  padding: 20px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
-
-.hero-content h1 {
-  font-size: 3rem;
-  color: #fecf09;
-}
-
-.hero-content p {
-  font-size: 1.5rem;
-  margin: 15px 0;
-  color: #fff;
-}
-
-/* Buttons */
-.hero-buttons .btn {
-  margin: 8px;
-  padding: 12px 24px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-.btn.yellow { background: #fecf09; color: #273a80; }
-.btn.purple { background: #273a80; color: #fecf09; }
-.btn.white { background: #fff; color: #273a80; }
-.btn:hover { opacity: 0.85; }
-
-/* Navigation buttons */
-.nav-btn {
+.hero-slider .slide {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
-  color: #fff;
-  border: none;
-  font-size: 2rem;
-  padding: 10px 15px;
-  cursor: pointer;
-  z-index: 3;
-  border-radius: 50%;
-  transition: background 0.3s;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 0.9s ease;
 }
-.nav-btn:hover {
-  background: rgba(0,0,0,0.7);
+.hero-slider .slide.active { opacity: 1; transform: scale(1); }
+
+/* overlay + text */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(39,58,128,0.28), rgba(39,58,128,0.28));
 }
-.nav-btn.prev { left: 20px; }
-.nav-btn.next { right: 20px; }
-
-
-
-/* ===========================
-   Section Base
-   =========================== */
-section {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: #273a80;
-  margin-bottom: 2rem;
-}
-
-/* ===========================
-   About Section
-   =========================== */
-.about p {
-  text-align: center;
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: auto;
-  margin-bottom: 2rem;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.stats .card {
-  background: #fff;
-  padding: 2rem;
-  border: 2px solid #273a80;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: bold;
-}
-
-/* ===========================
-   Actions / Goals / Voices / Gallery
-   =========================== */
-.grid-3,
-.grid-4,
-.grid-2 {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.grid-4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.card {
-  background: #fff;
-  border: 2px solid #fecf09;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.card img {
-  max-width: 100%;
-  border-radius: 8px;
-}
-
-/* ===========================
-   Gallery Section
-   =========================== */
-.gallery img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-/* ===========================
-   Schedule Section
-   =========================== */
-.schedule {
-  text-align: center;
-}
-
-.schedule-table-wrapper {
-  overflow-x: auto; /* เลื่อนแนวนอนได้ในมือถือ */
-}
-
-.schedule table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-.schedule th,
-.schedule td {
-  border: 1px solid #ddd;
-  padding: 0.75rem;
-}
-
-.schedule th {
-  background: #273a80;
+.hero-content h1 {
   color: #fecf09;
-  text-align: left;
+  font-size: 3rem;
+  margin-bottom: 12px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+.hero-content p { color: #fff; font-size: 1.2rem; margin-bottom: 14px; }
+
+/* hero buttons */
+.hero-buttons .btn {
+  display:inline-block;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 700;
+  margin: 6px;
+  text-decoration: none;
+}
+.btn.yellow { background:#fecf09; color:#273a80; }
+.btn.white  { background:#fff; color:#273a80; }
+
+/* nav btns */
+.nav-btn {
+  position:absolute; top:50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.35);
+  color:#fff; border:none; font-size:1.6rem;
+  width:44px; height:44px; border-radius:50%; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  z-index:3;
+}
+.nav-btn.prev { left: 18px; }
+.nav-btn.next { right: 18px; }
+
+/* -------------------------
+   Sections (boxed)
+   ------------------------- */
+.section { padding: 48px 16px; }
+.section.alt { background:#f7f3ee; }
+.section-box {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 12px;
 }
 
-/* ===========================
-   Footer
-   =========================== */
-.footer {
-  background: #273a80;
-  color: #fff;
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-}
+/* headings */
+.section-box h2 { color: #273a80; margin-bottom: 10px; }
 
-/* ===========================
-   Responsive Design
-   =========================== */
-@media (max-width: 1024px) {
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.6rem; }
-}
+/* highlight spans */
+.highlight { font-weight:700; color: #273a80; }
 
-@media (max-width: 768px) {
-  /* Navbar */
-  .navbar {
-    padding: 0.5rem 1rem;
-  }
-  .logo { height: 40px; }
-  .club-name h1 { font-size: 1rem; }
-  .club-name p { font-size: 0.8rem; }
-
-  /* Hero */
-  .hero { padding: 3rem 1rem; }
-  .hero h1 { font-size: 1.8rem; }
-  .hero p { font-size: 1rem; }
-  .hero-buttons { flex-direction: column; }
-
-  /* Grid Sections → 1 คอลัมน์ */
-  .grid-3,
-  .grid-4,
-  .grid-2,
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  /* Schedule */
-  .schedule {
-    font-size: 0.85rem;
-  }
-
-  /* Footer */
-  .footer {
-    font-size: 0.8rem;
-    padding: 1rem;
-  }
-}
-
-/* ===========================
-   Animation Base
-   =========================== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
-}
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hero-buttons a {
-  transition: transform 0.3s ease;
-}
-.hero-buttons a:hover {
-  transform: scale(1.05);
-}
-
-.gallery img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
-
-/* --- ANIMATION (append) --- */
-/* fade-in: ใช้เป็นค่าพื้นฐาน (เลื่อนขึ้นเล็กน้อย + โปร่งพอ) */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-/* slide-in: ซ้าย / ขวา */
-.slide-in-left {
-  opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.slide-in-right {
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* เมื่อพร้อมให้แสดง (ถูกเพิ่มโดย JS) */
-.fade-in.show,
-.slide-in-left.show,
-.slide-in-right.show {
-  opacity: 1;
-  transform: translateX(0) translateY(0);
-}
-
-/* สังเกต: .show จะรีเซ็ต transform ทั้ง X/Y เพื่อความเรียบ */
-.fade-in.show { transform: translateY(0); }
-.slide-in-left.show,
-.slide-in-right.show { transform: translateX(0); }
-
-/* Stagger helper (ถ้าต้องการ) - apply inline style via JS หรือ class เช่น .delay-1 */
-.delay-1 { transition-delay: 0.12s; }
-.delay-2 { transition-delay: 0.24s; }
-.delay-3 { transition-delay: 0.36s; }
-
-/* Gallery hover effect (เล็กน้อย) */
-.gallery img, .card img {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.gallery img:hover, .card img:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
-}
-
-/* Count-up number style (ถ้ายังไม่มี) */
-[data-count] {
-  will-change: contents;
-  display: inline-block;
-}
-
-/* ==== Count-up Number Styling ==== */
-.stat-number {
-  font-size: 3rem;            /* ใหญ่ */
-  font-weight: 800;           /* หนัก ชัด */
-  color: #fecf09;             /* เหลืองทอง */
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.25); /* ให้เด่นขึ้น */
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .stat-number {
-    font-size: 2.2rem; /* เล็กลงบน tablet */
-  }
-}
-
-@media (max-width: 480px) {
-  .stat-number {
-    font-size: 1.8rem; /* เล็กลงบนมือถือ */
-  }
-}
-
-/* Container ของการ์ด */
+/* -------------------------
+   Stats cards
+   ------------------------- */
 .stats {
-  display: flex;
-  flex-wrap: wrap;        /* ให้เรียงลงมาในมือถือ */
-  gap: 20px;              /* ระยะห่างการ์ด */
-  justify-content: center;
-  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 18px;
 }
-
-/* ตัวการ์ด */
 .stat-card {
-  background: #ffffff;               /* พื้นหลังขาว */
-  border-radius: 12px;               /* มุมโค้ง */
-  padding: 20px 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* เงาอ่อน */
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   text-align: center;
-  flex: 1 1 200px;                    /* ยืดหยุ่น */
-  max-width: 250px;
 }
-
-/* ตัวเลขใหญ่ */
-.stat-card .stat-number {
+.stat-number {
   font-size: 3rem;
   font-weight: 800;
-  color: #fecf09;                     /* เหลืองทอง */
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-  display: block;
-  margin-bottom: 10px;
+  color: #fecf09;
+  display:block;
+  margin-bottom:8px;
+}
+.stat-card p { color: #273a80; margin: 0; }
+
+/* -------------------------
+   Goals cards
+   ------------------------- */
+.goal-cards { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:14px; }
+.goal-card {
+  background:#fff; border-radius:10px; padding:16px; width:180px;
+  text-align:center; box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+.goal-card .counter { font-size:2.4rem; font-weight:800; color:#fecf09; display:block; }
+
+/* -------------------------
+   Schedule list (left time / detail)
+   ------------------------- */
+.schedule-list { margin-top: 18px; display:flex; flex-direction:column; gap:12px; }
+.schedule-list .item {
+  display:flex; gap:16px; align-items:flex-start; background:#fffdf9;
+  padding:12px; border-radius:10px; box-shadow:0 6px 14px rgba(0,0,0,0.04);
+}
+.schedule-list .time { width:140px; font-weight:700; color:#8b5e3c; }
+.schedule-list .detail { flex:1; color:#3b2c20; }
+
+/* -------------------------
+   Animations (fade/slide)
+   ------------------------- */
+.fade-in, .slide-in-left, .slide-in-right {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.slide-in-left { transform: translateX(-40px); }
+.slide-in-right { transform: translateX(40px); }
+
+.fade-in.show, .slide-in-left.show, .slide-in-right.show {
+  opacity:1; transform: translateX(0) translateY(0);
 }
 
-/* คำอธิบายใต้ตัวเลข */
-.stat-card p {
-  font-size: 1rem;
-  color: #273a80;                     /* น้ำเงินเข้ม */
-  margin: 0;
-}
-
-/* Responsive */
+/* small screens */
 @media (max-width: 768px) {
-  .stat-card .stat-number {
-    font-size: 2.2rem;
-  }
-}
-/* ==== Count-up Number Styling ==== */
-
-
-/* ===== Schedule Table (โทนน้ำตาลอบอุ่น) ===== */
-.schedule-table {
-  margin-top: 2rem;
-  overflow-x: auto; /* กันล้นบนมือถือ */
-}
-
-.schedule-table table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fffdf9; /* ครีมอ่อน */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.schedule-table th,
-.schedule-table td {
-  padding: 15px;
-  text-align: left;
-  border-bottom: 1px solid #eee;
-}
-
-.schedule-table th {
-  background: #d9c4a1;  /* น้ำตาลอ่อน */
-  color: #5a4633;       /* น้ำตาลเข้ม */
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.schedule-table td {
-  font-size: 1rem;
-  color: #3b2c20;       /* น้ำตาลเข้ม */
-}
-
-.schedule-table tr:hover {
-  background: #f6f1e7;  /* ไฮไลท์อ่อนๆ เวลา hover */
-}
-
-/* Responsive */ /* ===== Schedule Section ===== */
-@media (max-width: 600px) {
-  .schedule-table table,
-  .schedule-table thead,
-  .schedule-table tbody,
-  .schedule-table th,
-  .schedule-table td,
-  .schedule-table tr {
-    display: block;
-    width: 100%;
-  }
-
-  .schedule-table thead {
-    display: none; /* ซ่อนหัวตาราง */
-  }
-
-  .schedule-table tr {
-    margin-bottom: 15px;
-    border-bottom: 2px solid #e8d9c3;
-    padding: 12px;
-    background: #fffdf9;
-    border-radius: 8px;
-  }
-
-  /* เวลา (คอลัมน์แรก) */
-  .schedule-table td:first-child {
-    font-weight: 700;
-    color: #5a4633; /* น้ำตาลเข้ม */
-    font-size: 1rem;
-    margin-bottom: 6px;
-  }
-
-  /* รายละเอียดกิจกรรม (คอลัมน์สอง) */
-  .schedule-table td:last-child {
-    font-size: 0.95rem;
-    color: #3b2c20;
-  }
-
-  /* เอา flex ออก → ให้เป็น block แทน */
-  .schedule-table td {
-    display: block;
-    padding: 6px 0;
-    border: none;
-    text-align: left;
-  }
-}
-/* ===== Schedule Section ===== */
-
-/* ===== Schedule Table (Desktop) ===== */
-.schedule-table {
-  margin-top: 2rem;
-  overflow-x: auto;
-}
-.schedule-table table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fffdf9; /* ครีมอ่อน */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-.schedule-table th,
-.schedule-table td {
-  padding: 15px;
-  text-align: left;
-  border-bottom: 1px solid #eee;
-}
-.schedule-table th {
-  background: #d9c4a1; /* น้ำตาลอ่อน */
-  color: #5a4633;
-  font-weight: 700;
-}
-.schedule-table td {
-  color: #3b2c20;
-}
-
-/* ===== Mobile (แปลง Table → Card) ===== */
-@media (max-width: 600px) {
-  .schedule-table table,
-  .schedule-table thead,
-  .schedule-table tbody,
-  .schedule-table th,
-  .schedule-table tr,
-  .schedule-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .schedule-table thead {
-    display: none;
-  }
-
-  .schedule-table tr {
-    margin-bottom: 15px;
-    background: #fffdf9;
-    border: 1px solid #e8d9c3;
-    border-radius: 8px;
-    padding: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  }
-
-  .schedule-table td {
-    border: none;
-    padding: 8px 0;
-    text-align: left;
-  }
-
-  .schedule-table td::before {
-    content: attr(data-label);
-    display: block;
-    font-weight: 700;
-    color: #5a4633;
-    margin-bottom: 3px;
-  }
-}
-
-/* schedule agenda */
-/* Event Title */
-.event-title {
-  font-size: 1rem;
-  color: #5a4633;
-  margin: 0 auto 2rem;
-  max-width: 900px;
-  line-height: 1.6;
-  text-align: left; /* ชิดซ้าย */
-}
-
-/* Agenda Layout */
-.agenda {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.agenda-item {
-  display: flex;
-  gap: 20px;
-  padding: 15px 20px;
-  background: #fffdf9;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  text-align: left; /* ชิดซ้าย */
-}
-
-.agenda-item .time {
-  min-width: 120px;
-  font-weight: 700;
-  color: #8b5e3c; /* น้ำตาลเข้ม */
-}
-
-.agenda-item .content h3 {
-  margin-bottom: 8px;
-  font-size: 1.1rem;
-  color: #3b2c20;
-}
-
-.agenda-item .content ul {
-  margin: 0;
-  padding-left: 20px;
-  color: #4a3b2a;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  list-style-type: disc;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .agenda-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .agenda-item .time {
-    font-size: 1rem;
-    margin-bottom: 5px;
-  }
+  .hero-content h1 { font-size: 2rem; }
+  .stats { grid-template-columns: 1fr; }
+  .schedule-list .item { flex-direction: column; }
+  .schedule-list .time { width:100%; }
+  .goal-cards { justify-content: center; }
+  .hero-buttons .btn { padding:8px 14px; }
 }
