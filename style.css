@@ -1,275 +1,48 @@
-body {
-  font-family: 'Noto Sans Thai', sans-serif;
-  margin: 0;
-  background: linear-gradient(to bottom, #ffe4e6, #ffedd5, #fef9c3);
-  color: #444;
-  line-height: 1.6;
-}
-
-h1, h2, h3 {
-  color: #7c2d12; /* น้ำตาลอบอุ่น */
-}
-
-.section {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.section.alt {
-  background: #fffaf0;
-}
-
-.hero {
-  background: linear-gradient(to right, #fecdd3, #fed7aa, #fef08a);
-  padding: 5rem 2rem;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.hero-buttons .btn {
-  margin: 0.5rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: transform 0.2s;
-}
-
-.btn.primary {
-  background: #7e22ce;
-  color: #facc15;
-}
-
-.btn.secondary {
-  background: #facc15;
-  color: #7e22ce;
-}
-
-.btn.outline {
-  border: 2px solid #7c2d12;
-  color: #7c2d12;
-  background: #fff;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-
-.cards {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
-
-.card {
-  background: #fff;
-  border: 2px solid #fcd34d;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.percent {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #7e22ce;
-}
-
-.highlight {
-  color: #7e22ce;
-  font-weight: bold;
-}
-
-.story-img {
-  border-radius: 1rem;
-  margin: 1rem 0;
-  max-width: 100%;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 1rem;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.schedule {
-  width: 80%;
-  margin: 2rem auto;
-  border-collapse: collapse;
-}
-
-.schedule th, .schedule td {
-  border: 1px solid #fcd34d;
-  padding: 0.75rem;
-}
-
-.schedule th {
-  background: #facc15;
-  color: #7c2d12;
-}
-
-.footer {
-  text-align: center;
-  padding: 2rem;
-  background: #7c2d12;
-  color: #fff;
-}
-
-
-/* nav */
-.navbar {
-  background: rgba(39, 58, 128, 0.95); /* เริ่มทึบ */
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border-bottom: 3px solid #facc15;
-  padding: 0.75rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
-}
-
-.navbar.scrolled {
-  background: rgba(39, 58, 128, 0.4); /* โปร่งลง */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.navbar .container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logo {
-  height: 55px;
-  width: auto;
-}
-
-.club-name h1 {
-  font-size: 1.25rem;
-  margin: 0;
-  color: #fecf09; /* ทอง */
-  font-weight: 600;
-}
-
-.club-name p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #FFFFFF; /* ขาว */
-}
-
 /* ===========================
-   Reset & Base
+   Base
    =========================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: "Noto Sans Thai", sans-serif;
-  background-color: #fffaf6; /* พื้นหลังโทนอบอุ่น */
+  margin: 0;
+  font-family: 'Noto Sans Thai', sans-serif;
+  background: #fdfbf7;
   color: #333;
   line-height: 1.6;
 }
 
-/* ===========================
-   Navbar
-   =========================== */
-.navbar {
-  background: rgba(39, 58, 128, 0.95); /* เริ่มทึบ */
-  border-bottom: 3px solid #fecf09; /* เส้นทอง */
-  padding: 0.75rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease;
-}
-
-.navbar.scrolled {
-  background: rgba(39, 58, 128, 0.5); /* โปร่งลงเมื่อเลื่อน */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.logo {
-  height: 55px;
-  width: auto;
-}
-
-.club-name h1 {
-  font-size: 1.25rem;
+h1 {
+  font-size: 2.5rem;
   color: #fecf09;
-  font-weight: 600;
 }
 
-.club-name p {
-  font-size: 0.9rem;
-  color: #ffffff;
-}
-
-/* ===========================
-   Hero Section
-   =========================== */
-.hero {
-  text-align: center;
-  padding: 5rem 2rem;
-  background: linear-gradient(to right, #fff6e5, #fde2cf);
-}
-
-.hero h1 {
-  font-size: 3rem;
+h2 {
+  font-size: 2rem;
   color: #273a80;
 }
 
-.hero p {
-  font-size: 1.25rem;
-  margin: 1rem 0;
-  color: #555;
+p {
+  font-size: 1.1rem;
 }
 
-.hero-buttons {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
+/* ===========================
+   Buttons
+   =========================== */
 .hero-buttons a {
-  padding: 0.75rem 1.5rem;
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 10px;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: transform 0.3s ease;
+}
+
+.hero-buttons a:hover {
+  transform: scale(1.05);
 }
 
 .btn-primary {
@@ -277,133 +50,56 @@ body {
   color: #fecf09;
 }
 
-.btn-primary:hover {
-  background: #1e2f63;
-}
-
 .btn-secondary {
   background: #fecf09;
   color: #273a80;
 }
 
-.btn-secondary:hover {
-  background: #e6b800;
-}
-
 /* ===========================
-   Section Base
+   Cards
    =========================== */
-section {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: #273a80;
-  margin-bottom: 2rem;
-}
-
-/* ===========================
-   About Section
-   =========================== */
-.about p {
-  text-align: center;
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: auto;
-  margin-bottom: 2rem;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.stats .card {
-  background: #fff;
-  padding: 2rem;
-  border: 2px solid #273a80;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: bold;
-}
-
-/* ===========================
-   Actions / Goals / Voices / Gallery
-   =========================== */
-.grid-3,
-.grid-4,
-.grid-2 {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.grid-4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.grid-2 {
-  grid-template-columns: repeat(2, 1fr);
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .card {
   background: #fff;
-  border: 2px solid #fecf09;
-  padding: 1.5rem;
+  color: #333;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  text-align: center;
+  padding: 20px;
+  max-width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card img {
-  max-width: 100%;
-  border-radius: 8px;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #273a80;
 }
 
 /* ===========================
-   Gallery Section
-   =========================== */
-.gallery img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-/* ===========================
-   Schedule Section
+   Schedule
    =========================== */
 .schedule {
-  text-align: center;
-}
-
-.schedule-table-wrapper {
-  overflow-x: auto; /* เลื่อนแนวนอนได้ในมือถือ */
-}
-
-.schedule table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
 }
-
-.schedule th,
-.schedule td {
+.schedule th, .schedule td {
   border: 1px solid #ddd;
-  padding: 0.75rem;
+  padding: 8px;
 }
-
 .schedule th {
   background: #273a80;
-  color: #fecf09;
-  text-align: left;
+  color: #fff;
 }
 
 /* ===========================
@@ -412,80 +108,7 @@ section h2 {
 .footer {
   background: #273a80;
   color: #fff;
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-}
-
-/* ===========================
-   Responsive Design
-   =========================== */
-@media (max-width: 1024px) {
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.6rem; }
-}
-
-@media (max-width: 768px) {
-  /* Navbar */
-  .navbar {
-    padding: 0.5rem 1rem;
-  }
-  .logo { height: 40px; }
-  .club-name h1 { font-size: 1rem; }
-  .club-name p { font-size: 0.8rem; }
-
-  /* Hero */
-  .hero { padding: 3rem 1rem; }
-  .hero h1 { font-size: 1.8rem; }
-  .hero p { font-size: 1rem; }
-  .hero-buttons { flex-direction: column; }
-
-  /* Grid Sections → 1 คอลัมน์ */
-  .grid-3,
-  .grid-4,
-  .grid-2,
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  /* Schedule */
-  .schedule {
-    font-size: 0.85rem;
-  }
-
-  /* Footer */
-  .footer {
-    font-size: 0.8rem;
-    padding: 1rem;
-  }
-}
-
-/* ===========================
-   Animation Base
-   =========================== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
-}
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hero-buttons a {
-  transition: transform 0.3s ease;
-}
-.hero-buttons a:hover {
-  transform: scale(1.05);
-}
-
-.gallery img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  padding: 20px;
 }
 
 /* ===========================
