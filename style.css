@@ -239,56 +239,73 @@ body {
 /* ===========================
    Hero Section
    =========================== */
+/* Hero Section */
 .hero {
-  text-align: center;
-  padding: 5rem 2rem;
-  background: linear-gradient(to right, #fff6e5, #fde2cf);
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  color: #273a80;
+.hero-slider {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
 }
 
-.hero p {
-  font-size: 1.25rem;
-  margin: 1rem 0;
-  color: #555;
+.hero-slider .slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-.hero-buttons {
-  margin-top: 2rem;
+.hero-slider .slide.active {
+  opacity: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  background: rgba(39, 58, 128, 0.4); /* overlay โปร่ง */
+  padding: 20px;
 }
 
-.hero-buttons a {
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.btn-primary {
-  background: #273a80;
+.hero-content h1 {
+  font-size: 3rem;
   color: #fecf09;
 }
 
-.btn-primary:hover {
-  background: #1e2f63;
+.hero-content p {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  color: #fff;
 }
 
-.btn-secondary {
-  background: #fecf09;
-  color: #273a80;
+.hero-buttons .btn {
+  margin: 8px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.btn-secondary:hover {
-  background: #e6b800;
-}
+.btn.yellow { background: #fecf09; color: #273a80; }
+.btn.purple { background: #273a80; color: #fecf09; }
+.btn.white { background: #fff; color: #273a80; }
+
+.btn:hover { opacity: 0.85; }
+
 
 /* ===========================
    Section Base
