@@ -140,23 +140,43 @@ h1, h2, h3 {
 
 
 /* nav */
+/* Navbar ปกติ */
 .navbar {
-  background: rgba(39, 58, 128, 0.95); /* เริ่มทึบ */
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
+  background: rgba(39, 58, 128, 0.95);
   border-bottom: 3px solid #facc15;
   padding: 0.75rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease;
 }
 
+/* Navbar เมื่อ scroll ลง */
 .navbar.scrolled {
-  background: rgba(39, 58, 128, 0.4); /* โปร่งลง */
+  background: rgba(39, 58, 128, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+
+/* === สำหรับมือถือ (จอเล็กกว่า 768px) === */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;   /* padding เล็กลง */
+  }
+
+  .logo {
+    height: 40px;           /* โลโก้เล็กลง */
+  }
+
+  .club-name h1 {
+    font-size: 1rem;        /* ตัวอักษรเล็กลง */
+  }
+
+  .club-name p {
+    font-size: 0.8rem;
+  }
+}
+
 
 .navbar .container {
   display: flex;
