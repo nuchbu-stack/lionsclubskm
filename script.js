@@ -24,3 +24,44 @@ window.addEventListener("scroll", function () {
     navbar.classList.remove("scrolled");
   }
 });
+
+// Fade-in on scroll
+const faders = document.querySelectorAll(".fade-in");
+
+const appearOptions = {
+  threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("show");
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+
+// Stats Count-up
+function countUp(element, target) {
+  let count = 0;
+  const speed = target / 100; // ปรับความเร็วได้
+  const update = () => {
+    count += speed;
+    if (count < target) {
+      element.textContent = Math.floor(count) + "%";
+      requestAnimationFrame(update);
+    } else {
+      element.textContent = target + "%";
+    }
+  };
+  update();
+}
+
+const statElements = document.querySelectorAll("[data-count]");
+statElements.forEach(el => {
+  const target = +el.getAttribute("data-count");
+  countUp(el, target);
+});
