@@ -607,3 +607,48 @@ section h2 {
     font-size: 2.2rem;
   }
 }
+
+/* ===== Schedule Section ===== */
+.schedule {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.schedule-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.schedule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.schedule-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #273a80; /* น้ำเงินเข้ม */
+  margin-bottom: 10px;
+}
+
+.schedule-card p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .schedule-card h3 {
+    font-size: 1rem;
+  }
+  .schedule-card p {
+    font-size: 0.9rem;
+  }
+}
+
