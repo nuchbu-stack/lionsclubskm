@@ -607,42 +607,48 @@ section h2 {
     font-size: 2.2rem;
   }
 }
+/* ==== Count-up Number Styling ==== */
 
-/* ===== Schedule Section ===== */
-.schedule {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+
+/* ===== Schedule Table (โทนน้ำตาลอบอุ่น) ===== */
+.schedule-table {
   margin-top: 2rem;
+  overflow-x: auto; /* กันล้นบนมือถือ */
 }
 
-.schedule-card {
-  background: #ffffff;
+.schedule-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fffdf9; /* ครีมอ่อน */
   border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-.schedule-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+.schedule-table th,
+.schedule-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
 }
 
-.schedule-card h3 {
-  font-size: 1.2rem;
+.schedule-table th {
+  background: #d9c4a1;  /* น้ำตาลอ่อน */
+  color: #5a4633;       /* น้ำตาลเข้ม */
   font-weight: 700;
-  color: #273a80; /* น้ำเงินเข้ม */
-  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
 
-.schedule-card p {
+.schedule-table td {
   font-size: 1rem;
-  color: #333;
+  color: #3b2c20;       /* น้ำตาลเข้ม */
 }
 
-/* Responsive */
+.schedule-table tr:hover {
+  background: #f6f1e7;  /* ไฮไลท์อ่อนๆ เวลา hover */
+}
+
+/* Responsive */ /* ===== Schedule Section ===== */
 @media (max-width: 600px) {
   .schedule-table table,
   .schedule-table thead,
@@ -688,5 +694,5 @@ section h2 {
     text-align: left;
   }
 }
-
+/* ===== Schedule Section ===== */
 
