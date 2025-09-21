@@ -696,3 +696,70 @@ section h2 {
 }
 /* ===== Schedule Section ===== */
 
+/* ===== Schedule Table (Desktop) ===== */
+.schedule-table {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+.schedule-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fffdf9; /* ครีมอ่อน */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.schedule-table th,
+.schedule-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+.schedule-table th {
+  background: #d9c4a1; /* น้ำตาลอ่อน */
+  color: #5a4633;
+  font-weight: 700;
+}
+.schedule-table td {
+  color: #3b2c20;
+}
+
+/* ===== Mobile (แปลง Table → Card) ===== */
+@media (max-width: 600px) {
+  .schedule-table table,
+  .schedule-table thead,
+  .schedule-table tbody,
+  .schedule-table th,
+  .schedule-table tr,
+  .schedule-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .schedule-table thead {
+    display: none;
+  }
+
+  .schedule-table tr {
+    margin-bottom: 15px;
+    background: #fffdf9;
+    border: 1px solid #e8d9c3;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+
+  .schedule-table td {
+    border: none;
+    padding: 8px 0;
+    text-align: left;
+  }
+
+  .schedule-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 700;
+    color: #5a4633;
+    margin-bottom: 3px;
+  }
+}
