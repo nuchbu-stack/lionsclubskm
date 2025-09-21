@@ -276,20 +276,6 @@ section h2 {
   margin-bottom: 2rem;
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.stats .card {
-  background: #fff;
-  padding: 2rem;
-  border: 2px solid #273a80;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: bold;
-}
 
 /* ===========================
    Actions / Goals / Voices / Gallery
