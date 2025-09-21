@@ -157,50 +157,6 @@ h1, h2, h3 {
 }
 
 
-/* nav */
-.navbar {
-  background: rgba(39, 58, 128, 0.95); /* เริ่มทึบ */
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border-bottom: 3px solid #facc15;
-  padding: 0.75rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
-}
-
-.navbar.scrolled {
-  background: rgba(39, 58, 128, 0.4); /* โปร่งลง */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.navbar .container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logo {
-  height: 55px;
-  width: auto;
-}
-
-.club-name h1 {
-  font-size: 1.25rem;
-  margin: 0;
-  color: #fecf09; /* ทอง */
-  font-weight: 600;
-}
-
-.club-name p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #FFFFFF; /* ขาว */
-}
-
-
 /* ===========================
    Navbar
    =========================== */
@@ -221,6 +177,12 @@ h1, h2, h3 {
   background: rgba(39, 58, 128, 0.5); /* โปร่งลงเมื่อเลื่อน */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .logo {
