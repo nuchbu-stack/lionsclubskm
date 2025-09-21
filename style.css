@@ -141,7 +141,7 @@ h1, h2, h3 {
 
 /* nav */
 .navbar {
-  background: #fff8dc; /* โทนอบอุ่น */
+  background: #273a80; /* โทนอบอุ่น */
   border-bottom: 3px solid #facc15; /* เส้นทอง */
   padding: 0.5rem 2rem;
   position: sticky;
@@ -163,12 +163,12 @@ h1, h2, h3 {
 .club-name h1 {
   font-size: 1.25rem;
   margin: 0;
-  color: #7e22ce; /* ม่วง ไลออนส์ */
+  color: #fecf09; /* เหลือง ไลออนส์ */
   font-weight: 600;
 }
 
 .club-name p {
   margin: 0;
   font-size: 0.9rem;
-  color: #7c2d12; /* น้ำตาลอบอุ่น */
+  color: #FFFFFF; /* ขาวอบอุ่น */
 }
