@@ -1,246 +1,94 @@
 <!DOCTYPE html>
 <html lang="th">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>เพื่อนใจวัยเก๋า</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Noto Sans Thai", sans-serif;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-  </head>
-  <body class="bg-gradient-to-b from-rose-50 via-orange-50 to-yellow-50 text-gray-800">
-    <!-- Hero -->
-    <section
-      id="hero"
-      class="text-center py-20 px-6 bg-gradient-to-r from-pink-200 via-orange-200 to-yellow-200"
-    >
-      <img
-        src="https://placehold.co/1200x400/png"
-        alt="ภาพผู้สูงอายุยิ้ม"
-        class="mx-auto rounded-2xl shadow-lg mb-8"
-      />
-      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-purple-800">
-        เพื่อนใจวัยเก๋า
-      </h1>
-      <p class="text-xl md:text-2xl mb-8 text-gray-700">
-        ใจดี กายดี ชีวิตก็มีสุข
-      </p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a
-          href="#about"
-          class="bg-purple-700 text-yellow-300 px-6 py-3 rounded-full font-medium"
-        >
-          เกี่ยวกับโครงการ
-        </a>
-        <a
-          href="#join"
-          class="bg-yellow-400 text-purple-900 px-6 py-3 rounded-full font-medium"
-        >
-          สมัครอาสาสมัคร
-        </a>
-        <a
-          href="#contact"
-          class="bg-white text-purple-800 px-6 py-3 rounded-full font-medium shadow"
-        >
-          ติดต่อเรา
-        </a>
-      </div>
-    </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>เพื่อนใจวัยเก๋า</title>
+  <meta name="description" content="เว็บไซต์ข้อมูลกิจกรรมและเครือข่ายเพื่อนใจวัยเก๋า โดย Lions Club" />
+  <link rel="icon" href="favicon.png" type="image/png">
 
-    <!-- About -->
-    <section id="about" class="py-16 px-6 max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-purple-800 mb-6">
-        ทำไม “เพื่อนใจวัยเก๋า” จึงสำคัญ?
-      </h2>
-      <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-10">
-        จังหวัดสมุทรสงคราม มีผู้สูงอายุกว่า
-        <span class="font-bold text-purple-800">28%</span> ของประชากรทั้งหมด
-        และมากกว่า <span class="font-bold text-purple-800">12%</span>
-        มีภาวะซึมเศร้าและความจำเสื่อม
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="border-2 border-purple-700 rounded-lg p-6 bg-white shadow">
-          <div class="text-5xl font-bold text-purple-800 mb-2">28%</div>
-          <p>ของประชากรในสมุทรสงครามเป็นผู้สูงอายุ</p>
-        </div>
-        <div class="border-2 border-purple-700 rounded-lg p-6 bg-white shadow">
-          <div class="text-5xl font-bold text-purple-800 mb-2">12%</div>
-          <p>มีภาวะซึมเศร้า หรือความจำเสื่อม</p>
-        </div>
-      </div>
-    </section>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-    <!-- Story -->
-    <section
-      id="story"
-      class="py-16 px-6 max-w-5xl mx-auto text-center bg-gradient-to-r from-orange-100 via-yellow-100 to-pink-100"
-    >
-      <h2 class="text-3xl md:text-4xl font-bold text-purple-800 mb-6">
-        เพื่อนที่ใส่ใจ…สามารถเปลี่ยนชีวิตได้
-      </h2>
-      <img
-        src="https://placehold.co/800x400/png"
-        alt="เรื่องราวแรงบันดาลใจ"
-        class="mx-auto rounded-2xl shadow-lg mb-8"
-      />
-      <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-10">
-        คุณป้าศรีนิตย์ จิตอนงค์ เห็นเพื่อนผู้สูงอายุมีอาการผิดปกติ
-        จึงโทรหาลูกสาวให้รีบพาไปพบแพทย์ เรื่องเล็ก ๆ นี้…
-        ทำให้คุณแม่ของคุณชโลทัยกลับมามีรอยยิ้มอีกครั้ง
-      </p>
-      <a
-        href="#video"
-        class="bg-purple-700 text-yellow-300 px-6 py-3 rounded-full font-medium"
-      >
-        ▶️ ดูวิดีโอเรื่องจริง
-      </a>
-    </section>
+  <!-- AOS (Scroll Animation) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">เพื่อนใจวัยเก๋า</div>
+    <nav>
+      <a href="#about">เกี่ยวกับ</a>
+      <a href="#goals">เป้าหมาย</a>
+      <a href="#gallery">ภาพกิจกรรม</a>
+      <a href="#testimonials">เสียงจากเพื่อนๆ</a>
+    </nav>
+  </header>
 
-    <!-- Actions -->
-    <section id="actions" class="py-16 px-6 max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-purple-800 mb-12">
-        เราทำอะไรบ้าง?
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white border-2 border-purple-700 rounded-lg p-6 shadow">
-          <img
-            src="https://placehold.co/200/png"
-            alt="สังเกต"
-            class="mx-auto mb-4 rounded-full"
-          />
-          <h3 class="text-xl font-semibold text-purple-800 mb-2">สังเกต</h3>
-          <p>เฝ้าระวังสัญญาณซึมเศร้าและอัลไซเมอร์</p>
-        </div>
-        <div class="bg-white border-2 border-purple-700 rounded-lg p-6 shadow">
-          <img
-            src="https://placehold.co/200/png"
-            alt="ฟังใจ"
-            class="mx-auto mb-4 rounded-full"
-          />
-          <h3 class="text-xl font-semibold text-purple-800 mb-2">ฟังใจ</h3>
-          <p>รับฟังด้วยความเข้าใจ</p>
-        </div>
-        <div class="bg-white border-2 border-purple-700 rounded-lg p-6 shadow">
-          <img
-            src="https://placehold.co/200/png"
-            alt="ส่งต่อ"
-            class="mx-auto mb-4 rounded-full"
-          />
-          <h3 class="text-xl font-semibold text-purple-800 mb-2">ส่งต่อ</h3>
-          <p>เชื่อมสู่การคัดกรองและบริการสุขภาพ</p>
-        </div>
-      </div>
-    </section>
+  <!-- Hero -->
+  <section class="hero">
+    <h1 data-aos="fade-up">เพื่อนใจวัยเก๋า</h1>
+    <p data-aos="fade-up" data-aos-delay="200">สร้างสังคมแห่งมิตรภาพและการแบ่งปัน</p>
+    <a href="#about" class="btn" data-aos="fade-up" data-aos-delay="400">เรียนรู้เพิ่มเติม</a>
+  </section>
 
-    <!-- Gallery -->
-    <section
-      id="gallery"
-      class="py-16 px-6 max-w-6xl mx-auto text-center bg-gradient-to-r from-yellow-100 via-pink-100 to-orange-100"
-    >
-      <h2 class="text-3xl md:text-4xl font-bold text-purple-800 mb-12">
-        บรรยากาศกิจกรรม
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <img
-          src="https://placehold.co/400x300/png"
-          alt="กิจกรรม 1"
-          class="rounded-xl shadow-lg"
-        />
-        <img
-          src="https://placehold.co/400x300/png"
-          alt="กิจกรรม 2"
-          class="rounded-xl shadow-lg"
-        />
-        <img
-          src="https://placehold.co/400x300/png"
-          alt="กิจกรรม 3"
-          class="rounded-xl shadow-lg"
-        />
-      </div>
-    </section>
+  <!-- About -->
+  <section id="about" class="about" data-aos="fade-up">
+    <h2>เกี่ยวกับเรา</h2>
+    <p>โครงการเพื่อนใจวัยเก๋า สร้างพื้นที่แบ่งปัน กิจกรรม และเครือข่ายสำหรับผู้สูงวัย โดย Lions Club</p>
+  </section>
 
-    <!-- Goals -->
-    <section id="goals" class="py-16 px-6 max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-purple-800 mb-12">
-        เป้าหมายของเรา
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div class="bg-white border-2 border-purple-700 rounded-lg p-6 shadow">
-          <div class="text-5xl font-bold text-purple-800 mb-2">70%</div>
-          <p>คัดกรองสุขภาพจิต</p>
-        </div>
-        <div class="bg-white border-2 border-purple-700 rounded-lg p-6 shadow">
-          <div class="text-5xl font-bold text-purple-800 mb-2">60%</div>
-          <p>เข้าสู่ระบบรักษา</p>
-        </div>
-        <div class="bg-white border-2 border-purple-700 rounded-lg p-6 shadow">
-          <div class="text-5xl font-bold text-purple-800 mb-2">80%</div>
-          <p>ชมรมสุขใจ 15 นาที</p>
-        </div>
-        <div class="bg-white border-2 border-purple-700 rounded-lg p-6 shadow">
-          <div class="text-5xl font-bold text-purple-800 mb-2">20%</div>
-          <p>เพิ่มคะแนนสุข</p>
-        </div>
-      </div>
-    </section>
+  <!-- Goals -->
+  <section id="goals" class="goals" data-aos="fade-up">
+    <h2>เป้าหมายของเรา</h2>
+    <div class="goal-item">
+      <span class="counter" data-target="70">0</span>%
+      <p>เพิ่มการมีส่วนร่วมของสมาชิก</p>
+    </div>
+    <div class="goal-item">
+      <span class="counter" data-target="85">0</span>%
+      <p>เสริมสุขภาพจิตและกาย</p>
+    </div>
+    <div class="goal-item">
+      <span class="counter" data-target="95">0</span>%
+      <p>สร้างเครือข่ายชุมชนที่อบอุ่น</p>
+    </div>
+  </section>
 
-    <!-- Voices -->
-    <section
-      id="voices"
-      class="py-16 px-6 max-w-5xl mx-auto text-center bg-gradient-to-r from-pink-100 via-yellow-100 to-orange-100"
-    >
-      <h2 class="text-3xl md:text-4xl font-bold text-purple-800 mb-12">
-        เสียงจากใจ
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-white border-2 border-yellow-400 rounded-lg p-6 shadow">
-          <p class="mb-4">
-            “ได้เพื่อนใจวัยเก๋า ทำให้แม่ฉันสดใสขึ้นมาก ไม่เหงาเหมือนเมื่อก่อน”
-          </p>
-          <div class="text-right font-medium text-purple-800">
-            — ลูกสาวผู้เข้าร่วม
-          </div>
-        </div>
-        <div class="bg-white border-2 border-yellow-400 rounded-lg p-6 shadow">
-          <p class="mb-4">
-            “มีกิจกรรมให้ทำ ได้เพื่อนใหม่ รู้สึกเหมือนได้กลับไปเป็นหนุ่มสาวอีกครั้ง”
-          </p>
-          <div class="text-right font-medium text-purple-800">
-            — ผู้สูงอายุในโครงการ
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Gallery -->
+  <section id="gallery" class="gallery" data-aos="fade-up">
+    <h2>ภาพกิจกรรม</h2>
+    <div class="grid">
+      <img src="img1.jpg" alt="กิจกรรม 1" />
+      <img src="img2.jpg" alt="กิจกรรม 2" />
+      <img src="img3.jpg" alt="กิจกรรม 3" />
+      <img src="img4.jpg" alt="กิจกรรม 4" />
+    </div>
+  </section>
 
-    <!-- Contact -->
-    <section
-      id="contact"
-      class="py-16 px-6 max-w-4xl mx-auto text-center bg-gradient-to-r from-purple-100 via-yellow-50 to-orange-100"
-    >
-      <h2 class="text-3xl md:text-4xl font-bold text-purple-800 mb-6">
-        ติดต่อเรา
-      </h2>
-      <p class="mb-6 text-lg">
-        หากคุณสนใจเข้าร่วมโครงการหรือต้องการข้อมูลเพิ่มเติม
-      </p>
-      <a
-        href="mailto:info@example.com"
-        class="bg-purple-700 text-yellow-300 px-6 py-3 rounded-full font-medium"
-      >
-        ✉️ ส่งอีเมลหาเรา
-      </a>
-    </section>
-  </body>
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials" data-aos="fade-up">
+    <h2>เสียงจากเพื่อนๆ</h2>
+    <div class="slider">
+      <div class="slide">"รู้สึกอบอุ่นทุกครั้งที่ได้เข้าร่วมกิจกรรม"</div>
+      <div class="slide">"ได้เพื่อนใหม่มากมาย และสุขภาพดีขึ้น"</div>
+      <div class="slide">"ขอบคุณ Lions Club ที่จัดกิจกรรมดีๆ"</div>
+    </div>
+  </section>
+
+  <!-- Floating Button -->
+  <a href="#contact" class="floating-btn">สมัครอาสาสมัคร</a>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Lions Club | เพื่อนใจวัยเก๋า</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
 </html>
