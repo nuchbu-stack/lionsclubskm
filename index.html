@@ -5,37 +5,122 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>เพื่อนใจวัยเก๋า</title>
   <link rel="stylesheet" href="style.css">
+  <!-- ฟอนต์ Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Hero Section -->
-  <header class="hero">
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="https://placehold.co/1200x400/png" alt="ภาพผู้สูงอายุ" class="hero-img">
     <h1>เพื่อนใจวัยเก๋า</h1>
     <p>ใจดี กายดี ชีวิตก็มีสุข</p>
-  </header>
+    <div class="hero-buttons">
+      <a href="#about" class="btn purple">เกี่ยวกับโครงการ</a>
+      <a href="#join" class="btn yellow">สมัครเป็นอาสาสมัคร</a>
+      <a href="#contact" class="btn white">ติดต่อเรา</a>
+    </div>
+  </section>
 
   <!-- About -->
-  <section class="about">
+  <section id="about" class="section">
     <h2>ทำไม “เพื่อนใจวัยเก๋า” จึงสำคัญ?</h2>
     <p>
-      จังหวัดสมุทรสงคราม มีผู้สูงอายุกว่า <strong>28%</strong> ของประชากรทั้งหมด  
-      และมากกว่า <strong>12%</strong> มีภาวะซึมเศร้าและความจำเสื่อม  
-      โครงการนี้เกิดขึ้นเพื่อสร้าง “เพื่อนใจ” ในทุกชุมชน
+      จังหวัดสมุทรสงคราม มีผู้สูงอายุกว่า <strong>28%</strong> ของประชากรทั้งหมด<br>
+      และมากกว่า <strong>12%</strong> มีภาวะซึมเศร้าและความจำเสื่อม<br>
+      โครงการนี้เกิดขึ้นเพื่อสร้าง “เพื่อนใจ” ในทุกชุมชน<br>
+      ที่คอยสังเกต รับฟัง และส่งต่อเข้าสู่การดูแลอย่างถูกต้อง
     </p>
+    <div class="stats">
+      <div class="card">
+        <div class="number">28%</div>
+        <p>ผู้สูงอายุในสมุทรสงคราม</p>
+      </div>
+      <div class="card">
+        <div class="number">12%</div>
+        <p>ภาวะซึมเศร้าหรือความจำเสื่อม</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section id="story" class="section alt">
+    <h2>เพื่อนที่ใส่ใจ…สามารถเปลี่ยนชีวิตได้</h2>
+    <img src="https://placehold.co/800x400/png" alt="เรื่องราวแรงบันดาลใจ" class="story-img">
+    <p>
+      วันหนึ่ง คุณป้าศรีนิตย์ จิตอนงค์ เห็นเพื่อนผู้สูงอายุมีอาการผิดปกติ<br>
+      จึงโทรหาลูกสาวให้รีบพาไปพบแพทย์<br>
+      เรื่องเล็ก ๆ นี้…ทำให้คุณแม่ของคุณชโลทัยได้รับการรักษาทันท่วงที<br>
+      และกลับมามีรอยยิ้มอีกครั้ง
+    </p>
+    <a href="#" class="btn purple">▶️ ดูวิดีโอเรื่องจริง</a>
+  </section>
+
+  <!-- Actions -->
+  <section id="actions" class="section">
+    <h2>เราทำอะไรบ้าง?</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://placehold.co/200/png" alt="สังเกต">
+        <h3>สังเกต</h3>
+        <p>เฝ้าระวังสัญญาณซึมเศร้าและอัลไซเมอร์</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/200/png" alt="ฟังใจ">
+        <h3>ฟังใจ</h3>
+        <p>รับฟังด้วยความเข้าใจ</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/200/png" alt="ส่งต่อ">
+        <h3>ส่งต่อ</h3>
+        <p>เชื่อมสู่การคัดกรองและบริการสุขภาพ</p>
+      </div>
+    </div>
   </section>
 
   <!-- Gallery -->
-  <section class="gallery">
+  <section id="gallery" class="section alt">
     <h2>บรรยากาศกิจกรรม</h2>
-    <div class="grid">
+    <div class="gallery">
       <img src="https://placehold.co/400x300/png" alt="กิจกรรม 1">
       <img src="https://placehold.co/400x300/png" alt="กิจกรรม 2">
       <img src="https://placehold.co/400x300/png" alt="กิจกรรม 3">
+      <img src="https://placehold.co/400x300/png" alt="กิจกรรม 4">
+    </div>
+  </section>
+
+  <!-- Goals -->
+  <section id="goals" class="section">
+    <h2>เป้าหมายของเรา</h2>
+    <div class="stats">
+      <div class="card"><div class="number">70%</div><p>คัดกรองสุขภาพจิต</p></div>
+      <div class="card"><div class="number">60%</div><p>เข้าสู่ระบบรักษา</p></div>
+      <div class="card"><div class="number">80%</div><p>กิจวัตรสุขใจ 15 นาที</p></div>
+      <div class="card"><div class="number">20%</div><p>เพิ่มคะแนนสุข</p></div>
+    </div>
+  </section>
+
+  <!-- Voices -->
+  <section id="voices" class="section alt">
+    <h2>เสียงจากใจ</h2>
+    <div class="grid">
+      <div class="card">
+        <p>“ได้เพื่อนใจวัยเก๋า ทำให้แม่ฉันสดใสขึ้นมาก ไม่เหงาเหมือนเมื่อก่อน”</p>
+        <p class="author">— ลูกสาวผู้เข้าร่วม</p>
+      </div>
+      <div class="card">
+        <p>“มีกิจกรรมให้ทำ ได้เพื่อนใหม่ รู้สึกเหมือนได้กลับไปเป็นหนุ่มสาวอีกครั้ง”</p>
+        <p class="author">— ผู้สูงอายุในโครงการ</p>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2024 เพื่อนใจวัยเก๋า | Lions Club</p>
+  <footer class="footer">
+    <p>สโมสรไลออนส์สมุทรสงคราม<br>
+    โทร: 0xx-xxx-xxxx | Line: @LionsSKM | Facebook: Lions Samutsongkhram</p>
+    <p class="small">“เพื่อนใจวัยเก๋า – พลังของเพื่อน พลังของไลออนส์”</p>
   </footer>
+
 </body>
 </html>
