@@ -141,9 +141,9 @@ h1, h2, h3 {
 
 /* nav */
 .navbar {
-  background: rgba(39, 58, 128, 0.4); /* เริ่มต้นโปร่งกว่าปกติ */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(39, 58, 128, 0.95); /* เริ่มทึบ */
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
   border-bottom: 3px solid #facc15;
   padding: 0.75rem 2rem;
   position: sticky;
@@ -153,11 +153,10 @@ h1, h2, h3 {
 }
 
 .navbar.scrolled {
-  background: rgba(39, 58, 128, 0.9); /* เข้มขึ้น */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(39, 58, 128, 0.5); /* โปร่งลง */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
-
 
 .navbar .container {
   display: flex;
