@@ -19,6 +19,14 @@ h1, h2, h3 {
   background: #fffaf0;
 }
 
+/* Container สำหรับ section อื่น */
+.section-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+
 .hero {
   background: linear-gradient(to right, #fecdd3, #fed7aa, #fef08a);
   padding: 5rem 2rem;
@@ -243,6 +251,7 @@ body {
 .hero {
   position: relative;
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
   color: #fff;
 }
@@ -291,6 +300,7 @@ body {
   color: #fff;
 }
 
+/* Buttons */
 .hero-buttons .btn {
   margin: 8px;
   padding: 12px 24px;
@@ -299,12 +309,32 @@ body {
   font-weight: bold;
   transition: all 0.3s ease;
 }
-
 .btn.yellow { background: #fecf09; color: #273a80; }
 .btn.purple { background: #273a80; color: #fecf09; }
 .btn.white { background: #fff; color: #273a80; }
-
 .btn:hover { opacity: 0.85; }
+
+/* Navigation buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 3;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+.nav-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+.nav-btn.prev { left: 20px; }
+.nav-btn.next { right: 20px; }
+
 
 
 /* ===========================
