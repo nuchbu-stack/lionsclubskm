@@ -1,15 +1,19 @@
+
 /* ===========================
    Reset & Base
    =========================== */
 * {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
   box-sizing: border-box;
 }
 
 body {
   font-family: "Noto Sans Thai", sans-serif;
   background-color: #fffaf6; /* พื้นหลังโทนอบอุ่น */
+  background: linear-gradient(to bottom, #ffe4e6, #ffedd5, #fef9c3);
   color: #333;
   line-height: 1.6;
 }
