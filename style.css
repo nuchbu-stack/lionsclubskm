@@ -137,7 +137,7 @@ h1, h2, h3 {
   border: none;
   font-size: 2rem;
   padding: 0.5rem 1rem;
-  z-index: 3;           /* สูงกว่า overlay */
+  z-index: 10;           /* สูงกว่า overlay */
   cursor: pointer;
 }
 .nav-btn.prev { left: 20px; }
