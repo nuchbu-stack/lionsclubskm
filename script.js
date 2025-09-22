@@ -142,45 +142,7 @@ function startCountUp(el, target) {
 // Hero Slider
 // (สไลด์รูปภาพอัตโนมัติ + ปุ่มควบคุม)
 // ========================
-// let slides = document.querySelectorAll('.hero-slider .slide');
-// let currentSlide = 0;
-let slideInterval = setInterval(nextSlide, 5000);
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove('active');
-    if (i === index) slide.classList.add('active');
-  });
-}
-
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
-
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(currentSlide);
-}
-
-// ปุ่มควบคุม
-document.querySelector('.next').addEventListener('click', () => {
-  nextSlide();
-  resetInterval();
-});
-
-document.querySelector('.prev').addEventListener('click', () => {
-  prevSlide();
-  resetInterval();
-});
-
-// Reset autoplay interval
-function resetInterval() {
-  clearInterval(slideInterval);
-  slideInterval = setInterval(nextSlide, 5000);
-}
-
-/* sssss */
 // Slider
 const slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
