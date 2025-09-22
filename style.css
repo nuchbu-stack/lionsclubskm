@@ -16,6 +16,7 @@ body {
   line-height: 1.6;
 }
 
+/* เริ่ม set ค่า */
 h1, h2, h3 {
   color: #7c2d12; /* น้ำตาลอบอุ่น */
 }
@@ -25,10 +26,6 @@ h1, h2, h3 {
   gap: 1.5rem;
   margin-top: 2rem;
 }
-
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
 
 .card {
   background: #fff;
@@ -240,6 +237,7 @@ section h2 {
 /* ===========================
    Actions / Goals / Voices / Gallery
    =========================== */
+
 .grid-3,
 .grid-4,
 .grid-2 {
@@ -247,17 +245,9 @@ section h2 {
   gap: 1.5rem;
 }
 
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.grid-4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
 
 .card {
   background: #fff;
