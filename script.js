@@ -142,8 +142,8 @@ function startCountUp(el, target) {
 // Hero Slider
 // (สไลด์รูปภาพอัตโนมัติ + ปุ่มควบคุม)
 // ========================
-let slides = document.querySelectorAll('.hero-slider .slide');
-let currentSlide = 0;
+// let slides = document.querySelectorAll('.hero-slider .slide');
+// let currentSlide = 0;
 let slideInterval = setInterval(nextSlide, 5000);
 
 function showSlide(index) {
@@ -180,3 +180,37 @@ function resetInterval() {
   slideInterval = setInterval(nextSlide, 5000);
 }
 
+/* sssss */
+// Slider
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
+}
+
+document.querySelector(".next").addEventListener("click", () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+});
+
+// Auto slide
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}, 6000);
+
+// Parallax Effect
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  slides.forEach((slide) => {
+    slide.style.transform = `translateY(${scrollY * 0.3}px)`; // ปรับ 0.3 ให้ช้ากว่า content
+  });
+});
