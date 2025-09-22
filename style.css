@@ -93,6 +93,7 @@ h1, h2, h3 {
   position: relative;
   width: 100%;
   height: 100vh; /* สูงเต็มหน้าจอ */
+  min-height: 100vh;
   background: url("images/hero1.jpg") center/cover no-repeat; /* ปรับเป็นรูปจริง */
   display: flex;
   align-items: center;
@@ -492,6 +493,14 @@ section h2 {
 
 /* Responsive */ /* ===== Schedule Section ===== */
 @media (max-width: 600px) {
+    /* Grid Sections → 1 คอลัมน์ */
+  .grid-3,
+  .grid-4,
+  .grid-2,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
   .agenda-item {
     flex-direction: column;
     align-items: flex-start;
