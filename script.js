@@ -141,7 +141,27 @@ faders.forEach(fader => {
       io.observe(t);
     });
 
+    // Count-up function (smoother, uses requestAnimationFrame)
+    function startCountUp(el, target) {
+      const duration = 1200; // ms, ปรับได้
+      const start = performance.now();
+      const initial = 0;
+      const isInteger = Number.isInteger(target);
 
+      function step(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.floor(progress * (target - initial) + initial);
+        el.textContent = isInteger ? value + (el.textContent.includes('%') ? '%' : '') : (Math.round((value + Number.EPSILON) * 100) / 100);
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          // ensure final value
+          el.textContent = (isInteger ? target + (el.textContent.includes('%') ? '%' : '') : target);
+        }
+      }
+      requestAnimationFrame(step);
+    }
 
     // Fallback: ถ้า browser ไม่รองรับ IntersectionObserver → แสดงทั้งหมดเลย
     if (!('IntersectionObserver' in window)) {
