@@ -88,35 +88,29 @@ h1, h2, h3 {
 /* ===========================
    Hero Section
    =========================== */
-/* Hero Section */
+/* ===== Hero Section ===== */
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh; /* สูงเต็มหน้าจอ */
-  min-height: 100vh;
-  display: flex;
-  background: url("images/hero1.jpg") center/cover no-repeat; /* ปรับเป็นรูปจริง */
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-align: center;
+  height: 100vh; /* เต็มจอ */
+  overflow: hidden;
 }
 
+/* Hero Slider (background images) */
 .hero-slider {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; 
-  height: 100vh; /* สูงเต็มหน้าจอ */
-  min-height: 100vh;
-  display: flex; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-slider .slide {
   position: absolute;
-  top: 0; left: 0;
-  width: 100vw;       /* บังคับเต็ม viewport */
-  height: 100vh;      /* เต็มสูงสุดหน้าจอ */
-  min-height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   opacity: 0;
@@ -125,67 +119,79 @@ h1, h2, h3 {
 
 .hero-slider .slide.active {
   opacity: 1;
+  z-index: 1;
 }
 
+/* Navigation Buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background 0.3s;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.nav-btn.prev {
+  left: 20px;
+}
+.nav-btn.next {
+  right: 20px;
+}
+
+/* Hero Content */
 .hero-content {
   position: relative;
-  z-index: 2;
-  height: 100%;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
   text-align: center;
-  background: rgba(39, 58, 128, 0.4); /* overlay โปร่ง */
-  padding: 20px;
+  padding: 0 1rem;
+  color: #fff;
 }
 
-.hero-content h1 {
+/* Overlay เพื่อให้ text อ่านชัด */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(39, 58, 128, 0.45); /* สี overlay */
+  z-index: 2;
+}
+
+/* Headline + Paragraph */
+.hero h1 {
   font-size: 3rem;
+  margin-bottom: 1rem;
   color: #fecf09;
 }
 
-.hero-content p {
+.hero p {
   font-size: 1.5rem;
-  margin: 15px 0;
+  margin-bottom: 2rem;
   color: #fff;
 }
 
 /* Buttons */
 .hero-buttons .btn {
-  margin: 8px;
-  padding: 12px 24px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  margin: 0 0.5rem;
 }
-.btn.yellow { background: #fecf09; color: #273a80; }
-.btn.purple { background: #273a80; color: #fecf09; }
-.btn.white { background: #fff; color: #273a80; }
-.btn:hover { opacity: 0.85; }
-
-/* Navigation buttons */
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
-  color: #fff;
-  border: none;
-  font-size: 2rem;
-  padding: 10px 15px;
-  cursor: pointer;
-  z-index: 3;
-  border-radius: 50%;
-  transition: background 0.3s;
-}
-.nav-btn:hover {
-  background: rgba(0,0,0,0.7);
-}
-.nav-btn.prev { left: 20px; }
-.nav-btn.next { right: 20px; }
-
 
 
 /* ===========================
