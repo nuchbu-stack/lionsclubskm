@@ -1,5 +1,6 @@
 // ========================
 // Navbar Scroll Effect
+// (เปลี่ยน style navbar เมื่อ scroll ลง)
 // ========================
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
@@ -10,12 +11,13 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Fade-in on scroll
+// ========================
+// Fade-in on Scroll (Basic)
+// (element ที่มี class="fade-in" จะค่อยๆ โผล่มาเมื่อเข้าหน้าจอ)
+// ========================
 const faders = document.querySelectorAll(".fade-in");
 
-const appearOptions = {
-  threshold: 0.2
-};
+const appearOptions = { threshold: 0.2 };
 
 const appearOnScroll = new IntersectionObserver(function(entries, observer) {
   entries.forEach(entry => {
@@ -29,87 +31,74 @@ faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
 
-
-
-// --- ANIMATION + COUNT-UP (append) ---
+// ========================
+// Advanced Animation + Count-up
+// (ใช้ data-anim, data-count, และ IntersectionObserver)
+// ========================
 (function () {
   if (window.__pjAnimationsInjected) return;
   window.__pjAnimationsInjected = true;
 
-  // รอ DOM โหลด (ปลอดภัย)
   document.addEventListener('DOMContentLoaded', () => {
-    // Element targets: ปรับได้ตามต้องการ
+    // เลือก targets (section, card, gallery, counter)
     const targets = [
-      ...document.querySelectorAll('section'),      // ทุก section
-      ...document.querySelectorAll('.card'),        // การ์ด (actions, voices, goals)
-      ...document.querySelectorAll('.gallery img'), // รูป gallery
-      ...document.querySelectorAll('[data-count]')  // ตัวเลขที่ต้อง count-up
+      ...document.querySelectorAll('section'),
+      ...document.querySelectorAll('.card'),
+      ...document.querySelectorAll('.gallery img'),
+      ...document.querySelectorAll('[data-count]')
     ];
 
-    // ให้แต่ละ target ได้ class พื้นฐาน ถ้ายังไม่มี (non-destructive)
+    // ใส่ class animation ตาม data-anim
     targets.forEach(el => {
-      // อย่าใส่ให้ navbar / footer หากเผลอเลือก
       if (el.closest && el.closest('header, nav, footer')) return;
-
-      const animAttr = el.getAttribute('data-anim'); // "left" | "right" | "fade"
+      const animAttr = el.getAttribute('data-anim');
       if (animAttr === 'left') {
         if (!el.classList.contains('slide-in-left')) el.classList.add('slide-in-left');
       } else if (animAttr === 'right') {
         if (!el.classList.contains('slide-in-right')) el.classList.add('slide-in-right');
       } else {
-        // ค่า default ให้ fade-in ถ้ายังไม่มี class
         if (!el.classList.contains('fade-in') && !el.classList.contains('slide-in-left') && !el.classList.contains('slide-in-right')) {
           el.classList.add('fade-in');
         }
       }
     });
 
-    // IntersectionObserver สำหรับเล่น animation เมื่อเข้า viewport
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.15
-    };
-
+    // Observer: trigger animation + count-up
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
     const io = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         const el = entry.target;
-
-        // เพิ่ม class 'show' เพื่อ trigger transition
         el.classList.add('show');
 
-        // ถ้ามี data-count ให้เริ่มนับ
+        // Count-up
         const countAttr = el.getAttribute('data-count');
         if (countAttr && !el.__countStarted) {
           el.__countStarted = true;
           startCountUp(el, parseFloat(countAttr));
         }
 
-        // ถ้าอยากได้ stagger (เช่น การ์ดภายใน container) เจ้าของโค้ดที่ต้องการ stagger สามารถใช้ attribute data-stagger
+        // Stagger children (option)
         if (el.hasAttribute('data-stagger')) {
           const children = Array.from(el.children);
           children.forEach((child, idx) => {
-            // add small delay classes (optional)
             child.style.transitionDelay = (idx * 0.12) + 's';
-            child.classList.add('show'); // if child already had animation class
+            child.classList.add('show');
           });
         }
 
-        // เรา unobserve เพื่อให้เล่นครั้งเดียว (เปลี่ยนได้)
         obs.unobserve(el);
       });
     }, observerOptions);
 
-    // Observe ทุก target ที่เรเตรียมไว้ (ยกเว้น header/footer)
     targets.forEach(t => {
       if (t.closest && t.closest('header, nav, footer')) return;
       io.observe(t);
     });
 
-    // Count-up function (smoother, uses requestAnimationFrame)
+    // Function: Count-up animation
     function startCountUp(el, target) {
-      const duration = 1200; // ms, ปรับได้
+      const duration = 1200;
       const start = performance.now();
       const initial = 0;
       const isInteger = Number.isInteger(target);
@@ -118,18 +107,22 @@ faders.forEach(fader => {
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
         const value = Math.floor(progress * (target - initial) + initial);
-        el.textContent = isInteger ? value + (el.textContent.includes('%') ? '%' : '') : (Math.round((value + Number.EPSILON) * 100) / 100);
+        el.textContent = isInteger
+          ? value + (el.textContent.includes('%') ? '%' : '')
+          : (Math.round((value + Number.EPSILON) * 100) / 100);
+
         if (progress < 1) {
           requestAnimationFrame(step);
         } else {
-          // ensure final value
-          el.textContent = (isInteger ? target + (el.textContent.includes('%') ? '%' : '') : target);
+          el.textContent = isInteger
+            ? target + (el.textContent.includes('%') ? '%' : '')
+            : target;
         }
       }
       requestAnimationFrame(step);
     }
 
-    // Fallback: ถ้า browser ไม่รองรับ IntersectionObserver → แสดงทั้งหมดเลย
+    // Fallback: ถ้า browser ไม่รองรับ IntersectionObserver
     if (!('IntersectionObserver' in window)) {
       targets.forEach(el => {
         el.classList.add('show');
@@ -140,7 +133,10 @@ faders.forEach(fader => {
   });
 })();
 
+// ========================
 // Hero Slider
+// (สไลด์รูปภาพอัตโนมัติ + ปุ่มควบคุม)
+// ========================
 let slides = document.querySelectorAll('.hero-slider .slide');
 let currentSlide = 0;
 let slideInterval = setInterval(nextSlide, 5000);
@@ -162,7 +158,7 @@ function prevSlide() {
   showSlide(currentSlide);
 }
 
-// ปุ่มกด
+// ปุ่มควบคุม
 document.querySelector('.next').addEventListener('click', () => {
   nextSlide();
   resetInterval();
@@ -173,7 +169,7 @@ document.querySelector('.prev').addEventListener('click', () => {
   resetInterval();
 });
 
-// รีเซ็ตเวลา autoplay
+// Reset autoplay interval
 function resetInterval() {
   clearInterval(slideInterval);
   slideInterval = setInterval(nextSlide, 5000);
