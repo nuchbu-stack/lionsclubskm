@@ -63,27 +63,7 @@ faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
 
-// Stats Count-up
-function countUp(element, target) {
-  let count = 0;
-  const speed = target / 100; // ปรับความเร็วได้
-  const update = () => {
-    count += speed;
-    if (count < target) {
-      element.textContent = Math.floor(count) + "%";
-      requestAnimationFrame(update);
-    } else {
-      element.textContent = target + "%";
-    }
-  };
-  update();
-}
 
-const statElements = document.querySelectorAll("[data-count]");
-statElements.forEach(el => {
-  const target = +el.getAttribute("data-count");
-  countUp(el, target);
-});
 
 // --- ANIMATION + COUNT-UP (append) ---
 (function () {
