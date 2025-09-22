@@ -499,34 +499,6 @@ section h2 {
 /* ===== Schedule Section ===== */
 
 
-/* ===== Schedule Table (Desktop) ===== */
-.schedule-table {
-  margin-top: 2rem;
-  overflow-x: auto;
-}
-.schedule-table table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fffdf9; /* ครีมอ่อน */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-.schedule-table th,
-.schedule-table td {
-  padding: 15px;
-  text-align: left;
-  border-bottom: 1px solid #eee;
-}
-.schedule-table th {
-  background: #d9c4a1; /* น้ำตาลอ่อน */
-  color: #5a4633;
-  font-weight: 700;
-}
-.schedule-table td {
-  color: #3b2c20;
-}
-
 /* schedule agenda */
 /* Event Title */
 .event-title {
