@@ -5,6 +5,8 @@
 * {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;  
   box-sizing: border-box;
 }
 
@@ -91,34 +93,37 @@ h1, h2, h3 {
    Hero Section
    =========================== */
 /* Hero เต็มจอ + reset padding/margin ที่อาจมี */
+/* Hero เต็มจอ */
 .hero {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100vw;   /* ใช้ viewport width */
+  height: 100vh;  /* ใช้ viewport height */
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-/* Slider & Slide */
-.hero-slider,
+/* Slider และ Slide */
+.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .hero-slider .slide {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;  
-  height: 100vh;
-}
-
-.slide {
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
-
-.slide.active {
+.hero-slider .slide.active {
   opacity: 1;
 }
 
@@ -126,7 +131,7 @@ h1, h2, h3 {
 .hero .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(39,58,128,0.5); /* ปรับระดับโปร่งตามต้องการ */
+  background: rgba(39,58,128,0.4);
   z-index: 1;
 }
 
@@ -143,17 +148,21 @@ h1, h2, h3 {
   padding: 0 1rem;
 }
 
-.hero-content h1 {
-  font-size: 3rem;
-  color: #fecf09;
-  margin-bottom: 1rem;
-}
-
-.hero-content p {
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
+/* Navigation Buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   color: #fff;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  z-index: 3;           /* สูงกว่า overlay */
+  cursor: pointer;
 }
+.nav-btn.prev { left: 20px; }
+.nav-btn.next { right: 20px; }
 
 /* Navigation Buttons */
 .nav-btn {
