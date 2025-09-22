@@ -303,6 +303,11 @@ section h2 {
    Goals Section
    =========================== */
 /* กล่องตัวเลข */
+/* Reset alignment ของ Goals */
+#goals {
+  text-align: center;
+}
+
 #goals .stats {
   display: flex;
   flex-wrap: wrap;
@@ -548,8 +553,9 @@ section h2 {
   }
 
   #goals .stat-card {
-    width: 90%;               /* กว้างขึ้นสำหรับจอเล็ก */
-    max-width: 320px;
+    width: auto;              /* ไม่ fix เต็มบรรทัด */
+    max-width: 320px;         /* จำกัดความกว้าง */
+    margin: 0 auto;           /* บังคับให้กลางจอ */
   }
 
   /* Schedule */
