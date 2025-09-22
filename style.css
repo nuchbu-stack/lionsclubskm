@@ -105,12 +105,14 @@ h1, h2, h3 {
 /* Hero Section */
 .hero {
   position: relative;
-  height: 100vh;
-  width: 100%;       /* ใช้ 100% ของ viewport */
-  margin: 0;         /* รีเซ็ต margin */
-  padding: 0;        /* รีเซ็ต padding */
-  overflow: hidden;
+  width: 100%;
+  height: 100vh; /* สูงเต็มหน้าจอ */
+  background: url("images/hero1.jpg") center/cover no-repeat; /* ปรับเป็นรูปจริง */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
+  text-align: center;
 }
 
 .hero-slider {
