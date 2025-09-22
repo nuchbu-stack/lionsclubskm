@@ -8,28 +8,31 @@ counters.forEach(counter => {
   const updateCount = () => {
     const target = +counter.getAttribute("data-count");
     const type = counter.dataset.type || "number"; // default เป็น number
-    const count = +counter.innerText.replace(/\D/g, ""); // ตัด % หรือ , ออก
+    const count = +counter.innerText.replace(/\D/g, ""); // เอาแต่ตัวเลขออกมา
     const inc = target / speed;
 
     if (count < target) {
       let nextVal = Math.ceil(count + inc);
+
       if (type === "percent") {
-        counter.innerText = nextVal + "%";
+        counter.innerText = nextVal + "%";   // ✅ % ติดตลอดเวลา animate
       } else {
-        counter.innerText = nextVal.toLocaleString(); // มี comma
+        counter.innerText = nextVal.toLocaleString();
       }
+
       setTimeout(updateCount, 20);
     } else {
       if (type === "percent") {
-        counter.innerText = target + "%";
+        counter.innerText = target + "%";   // ✅ % ติดตอนหยุดด้วย
       } else {
-        counter.innerText = target.toLocaleString(); // มี comma
+        counter.innerText = target.toLocaleString();
       }
     }
   };
 
   updateCount();
 });
+
 
 
 
