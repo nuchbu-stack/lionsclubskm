@@ -298,6 +298,37 @@ section h2 {
   border-radius: 8px;
 }
 
+
+/* ===========================
+   Goals Section
+   =========================== */
+/* Goals Section */
+#goals {
+  text-align: center;       /* ทำให้หัวข้ออยู่กลาง */
+  padding: 3rem 1rem;
+}
+
+/* กล่องตัวเลข */
+#goals .stats {
+  display: flex;
+  flex-wrap: wrap;          /* ให้แตกบรรทัดบนมือถือ */
+  justify-content: center;  /* จัดกลาง */
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Card */
+#goals .stat-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex: 1 1 200px;          /* กว้างยืดหยุ่น แต่ขั้นต่ำ 200px */
+  max-width: 250px;
+  text-align: center;
+}
+
+
 /* ===========================
    Gallery Section
    =========================== */
@@ -515,6 +546,16 @@ section h2 {
   .grid-2,
   .stats {
     grid-template-columns: 1fr;
+  }
+
+  #goals .stats {
+    flex-direction: column;  /* วางเรียงแนวตั้ง */
+    align-items: center;     /* จัดกลาง */
+  }
+
+  #goals .stat-card {
+    width: 90%;              /* ให้กว้างขึ้นสำหรับจอเล็ก */
+    max-width: 320px;
   }
 
   /* Schedule */
