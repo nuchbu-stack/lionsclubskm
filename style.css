@@ -548,12 +548,12 @@ section h2 {
     grid-template-columns: 1fr;
   }
 
-  .goals .stats {
+  #goals .stats {
     flex-direction: column;  /* วางเรียงแนวตั้ง */
     align-items: center;     /* จัดกลาง */
   }
 
-  .goals .stat-card {
+  #goals .stat-card {
     width: 90%;              /* ให้กว้างขึ้นสำหรับจอเล็ก */
     max-width: 320px;
   }
