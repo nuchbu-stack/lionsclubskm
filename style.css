@@ -21,6 +21,15 @@ h1, h2, h3 {
   color: #7c2d12; /* น้ำตาลอบอุ่น */
 }
 
+p {
+  font-size: 2rem;
+  color: #5a4633;
+  margin: 0 auto 2rem;
+  max-width: 900px;
+  line-height: 1.6;
+  text-align: left; /* ชิดซ้าย */
+}
+
 .percent {
   font-size: 2rem;
   font-weight: bold;
