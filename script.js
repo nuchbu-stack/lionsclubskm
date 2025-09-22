@@ -1,22 +1,36 @@
-// Counter Animation
-const counters = document.querySelectorAll('.counter');
+// ========================
+// Counter Animation (Stats)
+// ========================
+const counters = document.querySelectorAll(".stat-number");
+const speed = 200;
+
 counters.forEach(counter => {
   const updateCount = () => {
-    const target = +counter.getAttribute('data-count');
-    const count = +counter.innerText.replace(/\D/g, '');
+    const target = +counter.getAttribute("data-count");
+    const type = counter.dataset.type || "number"; // default เป็น number
+    const count = +counter.innerText.replace(/\D/g, ""); // ตัด % หรือ , ออก
     const inc = target / speed;
-    const type = counter.dataset.type;
 
     if (count < target) {
       let nextVal = Math.ceil(count + inc);
-      counter.innerText = type === 'percent' ? nextVal + '%' : nextVal.toLocaleString();
+      if (type === "percent") {
+        counter.innerText = nextVal + "%";
+      } else {
+        counter.innerText = nextVal.toLocaleString(); // มี comma
+      }
       setTimeout(updateCount, 20);
     } else {
-      counter.innerText = type === 'percent' ? target + '%' : target.toLocaleString();
+      if (type === "percent") {
+        counter.innerText = target + "%";
+      } else {
+        counter.innerText = target.toLocaleString(); // มี comma
+      }
     }
   };
+
   updateCount();
 });
+
 
 
 window.addEventListener("scroll", function () {
