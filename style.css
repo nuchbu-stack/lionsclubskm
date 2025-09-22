@@ -387,6 +387,7 @@ section h2 {
   flex-wrap: wrap;        /* ให้เรียงลงมาในมือถือ */
   gap: 20px;              /* ระยะห่างการ์ด */
   margin-top: 2rem;
+  justify-content: center;
 }
 
 /* ตัวการ์ด */
