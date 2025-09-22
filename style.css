@@ -146,14 +146,25 @@ h1, h2, h3 {
 /* Hero Content */
 .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
   text-align: center;
   padding: 0 1rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #fecf09;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
   color: #fff;
 }
 
@@ -169,23 +180,6 @@ h1, h2, h3 {
   z-index: 2;
 }
 
-/* Headline + Paragraph */
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #fecf09;
-}
-
-.hero p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: #fff;
-}
-
-/* Buttons */
-.hero-buttons .btn {
-  margin: 0 0.5rem;
-}
 
 
 /* ===========================
@@ -501,10 +495,16 @@ section h2 {
   .club-name p { font-size: 0.8rem; }
 
   /* Hero */
-  .hero { padding: 3rem 1rem; }
+  /* .hero { padding: 3rem 1rem; }
   .hero h1 { font-size: 1.8rem; }
   .hero p { font-size: 1rem; }
-  .hero-buttons { flex-direction: column; }
+  .hero-buttons { flex-direction: column; } */
+  .hero-content h1 { font-size: 2rem;}
+  .hero-content p { font-size: 1.2rem;}
+  .nav-btn {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
+  }
   
   .stat-number {
     font-size: 2.2rem; /* เล็กลงบน tablet */
@@ -552,5 +552,24 @@ section h2 {
   .agenda-item .time {
     font-size: 1rem;
     margin-bottom: 5px;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  .nav-btn {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
   }
 }
