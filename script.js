@@ -1,20 +1,23 @@
 // Counter Animation
 const counters = document.querySelectorAll('.counter');
 counters.forEach(counter => {
-  counter.innerText = '0';
-  const updateCounter = () => {
-    const target = +counter.getAttribute('data-target');
-    const count = +counter.innerText;
-    const increment = target / 100;
-    if(count < target) {
-      counter.innerText = Math.ceil(count + increment);
-      setTimeout(updateCounter, 40);
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-count');
+    const count = +counter.innerText.replace(/\D/g, '');
+    const inc = target / speed;
+    const type = counter.dataset.type;
+
+    if (count < target) {
+      let nextVal = Math.ceil(count + inc);
+      counter.innerText = type === 'percent' ? nextVal + '%' : nextVal.toLocaleString();
+      setTimeout(updateCount, 20);
     } else {
-      counter.innerText = target;
+      counter.innerText = type === 'percent' ? target + '%' : target.toLocaleString();
     }
   };
-  updateCounter();
+  updateCount();
 });
+
 
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
