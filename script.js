@@ -96,31 +96,36 @@ faders.forEach(fader => {
       io.observe(t);
     });
 
-    // Function: Count-up animation
-    function startCountUp(el, target) {
-      const duration = 1200;
-      const start = performance.now();
-      const initial = 0;
-      const isInteger = Number.isInteger(target);
+// Function: Count-up animation
+function startCountUp(el, target) {
+  const duration = 2000; // 2 วินาที
+  const start = performance.now();
+  const type = el.getAttribute("data-type"); // "percent" หรือ "number"
 
-      function step(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const value = Math.floor(progress * (target - initial) + initial);
-        el.textContent = isInteger
-          ? value + (el.textContent.includes('%') ? '%' : '')
-          : (Math.round((value + Number.EPSILON) * 100) / 100);
+  function step(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const value = Math.floor(progress * target);
 
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        } else {
-          el.textContent = isInteger
-            ? target + (el.textContent.includes('%') ? '%' : '')
-            : target;
-        }
-      }
-      requestAnimationFrame(step);
+    if (type === "percent") {
+      el.textContent = value + "%"; // % ตลอด
+    } else {
+      el.textContent = value.toLocaleString(); // comma ไม่มี %
     }
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      if (type === "percent") {
+        el.textContent = target + "%";
+      } else {
+        el.textContent = target.toLocaleString();
+      }
+    }
+  }
+
+  requestAnimationFrame(step);
+}
 
     // Fallback: ถ้า browser ไม่รองรับ IntersectionObserver
     if (!('IntersectionObserver' in window)) {
