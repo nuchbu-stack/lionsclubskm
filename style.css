@@ -243,6 +243,7 @@ section h2 {
 .grid-2 {
   display: grid;
   gap: 1.5rem;
+  justify-content: center;
 }
 
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
@@ -384,7 +385,6 @@ section h2 {
   display: flex;
   flex-wrap: wrap;        /* ให้เรียงลงมาในมือถือ */
   gap: 20px;              /* ระยะห่างการ์ด */
-  justify-content: center;
   margin-top: 2rem;
 }
 
