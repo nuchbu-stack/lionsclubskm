@@ -302,16 +302,10 @@ section h2 {
 /* ===========================
    Goals Section
    =========================== */
-/* Goals Section */
-#goals {
-  text-align: center;       /* ทำให้หัวข้ออยู่กลาง */
-  padding: 3rem 1rem;
-}
-
 /* กล่องตัวเลข */
 #goals .stats {
   display: flex;
-  flex-wrap: wrap;          /* ให้แตกบรรทัดบนมือถือ */
+  flex-wrap: wrap;
   justify-content: center;  /* จัดกลาง */
   gap: 1.5rem;
   margin-top: 2rem;
@@ -323,7 +317,7 @@ section h2 {
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  flex: 1 1 200px;          /* กว้างยืดหยุ่น แต่ขั้นต่ำ 200px */
+  flex: 1 1 200px;
   max-width: 250px;
   text-align: center;
 }
@@ -549,12 +543,12 @@ section h2 {
   }
 
   #goals .stats {
-    flex-direction: column;  /* วางเรียงแนวตั้ง */
-    align-items: center;     /* จัดกลาง */
+    flex-direction: column;   /* เรียงลง */
+    align-items: center;      /* จัดกลาง */
   }
 
   #goals .stat-card {
-    width: 90%;              /* ให้กว้างขึ้นสำหรับจอเล็ก */
+    width: 90%;               /* กว้างขึ้นสำหรับจอเล็ก */
     max-width: 320px;
   }
 
