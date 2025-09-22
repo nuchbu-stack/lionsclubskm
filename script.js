@@ -5,29 +5,20 @@ const counters = document.querySelectorAll(".stat-number");
 const speed = 200;
 
 counters.forEach(counter => {
-  const type = counter.dataset.type || "number"; // default เป็น number
+  const type = counter.dataset.type || "number"; // percent หรือ number
   const target = +counter.getAttribute("data-count");
+  let currentVal = 0; // ใช้ตัวแปรนี้แทนการอ่าน innerText
 
   const updateCount = () => {
-    let currentVal;
-
-    if (type === "percent") {
-      // เอาเฉพาะตัวเลขจากข้อความ (ตัด % ออก)
-      currentVal = parseInt(counter.innerText.replace("%", "")) || 0;
-    } else {
-      // เอาเฉพาะตัวเลขจากข้อความ (ตัด comma ออก)
-      currentVal = parseInt(counter.innerText.replace(/,/g, "")) || 0;
-    }
-
     const inc = target / speed;
 
     if (currentVal < target) {
-      let nextVal = Math.ceil(currentVal + inc);
+      currentVal = Math.min(target, Math.ceil(currentVal + inc));
 
       if (type === "percent") {
-        counter.innerText = nextVal + "%"; // ✅ % ตลอด
+        counter.innerText = currentVal + "%"; // ✅ % ตลอดเวลา
       } else {
-        counter.innerText = nextVal.toLocaleString(); // ✅ comma ตลอด
+        counter.innerText = currentVal.toLocaleString(); // ✅ มี comma ไม่มี %
       }
 
       setTimeout(updateCount, 20);
