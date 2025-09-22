@@ -41,13 +41,6 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
-.story-img {
-  border-radius: 1rem;
-  margin: 1rem 0;
-  max-width: 100%;
-}
-
-
 
 /* ===========================
    Navbar
@@ -244,6 +237,41 @@ section h2 {
   margin: auto;
   margin-bottom: 2rem;
 }
+
+.story-img {
+  border-radius: 1rem;
+  margin: 1rem 0;
+  max-width: 100%;
+}
+
+/* ===========================
+   Story Section
+   =========================== */
+#story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* จัดให้อยู่ตรงกลางแนวนอน */
+  justify-content: center; /* ถ้าสูงพอ จะกึ่งกลางแนวตั้ง */
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+#story img {
+  max-width: 800px;  /* จำกัดความกว้างของรูป */
+  width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+#story p {
+  max-width: 700px;
+  line-height: 1.8;
+  margin: 0 auto;
+  color: #444;
+}
+
 
 
 /* ===========================
