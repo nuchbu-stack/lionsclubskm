@@ -8,22 +8,25 @@ counters.forEach(counter => {
   const updateCount = () => {
     const target = +counter.getAttribute("data-count");
     const type = counter.dataset.type || "number"; // default เป็น number
-    const count = +counter.innerText.replace(/\D/g, ""); // เอาแต่ตัวเลขออกมา
+    const currentText = counter.innerText;
+
+    // อ่านค่าเฉพาะตัวเลข
+    const count = parseInt(currentText.replace(/,/g, "").replace("%", "")) || 0;
     const inc = target / speed;
 
     if (count < target) {
       let nextVal = Math.ceil(count + inc);
 
       if (type === "percent") {
-        counter.innerText = nextVal + "%";   // ✅ % ติดตลอดเวลา animate
+        counter.innerText = nextVal + "%";            // ✅ % ตลอด
       } else {
-        counter.innerText = nextVal.toLocaleString();
+        counter.innerText = nextVal.toLocaleString(); // ✅ comma ตลอด
       }
 
       setTimeout(updateCount, 20);
     } else {
       if (type === "percent") {
-        counter.innerText = target + "%";   // ✅ % ติดตอนหยุดด้วย
+        counter.innerText = target + "%";
       } else {
         counter.innerText = target.toLocaleString();
       }
@@ -32,6 +35,7 @@ counters.forEach(counter => {
 
   updateCount();
 });
+
 
 
 
