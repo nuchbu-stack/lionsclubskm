@@ -94,8 +94,8 @@ h1, h2, h3 {
   width: 100%;
   height: 100vh; /* สูงเต็มหน้าจอ */
   min-height: 100vh;
-  background: url("images/hero1.jpg") center/cover no-repeat; /* ปรับเป็นรูปจริง */
   display: flex;
+  background: url("images/hero1.jpg") center/cover no-repeat; /* ปรับเป็นรูปจริง */
   align-items: center;
   justify-content: center;
   color: #fff;
@@ -105,7 +105,10 @@ h1, h2, h3 {
 .hero-slider {
   position: absolute;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%; 
+  height: 100vh; /* สูงเต็มหน้าจอ */
+  min-height: 100vh;
+  display: flex; 
 }
 
 .hero-slider .slide {
@@ -113,6 +116,7 @@ h1, h2, h3 {
   top: 0; left: 0;
   width: 100vw;       /* บังคับเต็ม viewport */
   height: 100vh;      /* เต็มสูงสุดหน้าจอ */
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   opacity: 0;
