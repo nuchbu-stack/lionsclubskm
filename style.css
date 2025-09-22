@@ -143,6 +143,18 @@ h1, h2, h3 {
 .nav-btn.prev { left: 20px; }
 .nav-btn.next { right: 20px; }
 
+/* Overlay เพื่อให้ text อ่านชัด */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* สี overlay */
+  z-index: 2;
+}
+
 /* Hero Content */
 .hero-content {
   position: relative;
@@ -167,19 +179,6 @@ h1, h2, h3 {
   margin-bottom: 2rem;
   color: #fff;
 }
-
-/* Overlay เพื่อให้ text อ่านชัด */
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45); /* สี overlay */
-  z-index: 2;
-}
-
 
 
 /* ===========================
