@@ -94,6 +94,9 @@ h1, h2, h3 {
   width: 100%;
   height: 100vh; /* เต็มจอ */
   overflow: hidden;
+  padding: 0;       /* ลบ padding ที่สืบทอดจาก section */
+  max-width: none;  /* ยกเลิก max-width */
+  margin: 0;        /* ยกเลิก margin auto */
 }
 
 /* Hero Slider (background images) */
