@@ -379,15 +379,6 @@ section h2 {
 }
 
 /* ==== Count-up Number Styling ==== */
-.stat-number {
-  font-size: 3rem;            /* ใหญ่ */
-  font-weight: 800;           /* หนัก ชัด */
-  color: #fecf09;             /* เหลืองทอง */
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.25); /* ให้เด่นขึ้น */
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
 /* Container ของการ์ด */
 .stats {
   display: flex;
