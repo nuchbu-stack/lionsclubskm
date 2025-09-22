@@ -21,20 +21,6 @@ h1, h2, h3 {
   color: #7c2d12; /* น้ำตาลอบอุ่น */
 }
 
-.cards {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.card {
-  background: #fff;
-  border: 2px solid #fcd34d;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
 .percent {
   font-size: 2rem;
   font-weight: bold;
@@ -253,6 +239,13 @@ section h2 {
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 
+
+.cards {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
 .card {
   background: #fff;
   border: 2px solid #fecf09;
@@ -283,36 +276,6 @@ section h2 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-
-/* ===========================
-   Schedule Section
-   =========================== */
-.schedule {
-  width: 80%;
-  margin: 2rem auto;
-  border-collapse: collapse;
-}
-.schedule-table-wrapper {
-  overflow-x: auto; /* เลื่อนแนวนอนได้ในมือถือ */
-}
-
-.schedule table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-.schedule th,
-.schedule td {
-  border: 1px solid #ddd;
-  padding: 0.75rem;
-}
-
-.schedule th {
-  background: #273a80;
-  color: #fecf09;
-  text-align: left;
-}
 
 /* ===========================
    Footer
