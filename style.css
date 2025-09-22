@@ -20,8 +20,6 @@ h1, h2, h3 {
   color: #7c2d12; /* น้ำตาลอบอุ่น */
 }
 
-
-
 .cards {
   display: grid;
   gap: 1.5rem;
@@ -337,49 +335,6 @@ section h2 {
 
 
 /* ===========================
-   Responsive Design
-   =========================== */
-@media (max-width: 1024px) {
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.6rem; }
-}
-
-@media (max-width: 768px) {
-  /* Navbar */
-  .navbar {
-    padding: 0.5rem 1rem;
-  }
-  .logo { height: 40px; }
-  .club-name h1 { font-size: 1rem; }
-  .club-name p { font-size: 0.8rem; }
-
-  /* Hero */
-  .hero { padding: 3rem 1rem; }
-  .hero h1 { font-size: 1.8rem; }
-  .hero p { font-size: 1rem; }
-  .hero-buttons { flex-direction: column; }
-
-  /* Grid Sections → 1 คอลัมน์ */
-  .grid-3,
-  .grid-4,
-  .grid-2,
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  /* Schedule */
-  .schedule {
-    font-size: 0.85rem;
-  }
-
-  /* Footer */
-  .footer {
-    font-size: 0.8rem;
-    padding: 1rem;
-  }
-}
-
-/* ===========================
    Animation Base
    =========================== */
 
@@ -541,54 +496,8 @@ section h2 {
 .schedule-table tr:hover {
   background: #f6f1e7;  /* ไฮไลท์อ่อนๆ เวลา hover */
 }
-
-/* Responsive */ /* ===== Schedule Section ===== */
-@media (max-width: 600px) {
-  .schedule-table table,
-  .schedule-table thead,
-  .schedule-table tbody,
-  .schedule-table th,
-  .schedule-table td,
-  .schedule-table tr {
-    display: block;
-    width: 100%;
-  }
-
-  .schedule-table thead {
-    display: none; /* ซ่อนหัวตาราง */
-  }
-
-  .schedule-table tr {
-    margin-bottom: 15px;
-    border-bottom: 2px solid #e8d9c3;
-    padding: 12px;
-    background: #fffdf9;
-    border-radius: 8px;
-  }
-
-  /* เวลา (คอลัมน์แรก) */
-  .schedule-table td:first-child {
-    font-weight: 700;
-    color: #5a4633; /* น้ำตาลเข้ม */
-    font-size: 1rem;
-    margin-bottom: 6px;
-  }
-
-  /* รายละเอียดกิจกรรม (คอลัมน์สอง) */
-  .schedule-table td:last-child {
-    font-size: 0.95rem;
-    color: #3b2c20;
-  }
-
-  /* เอา flex ออก → ให้เป็น block แทน */
-  .schedule-table td {
-    display: block;
-    padding: 6px 0;
-    border: none;
-    text-align: left;
-  }
-}
 /* ===== Schedule Section ===== */
+
 
 /* ===== Schedule Table (Desktop) ===== */
 .schedule-table {
@@ -616,46 +525,6 @@ section h2 {
 }
 .schedule-table td {
   color: #3b2c20;
-}
-
-/* ===== Mobile (แปลง Table → Card) ===== */
-@media (max-width: 600px) {
-  .schedule-table table,
-  .schedule-table thead,
-  .schedule-table tbody,
-  .schedule-table th,
-  .schedule-table tr,
-  .schedule-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .schedule-table thead {
-    display: none;
-  }
-
-  .schedule-table tr {
-    margin-bottom: 15px;
-    background: #fffdf9;
-    border: 1px solid #e8d9c3;
-    border-radius: 8px;
-    padding: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  }
-
-  .schedule-table td {
-    border: none;
-    padding: 8px 0;
-    text-align: left;
-  }
-
-  .schedule-table td::before {
-    content: attr(data-label);
-    display: block;
-    font-weight: 700;
-    color: #5a4633;
-    margin-bottom: 3px;
-  }
 }
 
 /* schedule agenda */
@@ -709,12 +578,124 @@ section h2 {
   list-style-type: disc;
 }
 
-/* Responsive */
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 1024px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.6rem; }
+}
+
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .logo { height: 40px; }
+  .club-name h1 { font-size: 1rem; }
+  .club-name p { font-size: 0.8rem; }
+
+  /* Hero */
+  .hero { padding: 3rem 1rem; }
+  .hero h1 { font-size: 1.8rem; }
+  .hero p { font-size: 1rem; }
+  .hero-buttons { flex-direction: column; }
+
+  /* Grid Sections → 1 คอลัมน์ */
+  .grid-3,
+  .grid-4,
+  .grid-2,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* Schedule */
+  .schedule {
+    font-size: 0.85rem;
+  }
+
+  /* Footer */
+  .footer {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+}
+
+/* Responsive */ /* ===== Schedule Section ===== */
 @media (max-width: 600px) {
+  .schedule-table table,
+  .schedule-table thead,
+  .schedule-table tbody,
+  .schedule-table th,
+  .schedule-table td,
+  .schedule-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .schedule-table thead {
+    display: none; /* ซ่อนหัวตาราง */
+  }
+
+  .schedule-table tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e8d9c3;
+    padding: 12px;
+    background: #fffdf9;
+    border-radius: 8px;
+  }
+
+  /* เวลา (คอลัมน์แรก) */
+  .schedule-table td:first-child {
+    font-weight: 700;
+    color: #5a4633; /* น้ำตาลเข้ม */
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  /* รายละเอียดกิจกรรม (คอลัมน์สอง) */
+  .schedule-table td:last-child {
+    font-size: 0.95rem;
+    color: #3b2c20;
+  }
+
+  /* เอา flex ออก → ให้เป็น block แทน */
+  .schedule-table td {
+    display: block;
+    padding: 6px 0;
+    border: none;
+    text-align: left;
+  }
+
+    .schedule-table tr {
+    margin-bottom: 15px;
+    background: #fffdf9;
+    border: 1px solid #e8d9c3;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+
+  .schedule-table td {
+    border: none;
+    padding: 8px 0;
+    text-align: left;
+  }
+
+  .schedule-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 700;
+    color: #5a4633;
+    margin-bottom: 3px;
+  }
+
   .agenda-item {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .agenda-item .time {
     font-size: 1rem;
     margin-bottom: 5px;
