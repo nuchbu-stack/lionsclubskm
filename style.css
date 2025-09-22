@@ -276,7 +276,6 @@ section h2 {
 /* ===========================
    Gallery Section
    =========================== */
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -293,8 +292,6 @@ section h2 {
 /* ===========================
    Schedule Section
    =========================== */
-
-
 .schedule {
   width: 80%;
   margin: 2rem auto;
@@ -401,18 +398,6 @@ section h2 {
   display: block;
 }
 
-@media (max-width: 768px) {
-  .stat-number {
-    font-size: 2.2rem; /* เล็กลงบน tablet */
-  }
-}
-
-@media (max-width: 480px) {
-  .stat-number {
-    font-size: 1.8rem; /* เล็กลงบนมือถือ */
-  }
-}
-
 /* Container ของการ์ด */
 .stats {
   display: flex;
@@ -450,12 +435,6 @@ section h2 {
   margin: 0;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .stat-card .stat-number {
-    font-size: 2.2rem;
-  }
-}
 /* ==== Count-up Number Styling ==== */
 
 
@@ -559,6 +538,13 @@ section h2 {
   h2 { font-size: 1.6rem; }
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .stat-card .stat-number {
+    font-size: 2.2rem;
+  }
+}
+
 @media (max-width: 768px) {
   /* Navbar */
   .navbar {
@@ -573,6 +559,14 @@ section h2 {
   .hero h1 { font-size: 1.8rem; }
   .hero p { font-size: 1rem; }
   .hero-buttons { flex-direction: column; }
+  
+  .stat-number {
+    font-size: 2.2rem; /* เล็กลงบน tablet */
+  }
+
+  .stat-card .stat-number {
+    font-size: 2.2rem;
+  }  
 
   /* Grid Sections → 1 คอลัมน์ */
   .grid-3,
