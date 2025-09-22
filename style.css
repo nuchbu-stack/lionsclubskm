@@ -383,50 +383,10 @@ section h2 {
   color: #273a80;                     /* น้ำเงินเข้ม */
   margin: 0;
 }
-
 /* ==== Count-up Number Styling ==== */
 
 
-/* ===== Schedule Table (โทนน้ำตาลอบอุ่น) ===== */
-.schedule-table {
-  margin-top: 2rem;
-  overflow-x: auto; /* กันล้นบนมือถือ */
-}
-
-.schedule-table table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fffdf9; /* ครีมอ่อน */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.schedule-table th,
-.schedule-table td {
-  padding: 15px;
-  text-align: left;
-  border-bottom: 1px solid #eee;
-}
-
-.schedule-table th {
-  background: #d9c4a1;  /* น้ำตาลอ่อน */
-  color: #5a4633;       /* น้ำตาลเข้ม */
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.schedule-table td {
-  font-size: 1rem;
-  color: #3b2c20;       /* น้ำตาลเข้ม */
-}
-
-.schedule-table tr:hover {
-  background: #f6f1e7;  /* ไฮไลท์อ่อนๆ เวลา hover */
-}
 /* ===== Schedule Section ===== */
-
-
 /* schedule agenda */
 /* Event Title */
 .event-title {
