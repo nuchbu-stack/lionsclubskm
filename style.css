@@ -559,7 +559,7 @@ section h2 {
 
 #schedule .agenda-time {
   font-weight: bold;
-  color: #273a80; /* โทนหลัก */
+  color: #4a3b2a; /* โทนหลัก */
 }
 
 #schedule .agenda-content h3 {
@@ -578,8 +578,8 @@ section h2 {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: 20%; /* วงกลม */
-  border: 3px solid #fecf09; /* ขอบสีทอง */
+  border-radius: 10%; /* วงกลม */
+  border: 2px solid #fecf09; /* ขอบสีทอง */
 }
 
 /* 📱 Responsive */
