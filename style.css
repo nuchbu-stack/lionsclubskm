@@ -582,17 +582,7 @@ section h2 {
   border: 2px solid #fecf09; /* ขอบสีทอง */
 }
 
-/* 📱 Responsive */
-@media (max-width: 768px) {
-  #schedule .agenda-item {
-    grid-template-columns: 1fr; /* เรียงลง */
-    text-align: center;
-  }
 
-  #schedule .agenda-speaker {
-    margin-top: 0.8rem;
-  }
-}
 
 
 /* ===========================
