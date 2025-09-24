@@ -538,6 +538,62 @@ section h2 {
   list-style-type: disc;
 }
 
+/* Schedule Section */
+#schedule .agenda {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+#schedule .agenda-item {
+  display: grid;
+  grid-template-columns: 120px 1fr 100px; /* เวลา | เนื้อหา | รูป */
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+#schedule .agenda-time {
+  font-weight: bold;
+  color: #273a80; /* โทนหลัก */
+}
+
+#schedule .agenda-content h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+#schedule .agenda-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+#schedule .agenda-speaker img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%; /* วงกลม */
+  border: 3px solid #fecf09; /* ขอบสีทอง */
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  #schedule .agenda-item {
+    grid-template-columns: 1fr; /* เรียงลง */
+    text-align: center;
+  }
+
+  #schedule .agenda-speaker {
+    margin-top: 0.8rem;
+  }
+}
+
 
 /* ===========================
    Responsive Design
