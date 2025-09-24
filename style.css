@@ -578,7 +578,7 @@ section h2 {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: 50%; /* วงกลม */
+  border-radius: 20%; /* วงกลม */
   border: 3px solid #fecf09; /* ขอบสีทอง */
 }
 
