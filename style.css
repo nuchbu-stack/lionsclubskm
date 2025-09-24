@@ -224,6 +224,17 @@ section h2 {
   margin-bottom: 2rem;
 }
 
+/* ข้อความ Intro ใน About Section */
+#about .intro {
+  font-size: 1.125rem;       /* ~18px บน desktop */
+  line-height: 1.8;          /* เพิ่มระยะห่างระหว่างบรรทัด */
+  color: #333;               /* สีเทาเข้ม อ่านง่าย */
+  max-width: 800px;          /* จำกัดความกว้างสุดไม่ให้บรรทัดยาวเกิน */
+  margin: 0 auto 2rem auto;  /* จัดกลาง และเว้นขอบล่าง */
+  padding: 0 1rem;           /* เว้นขอบด้านข้าง สำหรับมือถือ */
+  text-align: left;          /* ให้อ่านง่าย ชิดซ้าย */
+}
+
 .story-img {
   border-radius: 1rem;
   margin: 1rem 0;
@@ -529,6 +540,13 @@ section h2 {
     font-size: 1.5rem;
     padding: 0.3rem 0.6rem;
   }
+
+  #about .intro {
+    font-size: 1rem;        /* ~16px */
+    line-height: 1.6;       
+    padding: 0 1.2rem;      /* เว้นขอบด้านข้างมากขึ้น */
+    text-align: justify;    /* จัดบรรทัดเต็มพื้นที่ สวยตอนอ่านยาว */
+  }  
   
   .stat-number {
     font-size: 2.2rem; /* เล็กลงบน tablet */
@@ -551,8 +569,9 @@ section h2 {
   }
 
   #goals .stat-card {
-    max-width: 320px;         /* จำกัดความกว้าง */
-    margin: 0 auto;           /* บังคับให้กลางจอ */
+    flex: none;         /* ยกเลิก flex-grow/shrink */
+    width: 90%;         /* ให้กิน 90% ของหน้าจอ */
+    max-width: 400px;   /* จำกัดสูงสุด */
   }
 
   /* Schedule */
