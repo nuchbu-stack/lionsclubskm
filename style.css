@@ -262,12 +262,20 @@ section h2 {
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
+/* Story Section Paragraph */
 #story p {
-  max-width: 700px;
-  line-height: 1.8;
-  margin: 0 auto;
-  color: #444;
+  font-size: 1.125rem;       /* ~18px */
+  line-height: 1.8;          /* อ่านง่าย โล่ง ๆ */
+  color: #444;               /* เทาเข้ม อ่านสบายกว่า #000 */
+  max-width: 800px;          /* จำกัดความกว้างไม่ให้ยาวเกิน */
+  margin: 1.5rem auto;       /* จัดกลางและเว้นระยะ */
+  padding: 1.2rem 1.5rem;    /* เพิ่มพื้นที่รอบข้อความ */
+  background: #fdf9f4;       /* สีครีมอ่อน ให้อารมณ์อบอุ่น */
+  border-left: 6px solid #d4a373;  /* เส้นนำสายตา โทนอบอุ่น */
+  border-radius: 8px;
+  text-align: left;          /* ชิดซ้ายเพื่อให้อ่านง่าย */
 }
+
 
 
 
@@ -308,6 +316,21 @@ section h2 {
   max-width: 100%;
   border-radius: 8px;
 }
+
+/* Custom Bullet List */
+.custom-list {
+  list-style: disc;         /* bullet มาตรฐาน */
+  padding-left: 1.5rem;     /* เว้นด้านซ้าย */
+  margin: 1rem 0;
+  color: #444;              /* สีตัวอักษร */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.custom-list li {
+  margin-bottom: 0.5rem;    /* เว้นระยะห่างแต่ละบรรทัด */
+}
+
 
 
 /* ===========================
@@ -548,6 +571,13 @@ section h2 {
     text-align: justify;    /* จัดบรรทัดเต็มพื้นที่ สวยตอนอ่านยาว */
   }  
   
+  #story p {
+    font-size: 1rem;         /* ~16px */
+    line-height: 1.6;
+    padding: 1rem;
+    margin: 1rem 1.2rem;     /* เว้นขอบให้ไม่ชิดจอ */
+  }
+
   .stat-number {
     font-size: 2.2rem; /* เล็กลงบน tablet */
   }
