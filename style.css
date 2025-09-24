@@ -311,22 +311,21 @@ section h2 {
 #goals .stats {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  /* จัดกลาง */
+  justify-content: center;  /* จัดให้อยู่กลางเสมอ */
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
-/* Card */
 #goals .stat-card {
   background: #fff;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   flex: 1 1 200px;
-  max-width: 250px;
+  max-width: 280px;   /* กว้างขึ้นเล็กน้อย */
+  margin: 0 auto;     /* บังคับให้การ์ดอยู่กลาง */
   text-align: center;
 }
-
 
 /* ===========================
    Gallery Section
@@ -549,11 +548,9 @@ section h2 {
 
   #goals .stats {
     flex-direction: column;   /* เรียงลง */
-    align-items: center;      /* จัดกลาง */
   }
 
   #goals .stat-card {
-    width: auto;              /* ไม่ fix เต็มบรรทัด */
     max-width: 320px;         /* จำกัดความกว้าง */
     margin: 0 auto;           /* บังคับให้กลางจอ */
   }
