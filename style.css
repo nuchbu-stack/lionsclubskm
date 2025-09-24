@@ -319,10 +319,11 @@ section h2 {
   text-align: center;
 }
 
+/* Goals Section - Cards */
 #goals .stats {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  /* จัดให้อยู่กลางเสมอ */
+  justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -332,9 +333,8 @@ section h2 {
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  flex: 1 1 200px;
-  max-width: 280px;   /* กว้างขึ้นเล็กน้อย */
-  margin: 0 auto;     /* บังคับให้การ์ดอยู่กลาง */
+  flex: 1 1 220px;     /* ขนาดเริ่มต้นเท่ากัน */
+  max-width: 220px;    /* จำกัดสูงสุดให้เท่ากัน */
   text-align: center;
 }
 
@@ -569,9 +569,10 @@ section h2 {
   }
 
   #goals .stat-card {
-    flex: none;         /* ยกเลิก flex-grow/shrink */
-    width: 90%;         /* ให้กิน 90% ของหน้าจอ */
+    flex: none;         /* ไม่ให้ยืด */
+    width: 90%;         /* ให้กว้างใกล้เต็มจอ */
     max-width: 400px;   /* จำกัดสูงสุด */
+    margin: 0 auto;
   }
 
   /* Schedule */
