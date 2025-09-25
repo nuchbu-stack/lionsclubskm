@@ -539,7 +539,7 @@ section h2 {
 }
 
 .dash-list {
-  content: "–";            /* ใช้ขีดแทน bullet */
+  list-style: none;        /* เอา bullet เดิมออก */
   padding-left: 1.2rem;    /* indent */
   margin: 0.5rem 0;
 }
