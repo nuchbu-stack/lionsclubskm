@@ -531,11 +531,31 @@ section h2 {
 
 .agenda-item .content ul {
   margin: 0;
-  padding-left: 10%;
+  padding-left: 20px;
   color: #4a3b2a;
   font-size: 0.95rem;
   line-height: 1.5;
   list-style-type: disc;
+}
+
+.dash-list {
+  list-style: none;        /* เอา bullet เดิมออก */
+  padding-left: 1.2rem;    /* indent */
+  margin: 0.5rem 0;
+}
+
+.dash-list li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+.dash-list li::before {
+  content: "–";            /* ใช้ขีดแทน bullet */
+  position: absolute;
+  left: -1.2rem;           /* ระยะห่างจากข้อความ */
+  color: #333;             /* สีของขีด */
+  font-weight: bold;
 }
 
 /* Schedule Section */
