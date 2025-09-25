@@ -175,3 +175,68 @@ window.addEventListener("scroll", () => {
     slide.style.transform = `translateY(${scrollY * 0.3}px)`; // ปรับ 0.3 ให้ช้ากว่า content
   });
 });
+
+
+// Gallery Carousel (infinite loop)
+const galleryTrack = document.querySelector('.gallery-track');
+let gallerySlides = document.querySelectorAll('.gallery-slide');
+const galleryPrev = document.querySelector('.gallery-btn.prev');
+const galleryNext = document.querySelector('.gallery-btn.next');
+
+let galleryIndex = 0;
+let slidesToShow = 3;
+
+// Clone slides for infinite loop
+function cloneSlides() {
+  gallerySlides.forEach(slide => {
+    const clone = slide.cloneNode(true);
+    galleryTrack.appendChild(clone);
+  });
+}
+
+// Update slidesToShow based on screen size
+function updateSlidesToShow() {
+  if (window.innerWidth <= 600) slidesToShow = 1;
+  else if (window.innerWidth <= 992) slidesToShow = 2;
+  else slidesToShow = 3;
+}
+
+// Show slide
+function showGallerySlide(index) {
+  galleryIndex = index;
+  const offset = -(galleryIndex * (100 / slidesToShow));
+  galleryTrack.style.transition = "transform 0.4s ease";
+  galleryTrack.style.transform = `translateX(${offset}%)`;
+
+  // Reset loop when reaching the end
+  setTimeout(() => {
+    if (galleryIndex >= gallerySlides.length) {
+      galleryTrack.style.transition = "none";
+      galleryIndex = 0;
+      galleryTrack.style.transform = `translateX(0%)`;
+    }
+  }, 400);
+}
+
+// Events
+galleryPrev.addEventListener('click', () => {
+  galleryIndex = (galleryIndex <= 0) ? gallerySlides.length - 1 : galleryIndex - 1;
+  showGallerySlide(galleryIndex);
+});
+galleryNext.addEventListener('click', () => {
+  showGallerySlide(galleryIndex + 1);
+});
+window.addEventListener('resize', () => {
+  updateSlidesToShow();
+});
+
+// Init
+updateSlidesToShow();
+cloneSlides();
+gallerySlides = document.querySelectorAll('.gallery-slide'); // update after cloning
+showGallerySlide(0);
+
+// Auto Slide
+setInterval(() => {
+  showGallerySlide(galleryIndex + 1);
+}, 5000);
