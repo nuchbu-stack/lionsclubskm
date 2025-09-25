@@ -22,7 +22,7 @@ h1, h2, h3 {
 }
 
 .intro {
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto 2rem auto;
   font-size: 1.1rem;
   line-height: 1.6;
