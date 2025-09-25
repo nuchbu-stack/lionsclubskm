@@ -582,6 +582,27 @@ section h2 {
   border: 2px solid #fecf09; /* ขอบสีทอง */
 }
 
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  #schedule .agenda-item {
+    grid-template-columns: 1fr;  /* เรียงลง */
+    text-align: left;            /* ชิดซ้าย */
+    padding: 1rem;
+  }
+
+  #schedule .agenda-time {
+    margin-bottom: 0.3rem;
+  }
+
+  #schedule .agenda-speaker {
+    margin-top: 0.8rem;
+  }
+
+  #schedule .agenda-speaker img {
+    width: 70px;
+    height: 70px;
+  }
+}
 
 
 
@@ -651,6 +672,21 @@ section h2 {
     margin: 0 auto;
   }
 
+  #schedule .agenda-item {
+    display: grid;
+    grid-template-areas:
+      "time"
+      "content"
+      "speaker";
+    grid-template-columns: 1fr;
+    text-align: left;
+    padding: 1rem;
+  }
+
+  #schedule .agenda-time { grid-area: time; }
+  #schedule .agenda-content { grid-area: content; }
+  #schedule .agenda-speaker { grid-area: speaker; margin-top: 0.8rem; }
+  
   /* Schedule */
   .schedule {
     font-size: 0.85rem;
@@ -671,11 +707,6 @@ section h2 {
   .grid-2,
   .stats {
     grid-template-columns: 1fr;
-  }
-
-  .agenda-item {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .agenda-item .time {
