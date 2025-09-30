@@ -64,6 +64,12 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   gap: 1rem;
+  max-width: 40%;  /* จำกัดฝั่งซ้ายไม่ให้กินเกินครึ่ง */
+}
+
+.brand .club-name h1 {
+  font-size: 1.1rem;  /* ลดขนาดตัวอักษร */
+  white-space: nowrap; /* กันขึ้นบรรทัดใหม่ */
 }
 
 /* Desktop menu */
@@ -135,6 +141,9 @@ h1, h2, h3 {
   align-items: center;
   justify-content: space-between; /* ดัน brand ไปซ้าย เมนูไปขวา */  
   gap: 1rem;
+  width: 100%;
+  max-width: 1200px; /* ถ้าอยากล็อกความกว้างสูงสุด */
+  margin: 0 auto;
 }
 
 .navbar nav ul {
