@@ -977,34 +977,39 @@ section h2 {
    Video Promo Section: Floating Effect
    =========================== */
 #video-promo {
-  /* ใช้พื้นหลังสีเทาอ่อน หรือสีครีมที่ตัดกับพื้นหลังไล่สีหลัก */
-  background: #fff;
+  /* ใช้พื้นหลังสีขาวหรือสีอ่อน เพื่อให้ตัดกับพื้นหลังไล่สีหลัก (linear-gradient) */
+  background: #ffffff;
   color: #333;
   padding: 5rem 2rem; 
   
-  /* เพิ่มเงาที่ชัดเจนกว่าปกติ */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); 
-  
-  /* ปรับให้ขอบมนเล็กน้อย (Optional) */
-  border-radius: 12px;
+  /* เพิ่มเงาที่ชัดเจนกว่าปกติเพื่อให้ดู "ลอย" */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); 
   
   /* ดึง section ขึ้นมาเหนือส่วนอื่นเล็กน้อย */
   position: relative; 
   z-index: 5;
-  margin: 10 auto;
+  
+  /* ปรับให้ขอบมนเล็กน้อย (Optional) */
+  border-radius: 12px;
 }
 
 #video-promo h2,
 #video-promo .intro {
-  color: #7c2d12; /* ใช้สีน้ำตาลเดิม */
+  /* ใช้สีน้ำตาลเข้มเดิมของหัวข้อ */
+  color: #7c2d12; 
 }
 
 /* วิดีโอเองก็มีเงาและขอบที่ดูสะอาดตา */
 #video-promo .video-responsive {
   max-width: 850px; 
   margin: 0 auto;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15); 
-  border: 1px solid #ddd; /* ขอบบางๆ */
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); 
+  border: 1px solid #e0e0e0; /* ขอบบางๆ */
   border-radius: 6px;
   overflow: hidden;
+}
+
+/* เพิ่มสไตล์สำหรับ Navbar ให้เมนูชิดขวา (จากคำขอรีวิวก่อนหน้า) */
+.navbar nav {
+  margin-left: auto; /* ดันเมนูไปชิดขวา */
 }
