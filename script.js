@@ -240,3 +240,21 @@ showGallerySlide(0);
 setInterval(() => {
   showGallerySlide(galleryIndex + 1);
 }, 5000);
+
+
+// Hamburger Menu Toggle
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // ปิดเมนูเมื่อคลิก link
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+}
