@@ -89,6 +89,12 @@ h1, h2, h3 {
   color: #fecf09; /* hover เป็นสีทอง */
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* ให้โลโก้กับชื่อห่างกันเล็กน้อย */
+}
+
 .logo {
   height: 55px;
   width: auto;
