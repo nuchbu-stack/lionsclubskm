@@ -198,6 +198,11 @@ h1, h2, h3 {
     display: flex;
   }
   
+  .nav-links ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
   /* ... โค้ดเดิมส่วน responsive อื่นๆ ... */
 }
 
