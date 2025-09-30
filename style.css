@@ -157,10 +157,7 @@ h1, h2, h3 {
     background: rgba(39, 58, 128, 1) !important; /* บังคับให้เป็นสีทึบ 100% */
   }
 
-  /* Hamburger/Close Icon ต้องแสดงบนมือถือ */
-  .hamburger {
-    display: flex; /* แสดง Hamburger */
-  }
+
   .close-menu {
     display: none; /* ซ่อน Close Icon */
   }
@@ -198,12 +195,20 @@ h1, h2, h3 {
     display: flex;
   }
   
-  .nav-links ul {
-    flex-direction: column;
+  /* FIX: เพิ่ม .navbar เข้าไปเพื่อเพิ่ม Specificity ให้ชนะกฎ Desktop */
+  .navbar .nav-links ul { 
+    flex-direction: column; /* 👈 FIX: ทำให้เมนูเรียงตามแนวตั้ง */
     gap: 1.5rem;
     text-align: center;
   }
-  /* ... โค้ดเดิมส่วน responsive อื่นๆ ... */
+  
+  .hamburger {
+    display: block; /* show on mobile */
+  }
+
+  .nav-links.active {
+    right: 0; /* slide in */
+  }
 }
 
 
