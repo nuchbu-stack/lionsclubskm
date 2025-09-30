@@ -206,6 +206,24 @@ h1, h2, h3 {
     display: block; /* ใช้ block ร่วมกับ right: -100% เพื่อควบคุมการแสดงผล */
   }
 
+  /* CRITICAL FIX: ล้างพื้นหลังสีขาวและขอบของปุ่มปิด */
+  .nav-links .close-menu {
+    /* ล้างพื้นหลังและขอบทั้งหมด */
+    background: transparent !important; 
+    border: none !important;           
+    /* ล้างเงา/focus outline ที่อาจดูเหมือนขอบขาว */
+    box-shadow: none !important;
+    outline: none !important;  
+    
+    /* Ensure the icon's color is set if you're using text/symbol (e.g., &times;) */
+    color: #fecf09 !important;
+  }
+  
+  /* หากคุณใช้ span.bar-x เพื่อสร้างไอคอน X ต้องยืนยันสีอีกครั้ง */
+  .nav-links .close-menu .bar-x {
+      background-color: #fecf09 !important;
+  }
+    
   /* 4. เมื่อเมนู Active (Slide In) */
   .nav-links.active {
     right: 0; /* เลื่อนเข้าจอ */
