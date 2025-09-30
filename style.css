@@ -178,6 +178,11 @@ h1, h2, h3 {
   .navbar {
     background: rgba(39, 58, 128, 1) !important; /* บังคับให้เป็นสีทึบ 100% */
   }
+  .navbar.scrolled {
+  background: rgba(39, 58, 128, 1); /* โปร่งลงเมื่อเลื่อน */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
 
   /* FIX 1: บังคับให้ Hamburger แสดงบน Mobile (เพื่อ Override กฎ .scrolled ที่อาจซ่อนอยู่) */
   /* ใช้ !important ชั่วคราว หรือ เพิ่ม Specificity ให้ชนะกฎอื่นที่อาจซ่อนมันไว้ */
@@ -279,12 +284,6 @@ h1, h2, h3 {
   .nav-links.active {
     right: 0; /* slide in */
   }
-}
-
-.navbar.scrolled {
-  background: rgba(39, 58, 128, 0.5); /* โปร่งลงเมื่อเลื่อน */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 .navbar .container {
