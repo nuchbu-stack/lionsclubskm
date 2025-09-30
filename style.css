@@ -826,36 +826,6 @@ section h2 {
   font-size: 0.85rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  #voices .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* 📱 Responsive */
-@media (max-width: 768px) {
-  #schedule .agenda-item {
-    grid-template-columns: 1fr;  /* เรียงลง */
-    text-align: left;            /* ชิดซ้าย */
-    padding: 1rem;
-  }
-
-  #schedule .agenda-time {
-    margin-bottom: 0.3rem;
-  }
-
-  #schedule .agenda-speaker {
-    margin-top: 0.8rem;
-  }
-
-  #schedule .agenda-speaker img {
-    width: 70px;
-    height: 70px;
-  }
-}
-
 
 
 /* ===========================
@@ -949,7 +919,31 @@ section h2 {
     font-size: 0.8rem;
     padding: 1rem;
   }
-}
+
+  #voices .cards {
+    grid-template-columns: 1fr;
+  }
+
+  #schedule .agenda-item {
+    grid-template-columns: 1fr;  /* เรียงลง */
+    text-align: left;            /* ชิดซ้าย */
+    padding: 1rem;
+  }
+
+  #schedule .agenda-time {
+    margin-bottom: 0.3rem;
+  }
+
+  #schedule .agenda-speaker {
+    margin-top: 0.8rem;
+  }
+
+  #schedule .agenda-speaker img {
+    width: 70px;
+    height: 70px;
+  }
+}  
+
 
 /* Responsive */ /* ===== Schedule Section ===== */
 @media (max-width: 600px) {
