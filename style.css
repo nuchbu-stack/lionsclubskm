@@ -221,11 +221,7 @@ h1, h2, h3 {
 }
 
 
-.navbar.scrolled {
-  background: rgba(39, 58, 128, 0.5); /* โปร่งลงเมื่อเลื่อน */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
+
 
 .navbar .container {
   display: flex;
