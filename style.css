@@ -655,6 +655,58 @@ section h2 {
   border: 2px solid #fecf09; /* ขอบสีทอง */
 }
 
+
+/* Voices Section */
+#voices {
+  text-align: center;
+}
+
+#voices h2 {
+  margin-bottom: 2rem;
+}
+
+#voices .card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+#voices .card:hover {
+  transform: translateY(-5px);
+}
+
+#voices .quote {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+#voices .author {
+  display: block;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+#voices .author small {
+  display: block;
+  font-weight: normal;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #voices .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* 📱 Responsive */
 @media (max-width: 768px) {
   #schedule .agenda-item {
