@@ -686,10 +686,11 @@ section h2 {
 }
 
 #voices .author {
-  display: block;
-  font-weight: 600;
-  color: #555;
-  font-size: 0.95rem;
+  display: block;          /* แยกออกมาเป็นบรรทัดใหม่ */
+  margin-top: 1rem;
+  font-weight: 600;        /* ทำให้ชื่อหนาขึ้น */
+  color: #555;             /* สีเทาเข้ม อ่านง่าย */
+  font-size: 1rem;
 }
 
 #voices .author small {
