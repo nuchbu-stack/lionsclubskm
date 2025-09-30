@@ -174,14 +174,14 @@ h1, h2, h3 {
 @media (max-width: 768px) {
   /* ... โค้ดเดิมส่วน responsive อื่นๆ ... */
 
-  /* CRITICAL FIX 1: บังคับให้ Navbar Bar ทึบ 100% ตลอดเวลาบน Mobile */
-  .navbar, 
-  .navbar.scrolled { 
-    /* สีน้ำเงินเข้ม (39, 58, 128) และค่าความทึบเป็น 1 (ทึบ 100%) */
-    background: rgba(39, 58, 128, 1) !important; 
-    /* ล้างเอฟเฟกต์โปร่งแสงที่อาจมาจาก Desktop CSS */
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+  /* FIX: Navbar BG Opaque on Mobile Always */
+  .navbar {
+    background: rgba(39, 58, 128, 1) !important; /* บังคับให้เป็นสีทึบ 100% */
+  }
+  .navbar.scrolled {
+  background: rgba(39, 58, 128, 1); /* โปร่งลงเมื่อเลื่อน */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   }
 
   /* FIX 1: บังคับให้ Hamburger แสดงบน Mobile (เพื่อ Override กฎ .scrolled ที่อาจซ่อนอยู่) */
