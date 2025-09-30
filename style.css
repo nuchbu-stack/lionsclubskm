@@ -92,17 +92,13 @@ h1, h2, h3 {
 }
 
 /* ===========================
-   Modern Hamburger Icon
+   Modern Hamburger Icon (FIXED STYLE)
    =========================== */
-
-/* ปรับสไตล์ปุ่ม Hamburger หลัก (เมื่อเมนูถูกปิด) */
 .hamburger {
-  /* ยกเลิกสไตล์เดิมที่ใช้ &#9776; */
   font-size: 0;
-  /* กำหนดขนาดใหม่ */
   width: 30px; 
   height: 24px; 
-  display: flex; /* ใช้ Flexbox จัดเรียงเส้น */
+  display: none; /* ซ่อนบน Desktop */
   flex-direction: column;
   justify-content: space-between;
   background: none;
@@ -113,7 +109,6 @@ h1, h2, h3 {
   z-index: 1010;
 }
 
-/* สไตล์เส้น (Bar) 3 เส้น */
 .hamburger .bar {
   display: block;
   width: 100%;
@@ -124,14 +119,9 @@ h1, h2, h3 {
 }
 
 /* ===========================
-   Modern Close Icon (X)
+   Modern Close Icon (X) (FIXED STYLE)
    =========================== */
-
-/* ปรับสไตล์ปุ่มปิดเมนูหลัก */
 .close-menu {
-  position: absolute;
-  top: 1.25rem; /* ปรับตำแหน่ง */
-  right: 1.5rem; /* ปรับตำแหน่ง */
   width: 30px;
   height: 30px;
   background: none;
@@ -142,37 +132,73 @@ h1, h2, h3 {
   display: none; /* ซ่อนบน Desktop */
 }
 
-/* สไตล์เส้น (Bar) 2 เส้นสำหรับ X */
+/* ตั้งค่าให้ X ไอคอนสามารถทำงานได้ */
 .close-menu .bar-x {
   display: block;
   width: 100%;
   height: 3px;
-  background-color: #fecf09; /* สีทอง Lions Gold */
+  background-color: #fecf09;
   border-radius: 5px;
   position: absolute;
   left: 0;
   transition: transform 0.3s ease-in-out;
 }
 
-/* หมุนเส้นให้เป็นตัว X */
-.close-menu .bar-1 {
-  transform: rotate(45deg);
-}
-
-.close-menu .bar-2 {
-  transform: rotate(-45deg);
-}
+.close-menu .bar-1 { transform: rotate(45deg); }
+.close-menu .bar-2 { transform: rotate(-45deg); }
 
 /* Media Query: ให้แสดงเฉพาะบน Mobile */
+/* @media (max-width: 768px) { ... } */
 @media (max-width: 768px) {
+  /* ... โค้ดเดิมส่วน responsive อื่นๆ ... */
+
+  /* FIX: Navbar BG Opaque on Mobile Always */
+  .navbar {
+    background: rgba(39, 58, 128, 1) !important; /* บังคับให้เป็นสีทึบ 100% */
+  }
+
+  /* Hamburger/Close Icon ต้องแสดงบนมือถือ */
   .hamburger {
     display: flex; /* แสดง Hamburger */
   }
-  
-  /* เพิ่ม logic ให้ปุ่มปิดแสดงเมื่อเมนูถูกเปิด (active) */
-  .nav-links.active .close-menu {
-    display: flex; 
+  .close-menu {
+    display: none; /* ซ่อน Close Icon */
   }
+
+  /* Mobile Navigation Menu */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* ซ่อนนอกจอ */
+    width: 70%;
+    height: 100%;
+    background: rgba(39, 58, 128, 0.98); /* สีทึบของเมนู */
+    transition: right 0.3s ease;
+    padding-top: 5rem;
+    z-index: 1005;
+    /* Nav ต้องซ่อนไว้ก่อน */
+    display: block; /* ใช้ block ร่วมกับ right: -100% เพื่อควบคุมการแสดงผล */
+  }
+
+  /* 4. เมื่อเมนู Active (Slide In) */
+  .nav-links.active {
+    right: 0; /* เลื่อนเข้าจอ */
+  }
+  
+  /* 5. Logic สลับ Icon: เมื่อ Nav Active */
+  /* โครงสร้าง: Nav -> Hamburger -> Close (HTML ที่แก้ไขแล้ว) */
+  
+  /* เมื่อ Nav Active ให้ซ่อน Hamburger (น้องชายคนถัดไป) */
+  .nav-links.active + .hamburger {
+    display: none;
+  }
+  
+  /* เมื่อ Nav Active ให้แสดง Close Icon (น้องชายคนรอง) */
+  .nav-links.active + .hamburger + .close-menu {
+    display: flex;
+  }
+  
+  /* ... โค้ดเดิมส่วน responsive อื่นๆ ... */
 }
 
 /* Mobile menu (hidden by default) */
