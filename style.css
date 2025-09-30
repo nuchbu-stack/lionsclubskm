@@ -91,125 +91,44 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
-/* ===========================
-   Modern Hamburger Icon
-   =========================== */
-
-/* ปรับสไตล์ปุ่ม Hamburger หลัก (เมื่อเมนูถูกปิด) */
+/* Hamburger button (mobile only) */
 .hamburger {
-  /* ยกเลิกสไตล์เดิมที่ใช้ &#9776; */
-  font-size: 0;
-  /* กำหนดขนาดใหม่ */
-  width: 30px; 
-  height: 24px; 
-  display: flex; /* ใช้ Flexbox จัดเรียงเส้น */
-  flex-direction: column;
-  justify-content: space-between;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  position: relative;
-  z-index: 1010;
-}
-
-/* สไตล์เส้น (Bar) 3 เส้น */
-.hamburger .bar {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #fecf09; /* สีทอง Lions Gold */
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
-}
-
-/* ===========================
-   Modern Close Icon (X)
-   =========================== */
-
-/* ปรับสไตล์ปุ่มปิดเมนูหลัก */
-.close-menu {
-  position: absolute;
-  top: 1.25rem; /* ปรับตำแหน่ง */
-  right: 1.5rem; /* ปรับตำแหน่ง */
-  width: 30px;
-  height: 30px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1010;
-  padding: 0;
-  display: none; /* ซ่อนบน Desktop */
-}
-
-/* สไตล์เส้น (Bar) 2 เส้นสำหรับ X */
-.close-menu .bar-x {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #fecf09; /* สีทอง Lions Gold */
-  border-radius: 5px;
-  position: absolute;
-  left: 0;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* หมุนเส้นให้เป็นตัว X */
-.close-menu .bar-1 {
-  transform: rotate(45deg);
-}
-
-.close-menu .bar-2 {
-  transform: rotate(-45deg);
-}
-
-/* Media Query: ให้แสดงเฉพาะบน Mobile */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex; /* แสดง Hamburger */
-  }
-  
-  /* เพิ่ม logic ให้ปุ่มปิดแสดงเมื่อเมนูถูกเปิด (active) */
-  .nav-links.active .close-menu {
-    display: flex; 
-  }
-}
-
-/* style.css - ส่วนเพิ่มปุ่มปิดเมนู */
-.close-menu {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 3rem; /* ตัว X ใหญ่ขึ้น */
-  font-weight: 200;
+  font-size: 1.8rem;
   background: none;
   border: none;
   color: #fff;
   cursor: pointer;
-  display: none; /* ซ่อนบน Desktop */
-  z-index: 1010;
+  display: none; /* hidden on desktop */
 }
 
+/* Mobile menu (hidden by default) */
 @media (max-width: 768px) {
-  /* แสดงปุ่มปิดเมนูเฉพาะบนมือถือ */
-  .close-menu {
-    display: block; 
-  }
-
-  /* Navbar บน Mobile: บังคับให้เป็นสีทึบ 100% ตลอดเวลา */
-  .navbar {
-    background: rgba(39, 58, 128, 1) !important; 
-    border-bottom: 3px solid #fecf09; /* ให้เส้นทองยังอยู่ */
-  }
-
-  /* Mobile Menu: ทึบเต็มแผ่น */
   .nav-links {
-    /* ... โค้ดเดิม ... */
-    background: rgba(39, 58, 128, 0.98); /* พื้นหลังทึบของ Mobile Menu */
+    position: fixed;
+    top: 0;
+    right: -100%; /* hidden off-screen */
+    width: 70%;
+    height: 100%;
+    background: rgba(39, 58, 128, 0.95);
+    transition: right 0.3s ease;
+    padding-top: 5rem;
   }
-  
-  /* ... โค้ดอื่นๆ ที่เกี่ยวข้องกับ Mobile ... */  
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block; /* show on mobile */
+  }
+
+  .nav-links.active {
+    right: 0; /* slide in */
+  }
 }
+
 
 /* เพิ่มโค้ดนี้เพื่อดันเมนูให้ไปชิดขวา โดยใช้พื้นที่ว่างทั้งหมด */
 .navbar nav {
@@ -886,6 +805,36 @@ section h2 {
   font-size: 0.85rem;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  #voices .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  #schedule .agenda-item {
+    grid-template-columns: 1fr;  /* เรียงลง */
+    text-align: left;            /* ชิดซ้าย */
+    padding: 1rem;
+  }
+
+  #schedule .agenda-time {
+    margin-bottom: 0.3rem;
+  }
+
+  #schedule .agenda-speaker {
+    margin-top: 0.8rem;
+  }
+
+  #schedule .agenda-speaker img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
 
 
 /* ===========================
@@ -979,31 +928,7 @@ section h2 {
     font-size: 0.8rem;
     padding: 1rem;
   }
-
-  #voices .cards {
-    grid-template-columns: 1fr;
-  }
-
-  #schedule .agenda-item {
-    grid-template-columns: 1fr;  /* เรียงลง */
-    text-align: left;            /* ชิดซ้าย */
-    padding: 1rem;
-  }
-
-  #schedule .agenda-time {
-    margin-bottom: 0.3rem;
-  }
-
-  #schedule .agenda-speaker {
-    margin-top: 0.8rem;
-  }
-
-  #schedule .agenda-speaker img {
-    width: 70px;
-    height: 70px;
-  }
-}  
-
+}
 
 /* Responsive */ /* ===== Schedule Section ===== */
 @media (max-width: 600px) {
@@ -1088,3 +1013,7 @@ section h2 {
   overflow: hidden;
 }
 
+/* เพิ่มสไตล์สำหรับ Navbar ให้เมนูชิดขวา (จากคำขอรีวิวก่อนหน้า) */
+.navbar nav {
+  margin-left: auto; /* ดันเมนูไปชิดขวา */
+}

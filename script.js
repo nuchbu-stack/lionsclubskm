@@ -253,37 +253,16 @@ setInterval(() => {
 
 
 // ========================
-// Hamburger Menu Toggle (Logic ที่แก้ไขแล้ว)
+// Hamburger Menu Toggle (New Logic)
 // ========================
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
-  const closeMenu = document.getElementById('close-menu'); // ปุ่มปิด X
-  const navbar = document.querySelector(".navbar"); // เพื่อจัดการ Navbar BG
+  const closeMenu = document.getElementById('close-menu'); // ปุ่มปิดที่เพิ่มใน HTML
 
   if (hamburger && navLinks) {
-    
-    // ฟังก์ชันหลักในการเปิด/ปิดเมนู
     const toggleMenu = () => {
-      // 1. สลับคลาส 'active' เพื่อแสดง/ซ่อนเมนู
       navLinks.classList.toggle('active');
-
-      // 2. จัดการการแสดงผลของ Hamburger และ Close Icon
-      // Logic นี้ควรทำงานเมื่ออยู่บน Mobile (<= 768px)
-      if (window.innerWidth <= 768) {
-          if (navLinks.classList.contains('active')) {
-            // เมื่อเมนูเปิด: ซ่อน Hamburger, แสดง Close (X)
-            hamburger.style.display = 'none';
-            if (closeMenu) closeMenu.style.display = 'flex'; // ใช้ flex ตาม CSS X icon
-            
-            // บนมือถือเมื่อเมนูเปิด ให้ navbar เป็นสีทึบ
-            navbar.classList.add('scrolled'); 
-          } else {
-            // เมื่อเมนูปิด: แสดง Hamburger, ซ่อน Close (X)
-            hamburger.style.display = 'flex';
-            if (closeMenu) closeMenu.style.display = 'none';
-          }
-      }
     };
 
     // 1. กด Hamburger เปิด/ปิดเมนู
@@ -297,39 +276,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. กดลิงก์ในเมนูแล้วปิดเมนู
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        // ปิดเมนูหลัก
         navLinks.classList.remove('active');
-        
-        // จัดการ Icon ให้กลับไปเป็น Hamburger
-        if (window.innerWidth <= 768) {
-            hamburger.style.display = 'flex';
-            if (closeMenu) closeMenu.style.display = 'none';
-        }
       });
     });
-  }
-  
-  // จัดการการแสดงผลเริ่มต้นเมื่อโหลดหน้าจอ
-  window.addEventListener('resize', () => {
-      // เมื่อเปลี่ยนขนาดจอ (e.g. จาก Desktop ไป Mobile)
-      if (window.innerWidth > 768) {
-          // บน Desktop ให้ซ่อน Hamburger/Close icon
-          if (hamburger) hamburger.style.display = 'none';
-          if (closeMenu) closeMenu.style.display = 'none';
-      } else {
-          // บน Mobile: ถ้าเมนูไม่ได้เปิดอยู่ ให้แสดง Hamburger
-          if (!navLinks.classList.contains('active')) {
-              if (hamburger) hamburger.style.display = 'flex';
-              if (closeMenu) closeMenu.style.display = 'none';
-          }
-      }
-  });
-  
-  // เรียกใช้งานครั้งแรกเพื่อให้ Icon แสดงผลถูกต้องเมื่อเข้าหน้า
-  if (window.innerWidth > 768) {
-      if (hamburger) hamburger.style.display = 'none';
-  } else {
-      if (hamburger) hamburger.style.display = 'flex';
   }
 });
 
