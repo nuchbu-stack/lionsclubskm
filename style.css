@@ -73,6 +73,7 @@ h1, h2, h3 {
 .navbar .container {
   display: flex;
   align-items: center;
+  justify-content: space-between; /* ดัน brand ไปซ้าย เมนูไปขวา */  
   gap: 1rem;
 }
 
