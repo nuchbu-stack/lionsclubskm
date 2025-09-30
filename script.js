@@ -242,19 +242,33 @@ setInterval(() => {
 }, 5000);
 
 
-// Hamburger Menu Toggle
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
+// ========================
+// Hamburger Menu Toggle (New Logic)
+// ========================
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  const closeMenu = document.getElementById('close-menu'); // ปุ่มปิดที่เพิ่มใน HTML
 
-if (hamburger && navLinks) {
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
+  if (hamburger && navLinks) {
+    const toggleMenu = () => {
+      navLinks.classList.toggle('active');
+    };
 
-  // ปิดเมนูเมื่อคลิก link
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("active");
+    // 1. กด Hamburger เปิด/ปิดเมนู
+    hamburger.addEventListener('click', toggleMenu);
+    
+    // 2. กดปุ่ม Close ปิดเมนู
+    if (closeMenu) {
+        closeMenu.addEventListener('click', toggleMenu);
+    }
+
+    // 3. กดลิงก์ในเมนูแล้วปิดเมนู
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
     });
-  });
-}
+  }
+});
+
