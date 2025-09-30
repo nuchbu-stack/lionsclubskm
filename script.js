@@ -1,9 +1,19 @@
-// ========================
+// =========================
 // Navbar Scroll Effect
 // (เปลี่ยน style navbar เมื่อ scroll ลง)
-// ========================
+// =========================
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
+
+  // ตรวจสอบขนาดหน้าจอ: ถ้าเป็น Mobile (<= 768px) ให้ออกจากการทำงานนี้ทันที
+  // Mobile จะถูกจัดการเรื่องสีพื้นหลังที่ CSS แทน
+  if (window.innerWidth <= 768) {
+      // **สำคัญ:** ทำให้แน่ใจว่าบน Mobile ไม่มีคลาส scrolled เพื่อป้องกันการเปลี่ยนสีที่ไม่ต้องการ
+      // แต่ควรถูก override โดย CSS
+      return; 
+  }
+
+  // Logic สำหรับ Desktop (เมื่อ scroll ลงมาเกิน 50px)
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
   } else {

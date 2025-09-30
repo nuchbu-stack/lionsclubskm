@@ -195,6 +195,20 @@ h1, h2, h3 {
   .close-menu {
     display: block; 
   }
+
+  /* Navbar บน Mobile: บังคับให้เป็นสีทึบ 100% ตลอดเวลา */
+  .navbar {
+    background: rgba(39, 58, 128, 1) !important; 
+    border-bottom: 3px solid #fecf09; /* ให้เส้นทองยังอยู่ */
+  }
+
+  /* Mobile Menu: ทึบเต็มแผ่น */
+  .nav-links {
+    /* ... โค้ดเดิม ... */
+    background: rgba(39, 58, 128, 0.98); /* พื้นหลังทึบของ Mobile Menu */
+  }
+  
+  /* ... โค้ดอื่นๆ ที่เกี่ยวข้องกับ Mobile ... */  
 }
 
 /* เพิ่มโค้ดนี้เพื่อดันเมนูให้ไปชิดขวา โดยใช้พื้นที่ว่างทั้งหมด */
