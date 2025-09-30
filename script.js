@@ -8,8 +8,6 @@ window.addEventListener("scroll", function () {
   // ตรวจสอบขนาดหน้าจอ: ถ้าเป็น Mobile (<= 768px) ให้ออกจากการทำงานนี้ทันที
   // Mobile จะถูกจัดการเรื่องสีพื้นหลังที่ CSS แทน
   if (window.innerWidth <= 768) {
-      // **สำคัญ:** ทำให้แน่ใจว่าบน Mobile ไม่มีคลาส scrolled เพื่อป้องกันการเปลี่ยนสีที่ไม่ต้องการ
-      // แต่ควรถูก override โดย CSS
       return; 
   }
 
@@ -253,15 +251,18 @@ setInterval(() => {
 
 
 // ========================
-// Hamburger Menu Toggle (New Logic)
+// Hamburger Menu Toggle (Logic ที่แก้ไขแล้ว)
 // ========================
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
-  const closeMenu = document.getElementById('close-menu'); // ปุ่มปิดที่เพิ่มใน HTML
-
+  const closeMenu = document.getElementById('close-menu'); 
+  
   if (hamburger && navLinks) {
+    
+    // ฟังก์ชันหลักในการเปิด/ปิดเมนู
     const toggleMenu = () => {
+      // 1. สลับคลาส 'active' เพื่อแสดง/ซ่อนเมนูและจัดการ Icon ผ่าน CSS
       navLinks.classList.toggle('active');
     };
 
@@ -276,6 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. กดลิงก์ในเมนูแล้วปิดเมนู
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
+        // ปิดเมนูหลัก
         navLinks.classList.remove('active');
       });
     });
