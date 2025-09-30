@@ -991,6 +991,7 @@ section h2 {
   /* ดึง section ขึ้นมาเหนือส่วนอื่นเล็กน้อย */
   position: relative; 
   z-index: 5;
+  margin: 10 auto;
 }
 
 #video-promo h2,
