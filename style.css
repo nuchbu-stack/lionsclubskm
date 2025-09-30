@@ -91,41 +91,87 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
-/* Hamburger button (mobile only) */
+/* ===========================
+   Modern Hamburger Icon
+   =========================== */
+
+/* ปรับสไตล์ปุ่ม Hamburger หลัก (เมื่อเมนูถูกปิด) */
 .hamburger {
-  font-size: 1.8rem;
+  /* ยกเลิกสไตล์เดิมที่ใช้ &#9776; */
+  font-size: 0;
+  /* กำหนดขนาดใหม่ */
+  width: 30px; 
+  height: 24px; 
+  display: flex; /* ใช้ Flexbox จัดเรียงเส้น */
+  flex-direction: column;
+  justify-content: space-between;
   background: none;
   border: none;
-  color: #fff;
   cursor: pointer;
-  display: none; /* hidden on desktop */
+  padding: 0;
+  position: relative;
+  z-index: 1010;
 }
 
-/* Mobile menu (hidden by default) */
+/* สไตล์เส้น (Bar) 3 เส้น */
+.hamburger .bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fecf09; /* สีทอง Lions Gold */
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ===========================
+   Modern Close Icon (X)
+   =========================== */
+
+/* ปรับสไตล์ปุ่มปิดเมนูหลัก */
+.close-menu {
+  position: absolute;
+  top: 1.25rem; /* ปรับตำแหน่ง */
+  right: 1.5rem; /* ปรับตำแหน่ง */
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1010;
+  padding: 0;
+  display: none; /* ซ่อนบน Desktop */
+}
+
+/* สไตล์เส้น (Bar) 2 เส้นสำหรับ X */
+.close-menu .bar-x {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fecf09; /* สีทอง Lions Gold */
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* หมุนเส้นให้เป็นตัว X */
+.close-menu .bar-1 {
+  transform: rotate(45deg);
+}
+
+.close-menu .bar-2 {
+  transform: rotate(-45deg);
+}
+
+/* Media Query: ให้แสดงเฉพาะบน Mobile */
 @media (max-width: 768px) {
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%; /* hidden off-screen */
-    width: 70%;
-    height: 100%;
-    background: rgba(39, 58, 128, 0.95);
-    transition: right 0.3s ease;
-    padding-top: 5rem;
-  }
-
-  .nav-links ul {
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
-  }
-
   .hamburger {
-    display: block; /* show on mobile */
+    display: flex; /* แสดง Hamburger */
   }
-
-  .nav-links.active {
-    right: 0; /* slide in */
+  
+  /* เพิ่ม logic ให้ปุ่มปิดแสดงเมื่อเมนูถูกเปิด (active) */
+  .nav-links.active .close-menu {
+    display: flex; 
   }
 }
 
