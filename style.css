@@ -60,6 +60,12 @@ h1, h2, h3 {
   justify-content: space-between; /* logo left, menu right */
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* Desktop menu */
 .nav-links ul {
   display: flex;
