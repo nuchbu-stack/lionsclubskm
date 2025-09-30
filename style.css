@@ -187,9 +187,18 @@ h1, h2, h3 {
     z-index: 1010; /* ให้มันอยู่เหนือทุกสิ่ง */
   }
 
+  /* FIX: แก้ปัญหาพื้นหลังขาวของปุ่มปิด */
   .close-menu {
-    display: none !important;  /* ซ่อน Close Icon */
-    z-index: 1010;
+    /* CRITICAL FIX: บังคับให้พื้นหลังปุ่มเป็นโปร่งใส */
+    background: transparent !important; 
+    
+    /* ลบขอบ (ถ้ามี) ซึ่งมักเป็นสาเหตุที่ทำให้ดูเป็นสี่เหลี่ยมสีขาว */
+    border: none !important; 
+    
+    /* ... โค้ดอื่นๆ ที่คุณเคยแก้ไขเรื่องตำแหน่งและขนาด ... */
+    position: absolute !important; 
+    top: 1.5rem !important; 
+    right: 1.5rem !important; 
   }
 
   /* Mobile Navigation Menu */
@@ -204,7 +213,7 @@ h1, h2, h3 {
     padding-top: 5rem;
     z-index: 1005;
     /* Nav ต้องซ่อนไว้ก่อน */
-    /*display: block; /* ใช้ block ร่วมกับ right: -100% เพื่อควบคุมการแสดงผล */
+    display: block; /* ใช้ block ร่วมกับ right: -100% เพื่อควบคุมการแสดงผล */
   }
 
   /* 4. เมื่อเมนู Active (Slide In) */
