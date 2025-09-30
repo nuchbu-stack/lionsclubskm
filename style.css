@@ -950,3 +950,46 @@ section h2 {
   50% { transform: translate(-50%, -10px); }
 }
 
+/* ===========================
+   Video Section
+   =========================== */
+#video {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #fdf8f3; /* สีโทนอุ่นอ่อน */
+}
+
+#video h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #273a80; /* ใช้สีน้ำเงินจาก theme */
+}
+
+#video .intro {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
