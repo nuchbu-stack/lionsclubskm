@@ -4,20 +4,28 @@
 // =========================
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
+  const navLinks = document.getElementById('nav-links'); // ดึงเมนูมาตรวจสอบ
 
-  // ตรวจสอบขนาดหน้าจอ: ถ้าเป็น Mobile (<= 768px) ให้ออกจากการทำงานนี้ทันที
-  // Mobile จะถูกจัดการเรื่องสีพื้นหลังที่ CSS แทน
-  if (window.innerWidth <= 768) {
-      return; 
-  }
-
-  // Logic สำหรับ Desktop (เมื่อ scroll ลงมาเกิน 50px)
+  // Desktop Scroll Logic
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
   } else {
-    navbar.classList.remove("scrolled");
+    // ปิดการทำงานบน Mobile เมื่อเมนูเปิดอยู่
+    if (window.innerWidth > 768 || !navLinks.classList.contains('active')) {
+        navbar.classList.remove("scrolled");
+    }
+  }
+
+  // Mobile Logic: ถ้าอยู่บน Mobile ให้พื้นหลังเป็นสีทึบเสมอเมื่อ Scroll
+  if (window.innerWidth <= 768) {
+      navbar.classList.add('scrolled');
+  } else if (window.scrollY < 50) {
+      // บน Desktop ให้เอา scrolled ออกเมื่อกลับไปด้านบน
+      navbar.classList.remove('scrolled');
   }
 });
+
+
 
 // ========================
 // Fade-in on Scroll (Basic)
