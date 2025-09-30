@@ -974,23 +974,36 @@ section h2 {
 }
 
 /* ===========================
-   Video Promo Section Override
+   Video Promo Section: Floating Effect
    =========================== */
 #video-promo {
-  /* เปลี่ยนพื้นหลังเป็นสีเข้มหรือสีเน้นของแบรนด์ */
-  background: #273A80; /* สีน้ำเงินเข้มของ Lions Club */
-  color: #fff; /* เปลี่ยนสีข้อความใน Section นี้เป็นสีขาว */
-  padding: 4rem 2rem; /* ให้มีระยะห่างด้านบน/ล่างมากขึ้น */
+  /* ใช้พื้นหลังสีเทาอ่อน หรือสีครีมที่ตัดกับพื้นหลังไล่สีหลัก */
+  background: #fff;
+  color: #333;
+  padding: 5rem 2rem; 
+  
+  /* เพิ่มเงาที่ชัดเจนกว่าปกติ */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); 
+  
+  /* ปรับให้ขอบมนเล็กน้อย (Optional) */
+  border-radius: 12px;
+  
+  /* ดึง section ขึ้นมาเหนือส่วนอื่นเล็กน้อย */
+  position: relative; 
+  z-index: 5;
 }
 
-/* ปรับสีหัวข้อหรือข้อความ Intro ภายใน Section นี้ */
 #video-promo h2,
 #video-promo .intro {
-  color: #fecf09; /* ใช้สีเหลืองทองเป็นสีเน้นสำหรับข้อความ */
+  color: #7c2d12; /* ใช้สีน้ำตาลเดิม */
 }
 
-/* เพิ่มเงาให้กับวิดีโอเพื่อให้ลอยออกมา */
+/* วิดีโอเองก็มีเงาและขอบที่ดูสะอาดตา */
 #video-promo .video-responsive {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
-  border: 5px solid #fecf09; /* เพิ่มขอบสีทอง */
+  max-width: 850px; 
+  margin: 0 auto;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15); 
+  border: 1px solid #ddd; /* ขอบบางๆ */
+  border-radius: 6px;
+  overflow: hidden;
 }
