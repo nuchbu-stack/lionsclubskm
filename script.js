@@ -1,28 +1,34 @@
 // =========================
-// Navbar Scroll Effect
-// (เปลี่ยน style navbar เมื่อ scroll ลง)
+// Navbar Scroll Effect (Logic ที่ปรับให้รองรับ Mobile)
 // =========================
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
-  const navLinks = document.getElementById('nav-links'); // ดึงเมนูมาตรวจสอบ
+  const scrollY = window.scrollY;
+  const isMobile = window.innerWidth <= 768;
 
-  // Desktop Scroll Logic
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    // ปิดการทำงานบน Mobile เมื่อเมนูเปิดอยู่
-    if (window.innerWidth > 768 || !navLinks.classList.contains('active')) {
-        navbar.classList.remove("scrolled");
+  // 1. Logic สำหรับ Desktop (เปลี่ยนสีเมื่อ Scroll)
+  if (!isMobile) {
+    if (scrollY > 50) {
+      // Desktop: เมื่อเลื่อนลงมา ให้โปร่งแสง (ตาม .scrolled ใน CSS)
+      navbar.classList.add("scrolled");
+    } else {
+      // Desktop: เมื่ออยู่บนสุด ให้ใช้สีเดิม (rgba(39, 58, 128, 0.95))
+      navbar.classList.remove("scrolled");
     }
+  } 
+  
+  // 2. Logic สำหรับ Mobile (ทึบเสมอ)
+  // **ไม่จำเป็นต้องทำอะไรใน JS** เพราะเราได้กำหนดให้
+  // .navbar ใน CSS Media Query เป็นสีทึบด้วย !important แล้ว
+  
+  // ***หากต้องการให้ Mobile ใช้คลาส .scrolled ตลอดเวลา (เพื่อให้ง่ายต่อการจัดการ CSS)***
+  if (isMobile) {
+      if (!navbar.classList.contains('scrolled')) {
+          // ถ้าเป็น Mobile ให้เพิ่มคลาส scrolled ตลอดเวลา
+          navbar.classList.add('scrolled'); 
+      }
   }
 
-  // Mobile Logic: ถ้าอยู่บน Mobile ให้พื้นหลังเป็นสีทึบเสมอเมื่อ Scroll
-  if (window.innerWidth <= 768) {
-      navbar.classList.add('scrolled');
-  } else if (window.scrollY < 50) {
-      // บน Desktop ให้เอา scrolled ออกเมื่อกลับไปด้านบน
-      navbar.classList.remove('scrolled');
-  }
 });
 
 
