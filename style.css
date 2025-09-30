@@ -155,7 +155,6 @@ h1, h2, h3 {
   /* FIX: Navbar BG Opaque on Mobile Always */
   .navbar {
     background: rgba(39, 58, 128, 1) !important; /* บังคับให้เป็นสีทึบ 100% */
-  
   }
 
 
@@ -210,8 +209,6 @@ h1, h2, h3 {
   .nav-links.active {
     right: 0; /* slide in */
   }
-
-  
 }
 
 
