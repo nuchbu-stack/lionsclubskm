@@ -71,6 +71,24 @@ h1, h2, h3 {
   gap: 1rem;
 }
 
+.navbar nav ul {
+  display: flex;
+  list-style: none;
+  margin-left: auto; /* ดันเมนูไปขวา */
+  gap: 1.5rem;
+}
+
+.navbar nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+  color: #fecf09; /* hover เป็นสีทอง */
+}
+
 .logo {
   height: 55px;
   width: auto;
