@@ -202,7 +202,6 @@ h1, h2, h3 {
 }
 
 
-
 .navbar.scrolled {
   background: rgba(39, 58, 128, 0.5); /* โปร่งลงเมื่อเลื่อน */
   backdrop-filter: blur(10px);
@@ -1081,7 +1080,3 @@ section h2 {
   overflow: hidden;
 }
 
-/* เพิ่มสไตล์สำหรับ Navbar ให้เมนูชิดขวา (จากคำขอรีวิวก่อนหน้า) */
-.navbar nav {
-  margin-left: auto; /* ดันเมนูไปชิดขวา */
-}
