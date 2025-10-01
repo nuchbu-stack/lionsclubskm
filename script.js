@@ -292,3 +292,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// ========================\
+// Typing Animation Trigger on Scroll (Lions Club)
+// ========================\
+const animatedTitle = document.querySelector(".animated-title-start");
+
+const typingOptions = { threshold: 0.8 }; // 80% ของ section เข้ามาในจอจึงเริ่ม
+
+const startTypingOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    // 💡 เมื่อส่วนนี้เข้าสู่หน้าจอ
+    if (entry.isIntersecting) {
+        // 1. นำคลาส 'animated-title-start' ออก
+        animatedTitle.classList.remove("animated-title-start");
+        // 2. เพิ่มคลาส 'show-typing' (คลาสนี้จะถูกเพิ่มใน CSS ต่อไป)
+        animatedTitle.classList.add("show-typing");
+        
+        observer.unobserve(entry.target); // หยุดดูเมื่อเริ่มทำงานแล้ว
+    }
+  });
+}, typingOptions);
+
+// เริ่มต้นสังเกตการณ์ Lions Club Section
+const lionsSection = document.getElementById("lions-intro-animate");
+if (lionsSection && animatedTitle) {
+    startTypingOnScroll.observe(lionsSection);
+}
