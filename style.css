@@ -1177,228 +1177,235 @@ section h2 {
 
 
 /* =========================================================
-   LIONS CLUB HISTORY PANEL (Concept 5: Dark Blue History Panel)
-   - Combines 2-column layout (Concept 4) with Dark Blue BG (Concept 3)
+   LIONS CLUB INTRO (Concept 7: Minimalist, Typing Title)
+   - Typing effect on H2, small leader image, 50/50 clean layout.
    ========================================================= */
 
-#lions-blue-history-panel {
-    /* Full-width Dark Blue Background: #273a80 คือ Lions Blue */
-    background-color: #273a80; 
+#lions-intro-animate {
+    background-color: #273a80; /* Lions Blue */
     color: #ffffff; 
-    padding: 6rem 0; 
+    padding: 6rem 0 8rem 0; 
 }
 
-/* --- DIVIDER HEADER (ปรับให้เป็นสีขาว/ทอง บนพื้นหลังน้ำเงิน) --- */
-#lions-blue-history-panel .divider-header {
+/* --- TYPING ANIMATION HEADER --- */
+.animated-header-wrapper {
     text-align: center;
     margin-bottom: 4rem;
-    padding: 1rem 0;
+    padding: 0 2rem;
 }
 
-#lions-blue-history-panel .divider-header h2 {
-    font-size: 4rem; 
+.animated-title-text {
+    font-size: 4.5rem; 
     font-weight: 900;
-    color: #ffffff; /* ชื่อใหญ่สีขาว */
-    letter-spacing: 0.5rem; 
+    color: #ffffff; 
+    letter-spacing: 0.15em; 
     line-height: 1;
     text-transform: uppercase;
+    
+    /* Typing Effect CSS */
+    max-width: 10ch; /* ความยาวตามจำนวนตัวอักษร 'LIONS CLUB' (10 ตัวอักษร) */
+    overflow: hidden; /* ซ่อนข้อความที่เกินมา */
+    margin: 0 auto;
+    border-right: .15em solid #fecf09; /* เคอร์เซอร์ */
+    white-space: nowrap; /* ป้องกันการขึ้นบรรทัดใหม่ */
+    /* animation: typing [ระยะเวลา] steps([จำนวนตัวอักษร], end) forwards, blink-caret [ระยะเวลา] step-end infinite; */
+    animation: 
+      typing 3.5s steps(10, end) forwards, 
+      blink-caret .75s step-end infinite; 
+    animation-delay: 0.5s; /* หน่วงเวลาเริ่มต้น */
 }
 
-#lions-blue-history-panel .divider-header p {
+/* Keyframes for Typing Effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 10ch }
+}
+
+/* Keyframes for Cursor Blink */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #fecf09; } /* สีทอง Lions */
+}
+
+.animated-subtitle {
     font-size: 1.5rem;
-    color: #fecf09; /* ชื่อเล็กสีทอง Lions */
-    font-weight: 600;
-    margin-top: -0.5rem; 
+    color: #fecf09;
+    font-weight: 500;
+    margin-top: 1rem;
     letter-spacing: 0.1rem;
 }
 
-/* เส้นคั่นแบบ Modern */
-#lions-blue-history-panel .divider-header p::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 4px;
-    background-color: #fecf09;
-    margin: 15px auto 0 auto;
-    border-radius: 2px;
-}
-
-
-/* --- HISTORY GRID (2 COLUMNS) --- */
-.history-grid-blue {
+/* --- CONTENT GRID (50/50) --- */
+.intro-grid-clean {
     display: grid;
-    grid-template-columns: 40% 60%; 
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: 1fr 1fr; /* 50/50 split */
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 3rem auto 0 auto;
     padding: 0 2rem;
     align-items: flex-start; 
 }
 
-/* --- VISUAL FOCUS (คอลัมน์ซ้าย) --- */
-.history-visual-blue {
+/* --- LEFT COLUMN: LEADER INFO --- */
+.intro-leader-panel {
     text-align: center;
+    padding: 1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.2); /* เส้นแบ่งจางๆ */
 }
 
-.main-leader-img-blue {
-    width: 100%;
-    max-width: 300px; 
-    height: auto;
-    border-radius: 50%; 
-    border: 5px solid #fecf09; /* กรอบสีทอง */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* เพิ่มเงาเข้มขึ้นบนพื้นหลังมืด */
+.leader-intro-heading {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fecf09; 
     margin-bottom: 2rem;
-    display: block; 
-    margin-left: auto;
-    margin-right: auto;
+    line-height: 1.4;
 }
 
-.key-fact-box-blue {
-    /* กล่องข้อมูลนายกคนปัจจุบัน */
-    background-color: #1a295c; /* น้ำเงินที่เข้มขึ้นเล็กน้อย */
-    border: 1px solid #fecf09;
-    color: #ffffff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+.leader-visual-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-.key-fact-box-blue h3 {
-    color: #fecf09; /* สีทองสำหรับหัวข้อ */
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #fecf09;
+.small-leader-img {
+    width: 90px; /* รูปภาพเล็ก */
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
-.leader-name {
+.leader-info-block {
+    text-align: left;
+}
+
+.leader-name-clean {
     font-size: 1.5rem;
     font-weight: 700;
-    margin: 0.5rem 0 0.2rem 0;
+    margin: 0;
     color: #ffffff;
 }
 
-.leader-term {
+.leader-role-clean {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #fecf09;
+    margin: 0;
+}
+
+.leader-quote {
     font-size: 1.1rem;
-    font-weight: 500;
-    color: #fecf09; /* เน้นปีบริหารด้วยสีทอง */
-    margin-bottom: 1.5rem;
+    font-style: italic;
+    color: #cccccc; 
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
 }
 
-.highlight-gold {
-    color: #fecf09; /* เน้นสีทองในข้อความ */
-    font-weight: 700;
-}
-
-.history-cta-blue {
-    margin-top: 0.5rem;
-    display: block;
-    width: 100%;
-    text-align: center;
-    /* Inverted Colors: ใช้ทองเป็นพื้น, น้ำเงินเป็นตัวอักษร */
+.intro-cta {
     background-color: #fecf09; 
     color: #273a80 !important; 
-    border: 2px solid #fecf09;
     font-weight: 700;
     padding: 0.8rem 2rem;
+    border-radius: 4px;
     text-decoration: none;
+    display: inline-block;
     transition: background-color 0.3s;
 }
 
-.history-cta-blue:hover {
+.intro-cta:hover {
     background-color: #fff;
-    border-color: #fff;
 }
 
 
-/* --- TEXT DETAIL (คอลัมน์ขวา) --- */
-.history-text-blue {
-    text-align: justify; 
+/* --- RIGHT COLUMN: HISTORY TEXT --- */
+.intro-history-text {
+    padding: 1rem;
+    text-align: justify;
 }
 
-.history-text-blue p {
-    color: #ffffff; /* ข้อความสีขาว */
-    line-height: 1.7;
-    margin-bottom: 1.2rem;
-}
-
-.history-text-blue p.intro-large {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-top: 0;
-}
-
-.final-motto {
+.history-highlight {
     font-size: 1.2rem;
-    font-style: italic;
-    color: #fecf09; /* คำพูดเน้นด้วยสีทอง */
-    text-align: center;
-    margin-top: 3rem !important;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.intro-history-text p {
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.motto-clean {
+    font-size: 1.1rem;
     font-weight: 700;
+    color: #fecf09;
+    text-align: right;
+    margin-top: 2rem !important;
 }
 
-/* =========================================================
-    LIONS CLUB HISTORY PANEL (Concept 6: Dark Blue, Frameless)
-   ========================================================= */
-
-/* (ส่วน CSS อื่น ๆ คงเดิม) */
-
-/* --- VISUAL FOCUS (คอลัมน์ซ้าย) --- */
-.history-visual-blue {
-    text-align: center;
-}
-
-.main-leader-img-blue {
-    width: 100%;
-    max-width: 300px; 
-    height: auto;
-    border-radius: 50%; /* ยังคงความกลมไว้ */
-    /* ❌ ลบเส้นขอบสีทองออก */
-    /* border: none; */ 
-    /* ✅ ใช้เงาบาง ๆ เพื่อให้ดูนุ่มนวลขึ้น */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); 
-    margin-bottom: 2rem;
-    display: block; 
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* (ส่วน CSS อื่น ๆ คงเดิม) */
 
 /* ===========================
    Mobile Design (max-width: 768px)
    =========================== */
 @media (max-width: 768px) {
-    #lions-blue-history-panel {
+    #lions-intro-animate {
         padding: 4rem 0;
     }
+    
+    .animated-title-text {
+        font-size: 2.5rem;
+        max-width: 9.5ch; /* ปรับขนาดให้พอดีบนมือถือ */
+    }
+    
+    .animated-title-text.show {
+         /* ต้องปรับ animation ให้เข้ากับขนาดใหม่ด้วย */
+        animation: 
+            typing-mobile 3.5s steps(10, end) forwards, 
+            blink-caret .75s step-end infinite; 
+        animation-delay: 0.5s;
+    }
+
+    @keyframes typing-mobile {
+      from { width: 0 }
+      to { width: 9.5ch }
+    }
+
 
     /* 🛑 บังคับให้เรียงซ้อนกันบน Mobile */
-    .history-grid-blue {
+    .intro-grid-clean {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
     
-    /* สลับลำดับให้รูปภาพ/ข้อเท็จจริงอยู่บน Mobile */
-    .history-visual-blue {
+    .intro-leader-panel {
         order: 1; 
-    }
-
-    .history-text-blue {
-        order: 2; 
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* เพิ่มเส้นแบ่งด้านล่างแทน */
+        padding-bottom: 2rem;
         text-align: left; /* เปลี่ยนกลับเป็นชิดซ้ายบนมือถือ */
     }
 
-    .main-leader-img-blue {
-        max-width: 200px;
-    }
-    
-    .key-fact-box-blue {
-        text-align: center;
+    .intro-history-text {
+        order: 2; 
+        text-align: left;
     }
 
-    .leader-name {
-        font-size: 1.3rem;
+    .leader-visual-small {
+        justify-content: flex-start; /* ชิดซ้าย */
+        gap: 1rem;
+    }
+    
+    .intro-cta {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .leader-quote {
+        text-align: left;
     }
 }
