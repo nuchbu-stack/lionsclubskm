@@ -1181,59 +1181,52 @@ section h2 {
    - Typing effect on H2, small leader image, 50/50 clean layout.
    ========================================================= */
 
-#lions-intro-animate {
-    background-color: #273a80; /* Lions Blue */
-    color: #ffffff; 
-    padding: 6rem 0 8rem 0; 
-}
-
-/* --- TYPING ANIMATION HEADER --- */
+/* ===========================
+   LIONS CLUB INTRO
+   =========================== */
 .animated-header-wrapper {
     text-align: center;
-    margin-bottom: 4rem;
-    padding: 0 2rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
 }
 
 .animated-title-text {
-    font-size: 4.5rem; 
-    font-weight: 900;
-    color: #ffffff; 
-    letter-spacing: 0.15em; 
-    line-height: 1;
-    text-transform: uppercase;
-    
-    /* Typing Effect CSS - แก้ไขค่า */
-    max-width: 11ch; /* ✅ FIX: เพิ่มความกว้างเป็น 11ch (จาก 10ch) เพื่อให้มีที่พอสำหรับตัว B และเคอร์เซอร์ */
-    overflow: hidden; 
-    margin: 0 auto;
-    border-right: .15em solid #fecf09; 
-    white-space: nowrap; 
-    
-    /* ✅ FIX: เพิ่ม steps เป็น 11 และเพิ่ม duration เป็น 4s เพื่อความนุ่มนวล */
+    /* 👈 FIX: กำหนดฟอนต์ให้เป็นตัวหนา 700 เพื่อความเข้มแข็ง */
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: 700; 
+    font-size: 3.5rem; 
+    color: #273A80; /* สีน้ำเงินเข้มของไลออนส์ */
+    display: inline-block;
+    white-space: nowrap; /* ป้องกันการขึ้นบรรทัดใหม่ */
+    overflow: hidden;
+    border-right: 0.15em solid #FECF09; /* เคอร์เซอร์สีทอง */
+
+    /* 👈 FIX: ปรับความกว้างให้พอดีกับคำว่า LIONS CLUB (10 ตัวอักษร) */
+    width: 10ch; 
+    /* 👈 FIX: ปรับขั้นตอน (steps) ให้เท่ากับจำนวนตัวอักษร (10) และเพิ่มเวลาให้เหมาะสม */
     animation: 
-      typing 4s steps(11, end) forwards, 
-      blink-caret .75s step-end infinite; 
-    animation-delay: 0.5s; 
-}
-
-/* Keyframes for Typing Effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 11ch } /* ✅ FIX: ปรับ width ให้ตรงกับ max-width/steps */
-}
-
-/* Keyframes for Cursor Blink (ไม่ต้องแก้ไข) */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #fecf09; } 
+        typing 3.5s steps(10, end) forwards, /* 3.5s สำหรับ 10 ตัวอักษร */
+        blink-caret .75s step-end infinite;
 }
 
 .animated-subtitle {
-    font-size: 1.5rem;
-    color: #fecf09;
-    font-weight: 500;
-    margin-top: 1rem;
-    letter-spacing: 0.1rem;
+    /* 👈 FIX 3: ลดช่องว่างระหว่างบรรทัดลงเหลือ 0.8rem */
+    font-size: 1.5rem; 
+    color: #4A4A4A; 
+    margin-top: 0.5rem; /* ลดระยะห่างด้านบนลงอีก */
+    line-height: 0.8rem; /* **นี่คือส่วนที่ทำให้บรรทัดแคบลง** */
+    display: block;
+}
+
+/* @keyframes ยังใช้โค้ดเดิมได้ แต่ขอทวนเพื่อให้แน่ใจว่าถูกต้อง */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 10ch }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #FECF09; }
 }
 
 /* (ส่วน CSS อื่น ๆ ด้านล่างนี้สามารถใช้โค้ดเดิมได้เลยครับ) */
