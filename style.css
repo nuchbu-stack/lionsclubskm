@@ -223,7 +223,7 @@ h1, h2, h3 {
   .nav-links .close-menu .bar-x {
       background-color: #fecf09 !important;
   }
-    
+
   /* 4. เมื่อเมนู Active (Slide In) */
   .nav-links.active {
     right: 0; /* เลื่อนเข้าจอ */
@@ -231,7 +231,13 @@ h1, h2, h3 {
 
     /* ปุ่มปิดต้องแสดงเมื่อเมนูเปิด (nav-links.active) */
   .nav-links.active .close-menu { 
-    display: block !important;  /* 👈 (FIX) ทำให้ X ปรากฏ */
+    /* 👈 CRITICAL FIX: บังคับให้พื้นหลังเป็นโปร่งใส */
+    background: transparent !important; 
+    
+    /* ล้างขอบและเงาที่อาจมีสีขาว */
+    border: none !important; 
+    box-shadow: none !important;
+    outline: none !important;  
   }
 
   /* ปุ่ม Hamburger ต้องซ่อนเมื่อเมนูเปิด */
@@ -259,6 +265,42 @@ h1, h2, h3 {
     display: flex !important; /* 👈 (FIX) ต้องแสดงเมื่อเมนูเปิด */
   }
   
+  /* ========================================================= */
+  /* 🛑 แก้ปัญหา: พื้นหลังเมนูโปร่งใสและสูงไม่เต็มจอ (NAV LINKS) */
+  /* ========================================================= */
+  
+  .navbar .nav-links { 
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    width: 70%;
+    
+    /* 👈 CRITICAL FIX 1: บังคับความสูงให้เต็มจอเสมอ */
+    height: 100vh !important; 
+    
+    /* 👈 CRITICAL FIX 2: บังคับให้พื้นหลังทึบ (Alpha 1) */
+    background: rgba(39, 58, 128, 1) !important; 
+    
+    /* ยกเลิกเอฟเฟกต์เบลอที่อาจทำให้โปร่งใส */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important;
+    
+    transition: right 0.3s ease;
+    padding-top: 5rem;
+    z-index: 1005; 
+  }
+
+  /* 🛑 บังคับให้แถบ Header Bar (Navbar) ทึบตลอดเวลาบนมือถือ */
+  .navbar, 
+  .navbar.scrolled { 
+    background: rgba(39, 58, 128, 1) !important; 
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important; 
+  }
+
+
   /* FIX: เพิ่ม .navbar เข้าไปเพื่อเพิ่ม Specificity ให้ชนะกฎ Desktop */
   .navbar .nav-links ul { 
     flex-direction: column; /* 👈 FIX: ทำให้เมนูเรียงตามแนวตั้ง */
