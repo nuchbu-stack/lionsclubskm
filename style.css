@@ -1176,17 +1176,12 @@ section h2 {
 }
 
 /* ===========================
-   Lions Club Promo Section
+   Lions Club Promo Section (Modern Visual Focus)
    =========================== */
-#lions-club-promo {
-    background-color: #fff; /* ใช้พื้นหลังสีขาวเพื่อเน้นตัวคั่น */
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    overflow: hidden; /* เพื่อป้องกันไม่ให้รูปไดคัทล้นออกไป */
-}
 
-/* --- DIVIDER HEADER --- */
+/* 1. Header/Divider Style (ปรับสีให้ Modern ขึ้น) */
 .divider-header {
+    /* ใช้สีที่เข้มและเป็นทางการของ Lions */
     text-align: center;
     margin-bottom: 4rem;
     position: relative;
@@ -1194,95 +1189,88 @@ section h2 {
 }
 
 .divider-header h2 {
-    font-size: 4rem; /* ตัวใหญ่ */
+    font-size: 4.5rem; /* ใหญ่กว่าเดิม */
     font-weight: 900;
-    color: #273a80; /* สีน้ำเงินเข้ม */
-    letter-spacing: 0.2rem;
+    color: #273a80; /* สีน้ำเงิน Lions */
+    letter-spacing: 0.5rem; /* เพิ่มระยะห่างตัวอักษรให้ดู Modern */
     line-height: 1;
     text-transform: uppercase;
 }
 
 .divider-header p {
-    font-size: 1.5rem; /* ตัวเล็กกว่า */
-    color: #fecf09; /* สีทอง */
-    font-weight: 700;
-    margin-top: -0.5rem; /* ดึงข้อความให้ชิด H2 */
+    font-size: 1.3rem;
+    color: #fecf09; /* สีทอง Lions */
+    font-weight: 600;
+    margin-top: -0.5rem; 
+    letter-spacing: 0.1rem;
 }
 
-/* --- เส้นคั่นทอง --- */
+/* ลบเส้นคั่นแบบเก่า เพื่อความ Clean */
 .divider-header::before,
 .divider-header::after {
+    display: none; 
+}
+/* แทนที่ด้วยเส้นคั่นแบบ Modern (เส้นเดี่ยวใต้ข้อความ P) */
+.divider-header p::after {
     content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20%;
-    max-width: 250px;
-    height: 4px;
+    display: block;
+    width: 60px;
+    height: 3px;
     background-color: #fecf09;
+    margin: 10px auto 0 auto;
     border-radius: 2px;
 }
 
-.divider-header::before {
-    top: 0;
-}
 
-.divider-header::after {
-    bottom: 0;
-}
-
-/* --- CONTENT HALF-AND-HALF --- */
+/* 2. Content Half-and-Half Layout (Desktop) */
 .lions-content {
-    align-items: center; /* จัดให้อยู่ตรงกลางตามแนวตั้ง */
-    gap: 4rem;
+    display: grid;
+    grid-template-columns: 40% 60%; /* สลับ: รูปภาพ 40% ข้อความ 60% */
+    align-items: center; 
+    gap: 5rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-.lions-content .text-content {
-    order: 1; /* ข้อความอยู่ด้านซ้าย */
-}
-
-.lions-content .image-content {
-    order: 2; /* รูปภาพอยู่ด้านขวา */
-    text-align: center;
-}
-
-.cutout-img {
+/* 3. Image Style (เน้นรูปภาพ) */
+.cutout-img.visual-focus {
     max-width: 100%;
     height: auto;
+    /* เพิ่มเงาที่ดู Modern และนุ่มนวล */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); 
     border-radius: 8px;
-    /* *สำคัญ*: หากเป็นรูปไดคัทจริงๆ (PNG พื้นหลังใส) จะดูสวยงามมาก */
-    /* ถ้าไม่ใช่รูปไดคัท ให้เพิ่ม box-shadow เล็กน้อย */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    /* สามารถเพิ่ม transform เล็กน้อยเพื่อให้ดูมีมิติ */
+    transform: translateY(-10px); 
 }
 
-/* ===========================
-   Media Query (Mobile)
-   =========================== */
-@media (max-width: 768px) {
-    /* 🛑 ปรับให้เรียงซ้อนกันบน Mobile */
-    .lions-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    /* สลับลำดับให้รูปภาพอยู่ด้านบนข้อความบน Mobile */
-    .lions-content .text-content {
-        order: 2; 
-    }
+/* 4. Text Style */
+.lions-content .text-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
 
-    .lions-content .image-content {
-        order: 1; 
-    }
+/* 5. Mobile Adjustments */
+@media (max-width: 768px) {
     
     /* ปรับขนาดตัวอักษรของ Header */
     .divider-header h2 {
-        font-size: 2.5rem; 
+        font-size: 3rem; 
+        letter-spacing: 0.2rem;
     }
 
-    .divider-header p {
-        font-size: 1.2rem; 
+    /* 🛑 บังคับให้เรียงซ้อนกันบน Mobile */
+    .lions-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    /* 🛑 สลับลำดับ: รูปภาพ (Image-Content) ต้องอยู่บนข้อความ (Text-Content) */
+    .lions-content .image-content {
+        order: 1; /* รูปอยู่บนสุด */
+    }
+
+    .lions-content .text-content {
+        order: 2; /* ข้อความอยู่ด้านล่าง */
     }
 }
