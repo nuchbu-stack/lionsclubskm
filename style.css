@@ -1338,6 +1338,34 @@ section h2 {
     font-weight: 700;
 }
 
+/* =========================================================
+    LIONS CLUB HISTORY PANEL (Concept 6: Dark Blue, Frameless)
+   ========================================================= */
+
+/* (ส่วน CSS อื่น ๆ คงเดิม) */
+
+/* --- VISUAL FOCUS (คอลัมน์ซ้าย) --- */
+.history-visual-blue {
+    text-align: center;
+}
+
+.main-leader-img-blue {
+    width: 100%;
+    max-width: 300px; 
+    height: auto;
+    border-radius: 50%; /* ยังคงความกลมไว้ */
+    /* ❌ ลบเส้นขอบสีทองออก */
+    /* border: none; */ 
+    /* ✅ ใช้เงาบาง ๆ เพื่อให้ดูนุ่มนวลขึ้น */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); 
+    margin-bottom: 2rem;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* (ส่วน CSS อื่น ๆ คงเดิม) */
+
 /* ===========================
    Mobile Design (max-width: 768px)
    =========================== */
