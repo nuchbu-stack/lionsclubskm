@@ -226,11 +226,6 @@ h1, h2, h3 {
     filter: none !important; 
   }
 
-  
-  /* 4. เมื่อเมนู Active (Slide In) */
-  .nav-links.active {
-    right: 0; /* เลื่อนเข้าจอ */
-  }
 
     /* ปุ่มปิดต้องแสดงเมื่อเมนูเปิด (nav-links.active) */
   .nav-links.active .close-menu { 
