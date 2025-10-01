@@ -1181,9 +1181,13 @@ section h2 {
    - Typing effect on H2, small leader image, 50/50 clean layout.
    ========================================================= */
 
-/* ===========================
-   LIONS CLUB INTRO
-   =========================== */
+#lions-intro-animate {
+    background-color: #273a80; /* Lions Blue */
+    color: #ffffff; 
+    padding: 6rem 0 8rem 0; 
+}
+
+/* --- TYPING ANIMATION HEADER --- */
 .animated-header-wrapper {
     text-align: center;
     margin-bottom: 2rem;
@@ -1209,6 +1213,18 @@ section h2 {
         blink-caret .75s step-end infinite;
 }
 
+/* Keyframes for Typing Effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 11ch } /* ✅ FIX: ปรับ width ให้ตรงกับ max-width/steps */
+}
+
+/* Keyframes for Cursor Blink (ไม่ต้องแก้ไข) */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #fecf09; } 
+}
+
 .animated-subtitle {
     /* 👈 FIX 3: ลดช่องว่างระหว่างบรรทัดลงเหลือ 0.8rem */
     font-size: 1.5rem; 
@@ -1216,17 +1232,6 @@ section h2 {
     margin-top: 0.5rem; /* ลดระยะห่างด้านบนลงอีก */
     line-height: 0.8rem; /* **นี่คือส่วนที่ทำให้บรรทัดแคบลง** */
     display: block;
-}
-
-/* @keyframes ยังใช้โค้ดเดิมได้ แต่ขอทวนเพื่อให้แน่ใจว่าถูกต้อง */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 10ch }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #FECF09; }
 }
 
 /* (ส่วน CSS อื่น ๆ ด้านล่างนี้สามารถใช้โค้ดเดิมได้เลยครับ) */
