@@ -1216,27 +1216,35 @@ section h2 {
     padding-top: 1rem;
 }
 
+/* --- TYPING ANIMATION HEADER --- */
+/* ... (โค้ด .animated-header-wrapper ใช้ของเดิม) ... */
+
 .animated-title-text {
-    /* กำหนดฟอนต์ให้เป็นตัวหนา 700 เพื่อความเข้มแข็ง */
+    /* กำหนดฟอนต์, ขนาด, สี */
     font-family: 'Noto Sans Thai', sans-serif;
     font-weight: 700; 
     font-size: 4rem; 
     color: #ffffff; 
     display: inline-block;
     white-space: nowrap; 
-    /* 💡 สำคัญ: กำหนด width เริ่มต้นเป็น 0 เพื่อซ่อนไว้ก่อน */
+    
+    /* 💡 สำคัญ: width: 0; เพื่อซ่อนข้อความก่อนเริ่ม Animation */
     width: 0; 
     overflow: hidden;
     border-right: 0.15em solid #FECF09; 
+
+    /* ✅ FIX: ให้ Cursor Blinking ทำงานทันทีที่โหลดหน้า */
+    animation: blink-caret .75s step-end infinite; 
 }
 
-/* ✅ FIX 3: คลาสนี้จะถูกเพิ่มด้วย JavaScript เมื่อ Scroll มาถึง */
+/* ✅ คลาสนี้ถูกเพิ่มด้วย JavaScript เพื่อเริ่ม Typing Animation */
 .animated-title-text.show-typing {
-    /* ตั้งค่า width และ animation เมื่อถูกสั่งให้ทำงาน */
+    /* สั่งให้ความกว้างเป็น 11ch ทันทีเมื่อคลาสถูกเพิ่ม */
     width: 11ch; 
+    /* ✅ FIX: เพิ่ม Typing Animation เข้าไปในบรรทัด animation เดิม */
     animation: 
-        typing 3.5s steps(11, end) forwards, 
-        blink-caret .75s step-end infinite;
+        typing 3.5s steps(11, end) forwards, /* Typing Animation */
+        blink-caret .75s step-end infinite; /* Cursor Animation */
 }
 
 /* Keyframes for Typing Effect */
@@ -1386,15 +1394,14 @@ section h2 {
     
     .animated-title-text {
         font-size: 2.5rem;
-        max-width: 11ch; /* ✅ FIX: ปรับขนาดใหม่บนมือถือ */
+       /*  max-width: 11ch; /* ✅ FIX: ปรับขนาดใหม่บนมือถือ */
     }
     
-    .animated-title-text.show {
-         /* ต้องปรับ animation ให้เข้ากับขนาดใหม่ด้วย */
+    .animated-title-text.show-typing {
+        width: 11ch; 
         animation: 
-            typing-mobile 4s steps(11, end) forwards, /* ✅ FIX: เพิ่ม steps */
+            typing 3.5s steps(11, end) forwards, 
             blink-caret .75s step-end infinite; 
-        animation-delay: 0.5s;
     }
 
     @keyframes typing-mobile {
