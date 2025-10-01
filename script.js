@@ -295,29 +295,35 @@ document.addEventListener('DOMContentLoaded', () => {
 // =========================
 // Typing Animation Trigger on Scroll (Lions Club)
 // =========================
-// 💡 เราใช้ .animated-title-text เป็นตัวหลัก
-const animatedTitle = document.querySelector(".animated-title-text");
+// 💡 เราจะใส่โค้ดไว้ใน DOMContentLoaded เพื่อให้แน่ใจว่า Elements ถูกโหลดแล้ว
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedTitle = document.querySelector(".animated-title-text");
+    const lionsSection = document.getElementById("lions-intro-animate");
 
-// 💡 เราจะใช้ section หลักเป็นตัวสังเกตการณ์
-const lionsSection = document.getElementById("lions-intro-animate");
-
-// 💡 กำหนด Threshold ให้ Animation เริ่มเมื่อ 80% ของ Section เข้ามาในจอ
-const typingOptions = { threshold: 0.8 }; 
-
-const startTypingOnScroll = new IntersectionObserver(function(entries, observer) {
-  entries.forEach(entry => {
-    // เมื่อส่วนนี้เข้าสู่หน้าจอ
-    if (entry.isIntersecting) {
-        // 💡 สั่งเพิ่มคลาส 'show-typing' เพื่อเริ่ม Animation ใน CSS
-        animatedTitle.classList.add("show-typing");
-        
-        // หยุดสังเกตการณ์ เพราะแอนิเมชันเริ่มแล้ว
-        observer.unobserve(entry.target); 
+    // ตรวจสอบว่ามี Element ที่จำเป็นอยู่จริงก่อนจะเริ่ม Observer
+    if (!animatedTitle || !lionsSection) {
+        console.log("Typing animation elements not found.");
+        return; // ออกจากการทำงานหากหา Element ไม่เจอ
     }
-  });
-}, typingOptions);
 
-// เริ่มต้นสังเกตการณ์ Lions Club Section หากมี element อยู่
-if (lionsSection && animatedTitle) {
+    const typingOptions = { threshold: 0.8 }; 
+
+    const startTypingOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            // เมื่อส่วนนี้เข้าสู่หน้าจอ
+            if (entry.isIntersecting) {
+                // สั่งเพิ่มคลาส 'show-typing'
+                animatedTitle.classList.add("show-typing");
+                
+                // หยุดสังเกตการณ์
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, typingOptions);
+
+    // เริ่มต้นสังเกตการณ์ Lions Club Section
     startTypingOnScroll.observe(lionsSection);
-}
+});
+
+// 💡 หากคุณมีโค้ดอื่น ๆ ใน script.js ที่ต้องอยู่ใน DOMContentLoaded อยู่แล้ว
+// ให้รวมโค้ดชุดนี้เข้าไปอยู่ในบล็อก DOMContentLoaded เดิมได้เลย
