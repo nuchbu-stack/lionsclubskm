@@ -1202,29 +1202,30 @@ section h2 {
     line-height: 1;
     text-transform: uppercase;
     
-    /* Typing Effect CSS */
-    max-width: 10ch; /* ความยาวตามจำนวนตัวอักษร 'LIONS CLUB' (10 ตัวอักษร) */
-    overflow: hidden; /* ซ่อนข้อความที่เกินมา */
+    /* Typing Effect CSS - แก้ไขค่า */
+    max-width: 11ch; /* ✅ FIX: เพิ่มความกว้างเป็น 11ch (จาก 10ch) เพื่อให้มีที่พอสำหรับตัว B และเคอร์เซอร์ */
+    overflow: hidden; 
     margin: 0 auto;
-    border-right: .15em solid #fecf09; /* เคอร์เซอร์ */
-    white-space: nowrap; /* ป้องกันการขึ้นบรรทัดใหม่ */
-    /* animation: typing [ระยะเวลา] steps([จำนวนตัวอักษร], end) forwards, blink-caret [ระยะเวลา] step-end infinite; */
+    border-right: .15em solid #fecf09; 
+    white-space: nowrap; 
+    
+    /* ✅ FIX: เพิ่ม steps เป็น 11 และเพิ่ม duration เป็น 4s เพื่อความนุ่มนวล */
     animation: 
-      typing 3.5s steps(10, end) forwards, 
+      typing 4s steps(11, end) forwards, 
       blink-caret .75s step-end infinite; 
-    animation-delay: 0.5s; /* หน่วงเวลาเริ่มต้น */
+    animation-delay: 0.5s; 
 }
 
 /* Keyframes for Typing Effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 10ch }
+  to { width: 11ch } /* ✅ FIX: ปรับ width ให้ตรงกับ max-width/steps */
 }
 
-/* Keyframes for Cursor Blink */
+/* Keyframes for Cursor Blink (ไม่ต้องแก้ไข) */
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #fecf09; } /* สีทอง Lions */
+  50% { border-color: #fecf09; } 
 }
 
 .animated-subtitle {
@@ -1234,6 +1235,8 @@ section h2 {
     margin-top: 1rem;
     letter-spacing: 0.1rem;
 }
+
+/* (ส่วน CSS อื่น ๆ ด้านล่างนี้สามารถใช้โค้ดเดิมได้เลยครับ) */
 
 /* --- CONTENT GRID (50/50) --- */
 .intro-grid-clean {
@@ -1250,7 +1253,7 @@ section h2 {
 .intro-leader-panel {
     text-align: center;
     padding: 1rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.2); /* เส้นแบ่งจางๆ */
+    border-right: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
 .leader-intro-heading {
@@ -1270,7 +1273,7 @@ section h2 {
 }
 
 .small-leader-img {
-    width: 90px; /* รูปภาพเล็ก */
+    width: 90px; 
     height: 90px;
     border-radius: 50%;
     object-fit: cover;
@@ -1359,20 +1362,20 @@ section h2 {
     
     .animated-title-text {
         font-size: 2.5rem;
-        max-width: 9.5ch; /* ปรับขนาดให้พอดีบนมือถือ */
+        max-width: 10ch; /* ✅ FIX: ปรับขนาดใหม่บนมือถือ */
     }
     
     .animated-title-text.show {
          /* ต้องปรับ animation ให้เข้ากับขนาดใหม่ด้วย */
         animation: 
-            typing-mobile 3.5s steps(10, end) forwards, 
+            typing-mobile 4s steps(11, end) forwards, /* ✅ FIX: เพิ่ม steps */
             blink-caret .75s step-end infinite; 
         animation-delay: 0.5s;
     }
 
     @keyframes typing-mobile {
       from { width: 0 }
-      to { width: 9.5ch }
+      to { width: 10ch } /* ✅ FIX: ปรับ width ให้พอดีกับ max-width มือถือ */
     }
 
 
@@ -1385,9 +1388,9 @@ section h2 {
     .intro-leader-panel {
         order: 1; 
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* เพิ่มเส้นแบ่งด้านล่างแทน */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
         padding-bottom: 2rem;
-        text-align: left; /* เปลี่ยนกลับเป็นชิดซ้ายบนมือถือ */
+        text-align: left; 
     }
 
     .intro-history-text {
@@ -1396,7 +1399,7 @@ section h2 {
     }
 
     .leader-visual-small {
-        justify-content: flex-start; /* ชิดซ้าย */
+        justify-content: flex-start; 
         gap: 1rem;
     }
     
