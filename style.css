@@ -191,19 +191,39 @@ h1, h2, h3 {
     z-index: 1010;
   }
 
-  /* Mobile Navigation Menu */
-  .nav-links {
+  /* ========================================================= */
+  /* 🛑 แก้ปัญหา: พื้นหลังเมนูโปร่งใสและสูงไม่เต็มจอ (NAV LINKS) */
+  /* ========================================================= */
+  
+  .navbar .nav-links { 
     position: fixed;
     top: 0;
-    right: -100%; /* ซ่อนนอกจอ */
+    right: -100%; 
     width: 70%;
-    height: 100%;
-    background: rgba(39, 58, 128, 0.98); /* สีทึบของเมนู */
+    
+    /* 👈 CRITICAL FIX 1: บังคับความสูงให้เต็มจอเสมอ */
+    height: 100vh !important; 
+    
+    /* 👈 CRITICAL FIX 2: บังคับให้พื้นหลังทึบ (Alpha 1) */
+    background: rgba(39, 58, 128, 1) !important; 
+    
+    /* ยกเลิกเอฟเฟกต์เบลอที่อาจทำให้โปร่งใส */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important;
+    
     transition: right 0.3s ease;
     padding-top: 5rem;
-    z-index: 1005;
-    /* Nav ต้องซ่อนไว้ก่อน */
-    display: block; /* ใช้ block ร่วมกับ right: -100% เพื่อควบคุมการแสดงผล */
+    z-index: 1005; 
+  }
+
+  /* 🛑 บังคับให้แถบ Header Bar (Navbar) ทึบตลอดเวลาบนมือถือ */
+  .navbar, 
+  .navbar.scrolled { 
+    background: rgba(39, 58, 128, 1) !important; 
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important; 
   }
 
   
