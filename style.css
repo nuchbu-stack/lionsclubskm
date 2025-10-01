@@ -1179,127 +1179,182 @@ section h2 {
 /* ======================== LIONS CLUB =================================
    LIONS CLUB MANIFESTO SECTION (Minimalist Stripe - Concept 3)
    ========================================================= */
-#lions-minimal {
-    /* Full-width Stripe Background: สีน้ำเงินเข้มของ Lions */
-    background-color: #273a80; 
-    color: #ffffff; 
+/* =========================================================
+   LIONS CLUB HISTORY PANEL (Modern Layout - Concept 4)
+   ========================================================= */
+
+#lions-history-panel {
+    background-color: #f8f8f8; /* พื้นหลังสีอ่อนมากเพื่อให้ตัดกับพื้นหลังไล่สีหลัก */
+    color: #333;
     padding: 6rem 0; 
+}
+
+/* --- DIVIDER HEADER (นำมาจาก Concept 2/3 แต่ปรับให้ทันสมัย) --- */
+.divider-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 1rem 0;
+}
+
+.divider-header h2 {
+    font-size: 4rem; 
+    font-weight: 900;
+    color: #273a80; /* สีน้ำเงิน Lions */
+    letter-spacing: 0.5rem; 
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.divider-header p {
+    font-size: 1.5rem;
+    color: #fecf09; /* สีทอง Lions */
+    font-weight: 600;
+    margin-top: -0.5rem; 
+    letter-spacing: 0.1rem;
+}
+
+/* เส้นคั่นแบบ Modern */
+.divider-header p::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #fecf09;
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+
+/* --- HISTORY GRID (2 COLUMNS) --- */
+.history-grid {
+    display: grid;
+    /* 40% สำหรับรูปภาพและข้อเท็จจริง | 60% สำหรับข้อความยาว */
+    grid-template-columns: 40% 60%; 
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    align-items: flex-start; /* จัดเรียงส่วนบนให้ตรงกัน */
+}
+
+/* --- VISUAL FOCUS (คอลัมน์ซ้าย) --- */
+.history-visual {
     text-align: center;
 }
 
-.minimal-layout-content {
-    max-width: 900px; /* จำกัดความกว้างเนื้อหาหลัก */
-    margin: 0 auto;
-    padding: 0 2rem;
+.main-leader-img {
+    width: 100%;
+    max-width: 300px; /* จำกัดขนาดรูปภาพ */
+    height: auto;
+    border-radius: 50%; /* ให้เป็นรูปวงกลมสำหรับรูปไดคัท */
+    border: 5px solid #fecf09; /* กรอบสีทอง */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    margin-bottom: 2rem;
+    display: block; /* แก้ปัญหาช่องว่างด้านล่างรูป */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* --- DIVIDER HEADER (LIONS CLUB BIG) --- */
-.minimal-divider {
-    margin-bottom: 3rem;
-    line-height: 1;
-}
-
-.minimal-divider h2 {
-    font-size: 6rem; /* ใหญ่สุดๆ */
-    font-weight: 900;
-    color: #fecf09; /* สีทอง */
-    text-transform: uppercase;
-    letter-spacing: 0.5rem; /* เพิ่มช่องไฟให้ดู Modern */
-    margin-bottom: -1rem; 
-}
-
-.minimal-divider p {
-    font-size: 2rem; 
-    font-weight: 700;
-    color: #ffffff; /* สีขาว */
-    letter-spacing: 0.2rem;
-}
-
-/* --- TEXT BLOCK & IMAGE (Text Flow Layout) --- */
-.minimal-text-block {
-    text-align: left;
-    max-width: 700px; 
-    margin: 0 auto;
-    font-size: 1.15rem;
-    line-height: 1.8;
-}
-
-.minimal-text-block p {
-    margin-bottom: 1.5rem;
-}
-
-.minimal-text-block .intro-large {
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 1.5;
-    margin-top: 2rem;
-}
-
-/* --- FLOATING CUTOUT IMAGE --- */
-.floating-cutout {
-    width: 150px; /* ขนาดรูปคนไดคัท */
-    height: 150px;
-    object-fit: cover;
-    float: right; /* 👈 ทำให้รูปอยู่ขวาและข้อความไหลรอบ */
-    margin: 0 0 1rem 2rem; 
-    border-radius: 50%; /* เพื่อความกลมมน */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* --- INVERTED BUTTON (สีทอง/น้ำเงิน สำหรับพื้นหลังเข้ม) --- */
-.btn-inverted {
-    background-color: #fecf09; /* สีทอง */
-    color: #273a80 !important; /* ตัวอักษรสีน้ำเงิน */
-    border: 2px solid #fecf09;
-    font-weight: 700;
-    margin-top: 2rem;
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.btn-inverted:hover {
+.key-fact-box {
     background-color: #fff;
-    border-color: #fff;
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.key-fact-box h3 {
+    color: #273a80; 
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #273a80;
+    padding-bottom: 0.5rem;
+}
+
+.clean-list {
+    list-style: none;
+    padding: 0;
+}
+
+.clean-list li {
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.highlight-gold {
+    color: #fecf09; /* เน้นสีทองในข้อความ */
+    font-weight: 700;
+}
+
+.history-cta {
+    margin-top: 2rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #273a80;
+    color: #fff !important;
+}
+
+/* --- TEXT DETAIL (คอลัมน์ขวา) --- */
+.history-text {
+    text-align: justify; /* จัดชิดขอบซ้ายขวาเพื่อให้ดูเป็นทางการ */
+}
+
+.history-text p.intro-large {
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-top: 0;
+}
+
+.final-motto {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #273a80;
+    text-align: center;
+    margin-top: 3rem !important;
+    font-weight: 700;
 }
 
 /* ===========================
    Mobile Design (max-width: 768px)
    =========================== */
 @media (max-width: 768px) {
-    #lions-minimal {
+    #lions-history-panel {
         padding: 4rem 0;
     }
-    
-    .minimal-divider h2 {
-        font-size: 3rem; /* ปรับขนาด H2 ลง */
+
+    .divider-header h2 {
+        font-size: 3rem; 
         letter-spacing: 0.2rem;
-        margin-bottom: 0;
     }
 
-    .minimal-divider p {
-        font-size: 1.3rem; /* ปรับขนาด P ลง */
-        letter-spacing: 0.1rem;
+    /* 🛑 บังคับให้เรียงซ้อนกันบน Mobile */
+    .history-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* สลับลำดับให้รูปภาพ/ข้อเท็จจริงอยู่บน Mobile */
+    .history-visual {
+        order: 1; 
     }
 
-    .minimal-text-block {
-        text-align: center; /* ข้อความอยู่กึ่งกลางบนมือถือ */
+    .history-text {
+        order: 2; 
+        text-align: left; /* เปลี่ยนกลับเป็นชิดซ้ายบนมือถือ */
     }
 
-    /* จัดการรูปภาพบนมือถือ: ให้รูปอยู่บนข้อความและจัดกึ่งกลาง */
-    .floating-cutout {
-        float: none; /* ยกเลิกการลอย */
-        display: block; 
-        margin: 1rem auto 2rem auto; 
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
+    .main-leader-img {
+        max-width: 200px;
     }
-
-    .minimal-text-block .intro-large {
-        font-size: 1.2rem;
+    
+    .key-fact-box {
         text-align: center;
+    }
+
+    .history-text p.intro-large {
+        font-size: 1.15rem;
     }
 }
