@@ -1176,45 +1176,44 @@ section h2 {
 }
 
 
-/* ======================== LIONS CLUB =================================
-   LIONS CLUB MANIFESTO SECTION (Minimalist Stripe - Concept 3)
-   ========================================================= */
 /* =========================================================
-   LIONS CLUB HISTORY PANEL (Modern Layout - Concept 4)
+   LIONS CLUB HISTORY PANEL (Concept 5: Dark Blue History Panel)
+   - Combines 2-column layout (Concept 4) with Dark Blue BG (Concept 3)
    ========================================================= */
 
-#lions-history-panel {
-    background-color: #f8f8f8; /* พื้นหลังสีอ่อนมากเพื่อให้ตัดกับพื้นหลังไล่สีหลัก */
-    color: #333;
+#lions-blue-history-panel {
+    /* Full-width Dark Blue Background: #273a80 คือ Lions Blue */
+    background-color: #273a80; 
+    color: #ffffff; 
     padding: 6rem 0; 
 }
 
-/* --- DIVIDER HEADER (นำมาจาก Concept 2/3 แต่ปรับให้ทันสมัย) --- */
-.divider-header {
+/* --- DIVIDER HEADER (ปรับให้เป็นสีขาว/ทอง บนพื้นหลังน้ำเงิน) --- */
+#lions-blue-history-panel .divider-header {
     text-align: center;
     margin-bottom: 4rem;
     padding: 1rem 0;
 }
 
-.divider-header h2 {
+#lions-blue-history-panel .divider-header h2 {
     font-size: 4rem; 
     font-weight: 900;
-    color: #273a80; /* สีน้ำเงิน Lions */
+    color: #ffffff; /* ชื่อใหญ่สีขาว */
     letter-spacing: 0.5rem; 
     line-height: 1;
     text-transform: uppercase;
 }
 
-.divider-header p {
+#lions-blue-history-panel .divider-header p {
     font-size: 1.5rem;
-    color: #fecf09; /* สีทอง Lions */
+    color: #fecf09; /* ชื่อเล็กสีทอง Lions */
     font-weight: 600;
     margin-top: -0.5rem; 
     letter-spacing: 0.1rem;
 }
 
 /* เส้นคั่นแบบ Modern */
-.divider-header p::after {
+#lions-blue-history-panel .divider-header p::after {
     content: "";
     display: block;
     width: 80px;
@@ -1226,60 +1225,65 @@ section h2 {
 
 
 /* --- HISTORY GRID (2 COLUMNS) --- */
-.history-grid {
+.history-grid-blue {
     display: grid;
-    /* 40% สำหรับรูปภาพและข้อเท็จจริง | 60% สำหรับข้อความยาว */
     grid-template-columns: 40% 60%; 
     gap: 4rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-    align-items: flex-start; /* จัดเรียงส่วนบนให้ตรงกัน */
+    align-items: flex-start; 
 }
 
 /* --- VISUAL FOCUS (คอลัมน์ซ้าย) --- */
-.history-visual {
+.history-visual-blue {
     text-align: center;
 }
 
-.main-leader-img {
+.main-leader-img-blue {
     width: 100%;
-    max-width: 300px; /* จำกัดขนาดรูปภาพ */
+    max-width: 300px; 
     height: auto;
-    border-radius: 50%; /* ให้เป็นรูปวงกลมสำหรับรูปไดคัท */
+    border-radius: 50%; 
     border: 5px solid #fecf09; /* กรอบสีทอง */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* เพิ่มเงาเข้มขึ้นบนพื้นหลังมืด */
     margin-bottom: 2rem;
-    display: block; /* แก้ปัญหาช่องว่างด้านล่างรูป */
+    display: block; 
     margin-left: auto;
     margin-right: auto;
 }
 
-.key-fact-box {
-    background-color: #fff;
-    border: 1px solid #eee;
+.key-fact-box-blue {
+    /* กล่องข้อมูลนายกคนปัจจุบัน */
+    background-color: #1a295c; /* น้ำเงินที่เข้มขึ้นเล็กน้อย */
+    border: 1px solid #fecf09;
+    color: #ffffff;
     padding: 1.5rem;
     border-radius: 8px;
-    text-align: left;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.key-fact-box h3 {
-    color: #273a80; 
+.key-fact-box-blue h3 {
+    color: #fecf09; /* สีทองสำหรับหัวข้อ */
     margin-top: 0;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #273a80;
-    padding-bottom: 0.5rem;
-}
-
-.clean-list {
-    list-style: none;
-    padding: 0;
-}
-
-.clean-list li {
     margin-bottom: 0.5rem;
-    color: #444;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #fecf09;
+}
+
+.leader-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0 0.2rem 0;
+    color: #ffffff;
+}
+
+.leader-term {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fecf09; /* เน้นปีบริหารด้วยสีทอง */
+    margin-bottom: 1.5rem;
 }
 
 .highlight-gold {
@@ -1287,31 +1291,48 @@ section h2 {
     font-weight: 700;
 }
 
-.history-cta {
-    margin-top: 2rem;
+.history-cta-blue {
+    margin-top: 0.5rem;
     display: block;
     width: 100%;
     text-align: center;
-    background-color: #273a80;
-    color: #fff !important;
+    /* Inverted Colors: ใช้ทองเป็นพื้น, น้ำเงินเป็นตัวอักษร */
+    background-color: #fecf09; 
+    color: #273a80 !important; 
+    border: 2px solid #fecf09;
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
+
+.history-cta-blue:hover {
+    background-color: #fff;
+    border-color: #fff;
+}
+
 
 /* --- TEXT DETAIL (คอลัมน์ขวา) --- */
-.history-text {
-    text-align: justify; /* จัดชิดขอบซ้ายขวาเพื่อให้ดูเป็นทางการ */
+.history-text-blue {
+    text-align: justify; 
 }
 
-.history-text p.intro-large {
+.history-text-blue p {
+    color: #ffffff; /* ข้อความสีขาว */
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+.history-text-blue p.intro-large {
     font-size: 1.3rem;
     font-weight: 500;
-    line-height: 1.6;
     margin-top: 0;
 }
 
 .final-motto {
     font-size: 1.2rem;
     font-style: italic;
-    color: #273a80;
+    color: #fecf09; /* คำพูดเน้นด้วยสีทอง */
     text-align: center;
     margin-top: 3rem !important;
     font-weight: 700;
@@ -1321,40 +1342,35 @@ section h2 {
    Mobile Design (max-width: 768px)
    =========================== */
 @media (max-width: 768px) {
-    #lions-history-panel {
+    #lions-blue-history-panel {
         padding: 4rem 0;
     }
 
-    .divider-header h2 {
-        font-size: 3rem; 
-        letter-spacing: 0.2rem;
-    }
-
     /* 🛑 บังคับให้เรียงซ้อนกันบน Mobile */
-    .history-grid {
+    .history-grid-blue {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
     
     /* สลับลำดับให้รูปภาพ/ข้อเท็จจริงอยู่บน Mobile */
-    .history-visual {
+    .history-visual-blue {
         order: 1; 
     }
 
-    .history-text {
+    .history-text-blue {
         order: 2; 
         text-align: left; /* เปลี่ยนกลับเป็นชิดซ้ายบนมือถือ */
     }
 
-    .main-leader-img {
+    .main-leader-img-blue {
         max-width: 200px;
     }
     
-    .key-fact-box {
+    .key-fact-box-blue {
         text-align: center;
     }
 
-    .history-text p.intro-large {
-        font-size: 1.15rem;
+    .leader-name {
+        font-size: 1.3rem;
     }
 }
