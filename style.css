@@ -1199,7 +1199,7 @@ section h2 {
     font-family: 'Noto Sans Thai', sans-serif;
     font-weight: 700; 
     font-size: 3.5rem; 
-    color: #273A80; /* สีน้ำเงินเข้มของไลออนส์ */
+    color: #ffffff; /* สีน้ำเงินเข้มของไลออนส์ */
     display: inline-block;
     white-space: nowrap; /* ป้องกันการขึ้นบรรทัดใหม่ */
     overflow: hidden;
