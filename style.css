@@ -1220,32 +1220,24 @@ section h2 {
 /* ... (โค้ด .animated-header-wrapper ใช้ของเดิม) ... */
 
 .animated-title-text {
-    /* กำหนดฟอนต์, ขนาด, สี */
+    /* กำหนดฟอนต์ให้เป็นตัวหนา 700 เพื่อความเข้มแข็ง */
     font-family: 'Noto Sans Thai', sans-serif;
     font-weight: 700; 
     font-size: 4rem; 
     color: #ffffff; 
     display: inline-block;
     white-space: nowrap; 
-    
-    /* 💡 สำคัญ: width: 0; เพื่อซ่อนข้อความก่อนเริ่ม Animation */
-    width: 0; 
     overflow: hidden;
     border-right: 0.15em solid #FECF09; 
 
-    /* ✅ FIX: ให้ Cursor Blinking ทำงานทันทีที่โหลดหน้า */
-    animation: blink-caret .75s step-end infinite; 
+    /* ✅ FIX 1: แก้ปัญหาคำไม่ครบ (Desktop) */
+    /* LIONS CLUB มี 10 ตัวอักษร เราใช้ 11ch/steps(11) เพื่อให้มี Safety Margin */
+    width: 11ch; 
+    animation: 
+        typing 3.5s steps(11, end) forwards, 
+        blink-caret .75s step-end infinite;
 }
 
-/* ✅ คลาสนี้ถูกเพิ่มด้วย JavaScript เพื่อเริ่ม Typing Animation */
-.animated-title-text.show-typing {
-    /* สั่งให้ความกว้างเป็น 11ch ทันทีเมื่อคลาสถูกเพิ่ม */
-    width: 11ch; 
-    /* ✅ FIX: เพิ่ม Typing Animation เข้าไปในบรรทัด animation เดิม */
-    animation: 
-        typing 3.5s steps(11, end) forwards, /* Typing Animation */
-        blink-caret .75s step-end infinite; /* Cursor Animation */
-}
 
 /* Keyframes for Typing Effect */
 @keyframes typing {

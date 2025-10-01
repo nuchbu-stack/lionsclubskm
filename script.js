@@ -262,34 +262,6 @@ setInterval(() => {
 // Hamburger Menu Toggle (Logic ที่แก้ไขแล้ว)
 // ========================
 document.addEventListener('DOMContentLoaded', () => {
-
-
-// =========================
-// Typing Animation Trigger on Scroll (Lions Club)
-// โค้ดชุดนี้จะต้องอยู่ภายใน document.addEventListener('DOMContentLoaded', ... )
-// =========================
-  const animatedTitle = document.querySelector(".animated-title-text");
-  // ID ของ Section Lions Club
-  const lionsSection = document.getElementById("lions-intro-animate"); 
-
-  if (animatedTitle && lionsSection) {
-      const typingOptions = { threshold: 0.8 }; 
-
-      const startTypingOnScroll = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              // 💡 เมื่อ Section เข้าสู่หน้าจอ, สั่งเพิ่มคลาส 'show-typing'
-              animatedTitle.classList.add("show-typing");
-              observer.unobserve(entry.target); 
-          }
-        });
-      }, typingOptions);
-
-      startTypingOnScroll.observe(lionsSection);
-  }
-
-// ... (ต่อด้วยโค้ด Hamburger Menu เดิมของคุณที่อยู่ใน DOMContentLoaded) ...
-
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
   const closeMenu = document.getElementById('close-menu'); 
