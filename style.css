@@ -1175,3 +1175,114 @@ section h2 {
   overflow: hidden;
 }
 
+/* ===========================
+   Lions Club Promo Section
+   =========================== */
+#lions-club-promo {
+    background-color: #fff; /* ใช้พื้นหลังสีขาวเพื่อเน้นตัวคั่น */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    overflow: hidden; /* เพื่อป้องกันไม่ให้รูปไดคัทล้นออกไป */
+}
+
+/* --- DIVIDER HEADER --- */
+.divider-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.divider-header h2 {
+    font-size: 4rem; /* ตัวใหญ่ */
+    font-weight: 900;
+    color: #273a80; /* สีน้ำเงินเข้ม */
+    letter-spacing: 0.2rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.divider-header p {
+    font-size: 1.5rem; /* ตัวเล็กกว่า */
+    color: #fecf09; /* สีทอง */
+    font-weight: 700;
+    margin-top: -0.5rem; /* ดึงข้อความให้ชิด H2 */
+}
+
+/* --- เส้นคั่นทอง --- */
+.divider-header::before,
+.divider-header::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    max-width: 250px;
+    height: 4px;
+    background-color: #fecf09;
+    border-radius: 2px;
+}
+
+.divider-header::before {
+    top: 0;
+}
+
+.divider-header::after {
+    bottom: 0;
+}
+
+/* --- CONTENT HALF-AND-HALF --- */
+.lions-content {
+    align-items: center; /* จัดให้อยู่ตรงกลางตามแนวตั้ง */
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.lions-content .text-content {
+    order: 1; /* ข้อความอยู่ด้านซ้าย */
+}
+
+.lions-content .image-content {
+    order: 2; /* รูปภาพอยู่ด้านขวา */
+    text-align: center;
+}
+
+.cutout-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* *สำคัญ*: หากเป็นรูปไดคัทจริงๆ (PNG พื้นหลังใส) จะดูสวยงามมาก */
+    /* ถ้าไม่ใช่รูปไดคัท ให้เพิ่ม box-shadow เล็กน้อย */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+}
+
+/* ===========================
+   Media Query (Mobile)
+   =========================== */
+@media (max-width: 768px) {
+    /* 🛑 ปรับให้เรียงซ้อนกันบน Mobile */
+    .lions-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* สลับลำดับให้รูปภาพอยู่ด้านบนข้อความบน Mobile */
+    .lions-content .text-content {
+        order: 2; 
+    }
+
+    .lions-content .image-content {
+        order: 1; 
+    }
+    
+    /* ปรับขนาดตัวอักษรของ Header */
+    .divider-header h2 {
+        font-size: 2.5rem; 
+    }
+
+    .divider-header p {
+        font-size: 1.2rem; 
+    }
+}
