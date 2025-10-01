@@ -1195,29 +1195,28 @@ section h2 {
 }
 
 .animated-title-text {
-    /* กำหนดฟอนต์ให้เป็นตัวหนา 700 เพื่อความเข้มแข็ง */
+    /* 👈 FIX: กำหนดฟอนต์ให้เป็นตัวหนา 700 เพื่อความเข้มแข็ง */
     font-family: 'Noto Sans Thai', sans-serif;
     font-weight: 700; 
     font-size: 4rem; 
-    color: #ffffff; 
+    color: #ffffff; /* สีขาวของไลออนส์ */
     display: inline-block;
-    white-space: nowrap; 
+    white-space: nowrap; /* ป้องกันการขึ้นบรรทัดใหม่ */
     overflow: hidden;
-    border-right: 0.15em solid #FECF09; 
+    border-right: 0.15em solid #FECF09; /* เคอร์เซอร์สีทอง */
 
-    /* ✅ FIX 1: แก้ปัญหาคำไม่ครบ (Desktop) */
-    /* LIONS CLUB มี 10 ตัวอักษร เราใช้ 11ch/steps(11) เพื่อให้มี Safety Margin */
+    /* 👈 FIX: ปรับความกว้างให้พอดีกับคำว่า LIONS CLUB (10 ตัวอักษร) */
     width: 11ch; 
+    /* 👈 FIX: ปรับขั้นตอน (steps) ให้เท่ากับจำนวนตัวอักษร (10) และเพิ่มเวลาให้เหมาะสม */
     animation: 
-        typing 3.5s steps(11, end) forwards, 
+        typing 3.5s steps(11, end) forwards, /* 3.5s สำหรับ 10 ตัวอักษร */
         blink-caret .75s step-end infinite;
 }
 
 /* Keyframes for Typing Effect */
 @keyframes typing {
   from { width: 0 }
-  /* ✅ FIX: ปรับ width ให้ตรงกับ steps ที่เพิ่มเพื่อป้องกันตัวอักษรตกขอบ */
-  to { width: 11ch } 
+  to { width: 11ch } /* ✅ FIX: ปรับ width ให้ตรงกับ max-width/steps */
 }
 
 /* Keyframes for Cursor Blink (ไม่ต้องแก้ไข) */
@@ -1227,16 +1226,129 @@ section h2 {
 }
 
 .animated-subtitle {
+    /* 👈 FIX 3: ลดช่องว่างระหว่างบรรทัดลงเหลือ 0.8rem */
     font-size: 1.5rem; 
     color: #fecf09; 
-    
-    /* ✅ FIX 2: ปรับให้บรรทัดชิดกันมากที่สุด */
-    /* ดึงบรรทัดขึ้นมา -1.5rem (เท่ากับขนาด font-size) เพื่อให้ชิดกับบรรทัดบนสุด */
-    margin-top: -1.5rem; 
-    /* line-height: 1; คือ 100% ของ font-size ทำให้ระยะห่างในบรรทัดกระชับที่สุด */
-    line-height: 1; 
+    margin-top: -0.8rem; /* ลดระยะห่างด้านบนลงอีก */
+    line-height: 0.3rem; /* **นี่คือส่วนที่ทำให้บรรทัดแคบลง** */
     display: block;
 }
+
+/* (ส่วน CSS อื่น ๆ ด้านล่างนี้สามารถใช้โค้ดเดิมได้เลยครับ) */
+
+/* --- CONTENT GRID (50/50) --- */
+.intro-grid-clean {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50/50 split */
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 3rem auto 0 auto;
+    padding: 0 2rem;
+    align-items: flex-start; 
+}
+
+/* --- LEFT COLUMN: LEADER INFO --- */
+.intro-leader-panel {
+    text-align: center;
+    padding: 1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+.leader-intro-heading {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fecf09; 
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.leader-visual-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.small-leader-img {
+    width: 90px; 
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+
+.leader-info-block {
+    text-align: left;
+}
+
+.leader-name-clean {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+}
+
+.leader-role-clean {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #fecf09;
+    margin: 0;
+}
+
+.leader-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #cccccc; 
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.intro-cta {
+    background-color: #fecf09; 
+    color: #273a80 !important; 
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.intro-cta:hover {
+    background-color: #fff;
+}
+
+
+/* --- RIGHT COLUMN: HISTORY TEXT --- */
+.intro-history-text {
+    padding: 1rem;
+    text-align: justify;
+}
+
+.history-highlight {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.intro-history-text p {
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.motto-clean {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fecf09;
+    text-align: right;
+    margin-top: 2rem !important;
+}
+
 
 /* ===========================
    Mobile Design (max-width: 768px)
@@ -1248,22 +1360,20 @@ section h2 {
     
     .animated-title-text {
         font-size: 2.5rem;
-        /* ✅ FIX 1: ปรับ width เป็น 11ch บนมือถือด้วย */
-        width: 11ch; 
+        max-width: 11ch; /* ✅ FIX: ปรับขนาดใหม่บนมือถือ */
     }
     
-    /* โค้ดนี้ถูกแก้ไขให้ใช้ steps(11) เพื่อให้คำว่า LIONS CLUB แสดงครบ */
     .animated-title-text.show {
+         /* ต้องปรับ animation ให้เข้ากับขนาดใหม่ด้วย */
         animation: 
-            typing-mobile 4s steps(11, end) forwards, 
+            typing-mobile 4s steps(11, end) forwards, /* ✅ FIX: เพิ่ม steps */
             blink-caret .75s step-end infinite; 
         animation-delay: 0.5s;
     }
 
     @keyframes typing-mobile {
       from { width: 0 }
-      /* ✅ FIX: ปรับ width ให้พอดีกับ max-width มือถือ */
-      to { width: 11ch } 
+      to { width: 11ch } /* ✅ FIX: ปรับ width ให้พอดีกับ max-width มือถือ */
     }
 
 
@@ -1300,4 +1410,3 @@ section h2 {
         text-align: left;
     }
 }
-/* (ส่วน CSS อื่น ๆ ด้านล่างนี้สามารถใช้โค้ดเดิมได้เลยครับ) */
