@@ -1181,7 +1181,7 @@ section h2 {
    - Typing effect on H2, small leader image, 50/50 clean layout.
    ========================================================= */
 
-#lions-intro-animate {
+#lions {
     background-color: #273a80; /* Lions Blue */
     color: #ffffff; 
     padding: 6rem 0 8rem 0; 
@@ -1229,7 +1229,7 @@ section h2 {
     /* 👈 FIX 3: ลดช่องว่างระหว่างบรรทัดลงเหลือ 0.8rem */
     font-size: 1.5rem; 
     color: #fecf09; 
-    margin-top: 0.5rem; /* ลดระยะห่างด้านบนลงอีก */
+    margin-top: -0.8rem; /* ลดระยะห่างด้านบนลงอีก */
     line-height: 0.3rem; /* **นี่คือส่วนที่ทำให้บรรทัดแคบลง** */
     display: block;
 }
@@ -1354,7 +1354,7 @@ section h2 {
    Mobile Design (max-width: 768px)
    =========================== */
 @media (max-width: 768px) {
-    #lions-intro-animate {
+    #lions {
         padding: 4rem 0;
     }
     
