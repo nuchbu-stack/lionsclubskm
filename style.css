@@ -1206,7 +1206,7 @@ section h2 {
     border-right: 0.15em solid #FECF09; /* เคอร์เซอร์สีทอง */
 
     /* 👈 FIX: ปรับความกว้างให้พอดีกับคำว่า LIONS CLUB (10 ตัวอักษร) */
-    width: 12ch; 
+    width: 10ch; 
     /* 👈 FIX: ปรับขั้นตอน (steps) ให้เท่ากับจำนวนตัวอักษร (10) และเพิ่มเวลาให้เหมาะสม */
     animation: 
         typing 3.5s steps(10, end) forwards, /* 3.5s สำหรับ 10 ตัวอักษร */
@@ -1216,7 +1216,7 @@ section h2 {
 /* Keyframes for Typing Effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 12ch } /* ✅ FIX: ปรับ width ให้ตรงกับ max-width/steps */
+  to { width: 10ch } /* ✅ FIX: ปรับ width ให้ตรงกับ max-width/steps */
 }
 
 /* Keyframes for Cursor Blink (ไม่ต้องแก้ไข) */
@@ -1366,14 +1366,14 @@ section h2 {
     .animated-title-text.show {
          /* ต้องปรับ animation ให้เข้ากับขนาดใหม่ด้วย */
         animation: 
-            typing-mobile 4s steps(12, end) forwards, /* ✅ FIX: เพิ่ม steps */
+            typing-mobile 4s steps(10, end) forwards, /* ✅ FIX: เพิ่ม steps */
             blink-caret .75s step-end infinite; 
         animation-delay: 0.5s;
     }
 
     @keyframes typing-mobile {
       from { width: 0 }
-      to { width: 12ch } /* ✅ FIX: ปรับ width ให้พอดีกับ max-width มือถือ */
+      to { width: 10ch } /* ✅ FIX: ปรับ width ให้พอดีกับ max-width มือถือ */
     }
 
 
